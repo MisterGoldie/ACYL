@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@privy-io/privy-browser": "^0.0.3",
     "@privy-io/react-auth": "^2.10.0",
     "@privy-io/server-auth": "^1.21.0",
     "@solana/spl-token": "^0.4.13",

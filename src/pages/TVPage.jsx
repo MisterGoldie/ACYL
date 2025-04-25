@@ -111,7 +111,7 @@ const TVPage = () => {
           backgroundColor: '#fff',
         },
         embeddedWallets: {
-          createOnLogin: 'all-users',
+          createOnLogin: 'users-without-wallets',
           noPromptOnSignature: false,
         },
       }}

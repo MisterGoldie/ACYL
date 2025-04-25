@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { PrivyProvider } from "@privy-io/react-auth";
+import { PrivyProvider, usePrivy, useWallets } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
@@ -42,6 +42,88 @@ const Header = () => {
 };
 
 const ContributeContent = () => {
+  const { authenticated, user, ready, login } = usePrivy();
+  const { wallets } = useWallets();
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [transactionStatus, setTransactionStatus] = useState(null);
+  
+  const handlePatronTransaction = async () => {
+    if (!authenticated) {
+      login();
+      return;
+    }
+    
+    try {
+      setIsProcessing(true);
+      setTransactionStatus("processing");
+      
+      // Check if user has connected wallets
+      if (!wallets || wallets.length === 0) {
+        console.log("No wallets found");
+        setTransactionStatus("failed");
+        setIsProcessing(false);
+        return;
+      }
+      
+      // Get the first wallet (or you could let the user choose which wallet to use)
+      const wallet = wallets[0];
+      
+      // Get the Ethereum provider from the wallet
+      const provider = await wallet.getEthereumProvider();
+      
+      // Switch to Base network first
+      try {
+        await provider.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: '0x2105' }], // Chain ID for Base Mainnet (8453 in hex)
+        });
+      } catch (switchError) {
+        // This error code indicates that the chain has not been added to the wallet
+        if (switchError.code === 4902) {
+          await provider.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+              {
+                chainId: '0x2105', // Base Mainnet (8453 in hex)
+                chainName: 'Base',
+                nativeCurrency: {
+                  name: 'ETH',
+                  symbol: 'ETH',
+                  decimals: 18,
+                },
+                rpcUrls: ['https://mainnet.base.org'],
+                blockExplorerUrls: ['https://basescan.org'],
+              },
+            ],
+          });
+        }
+      }
+      
+      // Prepare transaction parameters
+      const transactionParameters = {
+        from: wallet.address, // Explicitly set the from address
+        to: "0x76A3B9340A2ae2144c0Ba37B04bD5Be3535Ac1A1", // ACYL treasury address
+        value: "0x38D7EA4C68000", // 0.001 ETH in hex (approximately $1)
+        gas: "0x5208", // 21000 gas
+        // data: "0x", // No additional data for a simple transfer
+      };
+      
+      // Send the transaction using the provider
+      const txHash = await provider.request({
+        method: 'eth_sendTransaction',
+        params: [transactionParameters],
+      });
+      
+      console.log("Transaction sent:", txHash);
+      setTransactionStatus("success");
+      
+    } catch (error) {
+      console.error("Error processing payment:", error);
+      setTransactionStatus("failed");
+    } finally {
+      setIsProcessing(false);
+    }
+  };
   return (
     <motion.div 
       className="contribute-content"
@@ -99,7 +181,19 @@ const ContributeContent = () => {
           </div>
           <h3>ACYL Patron</h3>
           <div className="price">$1.00</div>
-          <button className="join-button">Join</button>
+          <button 
+            className={`join-button ${isProcessing ? 'processing' : ''}`} 
+            onClick={handlePatronTransaction}
+            disabled={isProcessing || !authenticated}
+          >
+            {isProcessing ? 'Processing...' : 'Join'}
+          </button>
+          {transactionStatus === "success" && (
+            <div className="transaction-status success">Payment successful! Welcome, Patron!</div>
+          )}
+          {transactionStatus === "failed" && (
+            <div className="transaction-status error">Payment failed. Please try again.</div>
+          )}
           <p className="card-description">
             Contribute to the growth of ACYL with a custom donation. 100% of your donation goes into the ACYL Treasury
           </p>
@@ -129,9 +223,9 @@ const ContributePage = () => {
           backgroundColor: '#fff',
         },
         embeddedWallets: {
-          createOnLogin: 'all-users',
+          createOnLogin: 'users-without-wallets',
           noPromptOnSignature: false,
-        },
+        }
       }}
     >
       <motion.div 
