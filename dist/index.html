@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privy Login Widget Demo</title>
+</head>
+<body>
+    <h1>Privy Login Widget Demo</h1>
+    
+    <!-- Widget container -->
+    <div id="privy-login"></div>
+
+    <!-- Status display -->
+    <div id="status" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc;">
+        <p>Authentication Status: <span id="auth-status">Not authenticated</span></p>
+        <p>User Info: <span id="user-info">None</span></p>
+    </div>
+
+    <!-- Include the widget script -->
+    <script src="privy-login-widget.js"></script>
+    
+    <!-- Initialize the widget -->
+    <script>
+        const widget = new PrivyLoginWidget({
+            appId: 'YOUR_PRIVY_APP_ID', // Replace with your Privy App ID
+            containerId: 'privy-login',
+            buttonText: 'Connect Wallet',
+            theme: 'dark',
+            loginMethods: ['email', 'wallet'],
+            onAuthChange: (user, authenticated) => {
+                // Update status display
+                document.getElementById('auth-status').textContent = 
+                    authenticated ? 'Authenticated' : 'Not authenticated';
+                
+                document.getElementById('user-info').textContent = 
+                    authenticated ? JSON.stringify(user, null, 2) : 'None';
+            }
+        });
+
+        // Example of using the event listener
+        window.addEventListener('privyAuthChange', (event) => {
+            const { user, authenticated } = event.detail;
+            console.log('Auth state changed:', { user, authenticated });
+        });
+    </script>
+</body>
+</html> 

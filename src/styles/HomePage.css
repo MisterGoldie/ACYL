@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.multicolored-bg {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0f62fe 0%, #00b4d8 33%, #ff5e62 66%, #ff9966 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.auth-section {
+  display: flex;
+  align-items: center;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-text {
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.page-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.privy-button {
+  background: #0f62fe;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(15, 98, 254, 0.2);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.privy-button:hover {
+  background: #0051e6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(15, 98, 254, 0.3);
+}
+
+.privy-button:active {
+  transform: translateY(0);
+}
+
+.privy-button.logout {
+  background: #2a2a2a;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.privy-button.logout:hover {
+  background: #3a3a3a;
+}
