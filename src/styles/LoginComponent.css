@@ -1,0 +1,40 @@
+/* Login Component Styles */
+
+/* Mobile-specific login button styles */
+.mobile-login-button,
+.mobile-logout-button {
+  /* Remove animations for mobile */
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  
+  /* Clean styling */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Ensure mobile buttons have consistent appearance */
+.mobile-login-button {
+  background-color: #0f62fe;
+  color: white;
+  border: none;
+}
+
+.mobile-logout-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Prevent any hover effects on mobile */
+@media (max-width: 768px) {
+  .privy-button:hover,
+  .privy-button:active,
+  .privy-button:focus {
+    transform: none !important;
+    transition: none !important;
+  }
+}

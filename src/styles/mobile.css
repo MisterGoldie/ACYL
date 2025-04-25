@@ -1,0 +1,138 @@
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+  /* Header adjustments */
+  .site-header {
+    padding: 0.75rem 0.5rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  
+  .main-nav {
+    margin-left: 0.25rem;
+    margin-right: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .main-nav::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .nav-links {
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+    padding-right: 0.5rem;
+  }
+  
+  .nav-links li a {
+    font-size: 0.9rem;
+  }
+  
+  .header-logo {
+    flex-shrink: 0;
+  }
+
+  .circle-header-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.25rem;
+  }
+  
+  /* Auth section */
+  .auth-section {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  
+  .welcome-text {
+    font-size: 0.8rem;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .privy-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Content adjustments */
+  .page-content {
+    padding: 1rem;
+  }
+  
+  .acyl-description-title, 
+  .tv-headline,
+  .film-headline,
+  .radio-headline,
+  .stream-headline,
+  .discover-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .acyl-description-body,
+  .tv-description p,
+  .film-description p,
+  .radio-description p,
+  .stream-description p,
+  .discover-description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Membership cards */
+  .membership-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .membership-card {
+    width: 90%;
+    max-width: 300px;
+    margin: 1rem 0;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  /* Make all nav items visible but smaller on mobile */
+  .nav-links {
+    gap: 0.5rem;
+  }
+  
+  .nav-links li a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0;
+    white-space: nowrap;
+  }
+  
+  .more-dropdown {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    min-width: 180px;
+  }
+  
+  .dropdown-item {
+    padding: 0.8rem 1rem;
+  }
+  
+  /* Adjust content for very small screens */
+  .acyl-description-title,
+  .tv-headline,
+  .film-headline,
+  .radio-headline,
+  .stream-headline,
+  .discover-title {
+    font-size: 1.8rem;
+  }
+  
+  .acyl-big-logo {
+    width: 90%;
+    max-width: 300px;
+  }
+}

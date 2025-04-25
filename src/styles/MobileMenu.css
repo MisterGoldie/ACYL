@@ -1,0 +1,103 @@
+/* Mobile Menu Styles */
+.mobile-menu-container {
+  display: none;
+}
+
+.hamburger-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-icon {
+  display: block;
+  line-height: 1;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mobile-menu {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background-color: black;
+  padding: 2rem 1rem;
+  border-radius: 0 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.mobile-nav-item {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.mobile-nav-item:hover {
+  opacity: 0.8;
+}
+
+/* Show mobile menu only on small screens */
+@media screen and (max-width: 768px) {
+  .mobile-menu-container {
+    display: block;
+  }
+  
+  /* Hide the main navigation on mobile */
+  .main-nav {
+    display: none !important;
+  }
+  
+  /* Adjust header layout for mobile */
+  .site-header {
+    justify-content: space-between;
+  }
+  
+  /* Make the logo and auth section properly aligned */
+  .header-logo {
+    margin-right: auto;
+  }
+}

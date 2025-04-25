@@ -3,7 +3,9 @@ import { PrivyProvider } from "@privy-io/react-auth";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
+import MobileMenu from "../components/MobileMenu";
 import "../styles/HomePage.css";
+import "../styles/MobileMenu.css";
 
 const Header = () => {
   return (
@@ -34,6 +36,7 @@ const Header = () => {
         </ul>
       </nav>
       <LoginComponent />
+      <MobileMenu />
     </motion.header>
   );
 };
