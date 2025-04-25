@@ -100,6 +100,24 @@ const FilmContent = () => {
           loading="lazy"
         ></iframe>
       </motion.div>
+      
+      <motion.div
+        className="podplayr-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.0, duration: 0.6 }}
+      >
+        <h2 className="podcast-title">Featured Podcast</h2>
+        <iframe 
+          src="https://podplayr.xyz/widget?contract=0x27430c3ef4b04f7d223df7f280ae8fc0b3a407b7&tokenId=50dc9fb449e0&theme=dark&size=normal" 
+          width="100%" 
+          height="80" 
+          frameBorder="0" 
+          allowTransparency="true" 
+          allow="encrypted-media; autoplay" 
+          style={{ borderRadius: "12px" }}
+        ></iframe>
+      </motion.div>
     </motion.div>
   );
 };
