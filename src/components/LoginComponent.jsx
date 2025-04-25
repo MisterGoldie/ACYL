@@ -1,8 +1,40 @@
 import { usePrivy } from '@privy-io/react-auth';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 function LoginComponent() {
-  const { login, logout, authenticated, user } = usePrivy();
+  const { login, logout, authenticated, user, ready } = usePrivy();
+  const [displayName, setDisplayName] = useState('User');
+  
+  useEffect(() => {
+    if (authenticated && user && ready) {
+      console.log('User data:', user);
+      
+      // Check for wallet address in the embedded wallets
+      if (user.wallet?.address) {
+        const address = user.wallet.address;
+        const truncated = `${address.substring(0, 4)}...${address.substring(address.length - 4)}`;
+        setDisplayName(truncated);
+      } 
+      // Check for linked wallets
+      else if (user.linkedAccounts && user.linkedAccounts.length > 0) {
+        const walletAccount = user.linkedAccounts.find(account => account.type === 'wallet');
+        if (walletAccount && walletAccount.address) {
+          const address = walletAccount.address;
+          const truncated = `${address.substring(0, 4)}...${address.substring(address.length - 4)}`;
+          setDisplayName(truncated);
+        }
+      }
+      // Check for email
+      else if (user.email) {
+        setDisplayName(user.email);
+      }
+      // Check for Google email
+      else if (user.google?.email) {
+        setDisplayName(user.google.email);
+      }
+    }
+  }, [authenticated, user, ready]);
 
   return (
     <div className="auth-section">
@@ -36,7 +68,7 @@ function LoginComponent() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
             >
-              Welcome, {user?.email || 'User'}!
+              {displayName}
             </motion.span>
             <motion.button 
               className="privy-button logout"
