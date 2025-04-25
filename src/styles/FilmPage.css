@@ -31,6 +31,41 @@
   text-align: center;
 }
 
+/* Spotify player styles */
+.spotify-player-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.soundtrack-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Responsive styles for the Spotify player */
+@media screen and (max-width: 768px) {
+  .spotify-player-container {
+    max-width: 100%;
+    padding: 0.75rem;
+    margin: 1.5rem auto;
+  }
+  
+  .soundtrack-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
 .film-headline {
   font-size: 3.5rem;
   font-weight: 300;

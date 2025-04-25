@@ -83,7 +83,23 @@ const FilmContent = () => {
         </p>
       </motion.div>
       
-      {/* Film showcase section removed */}
+      <motion.div
+        className="spotify-player-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
+        <h2 className="soundtrack-title">Featured Soundtrack</h2>
+        <iframe 
+          src="https://open.spotify.com/embed/album/5wHRZCFMhWTk399TLXkdBi?utm_source=generator" 
+          width="100%" 
+          height="352" 
+          frameBorder="0" 
+          allowFullScreen="" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy"
+        ></iframe>
+      </motion.div>
     </motion.div>
   );
 };
