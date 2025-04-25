@@ -91,7 +91,7 @@ const StreamPage = () => {
           backgroundColor: '#fff',
         },
         embeddedWallets: {
-          createOnLogin: 'users-without-wallets',
+          createOnLogin: 'all-users',
           noPromptOnSignature: false,
         },
       }}

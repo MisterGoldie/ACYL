@@ -101,10 +101,10 @@ const ContributeContent = () => {
       
       // Prepare transaction parameters
       const transactionParameters = {
-        from: wallet.address, // Explicitly set the from address
         to: "0x76A3B9340A2ae2144c0Ba37B04bD5Be3535Ac1A1", // ACYL treasury address
         value: "0x38D7EA4C68000", // 0.001 ETH in hex (approximately $1)
-        gas: "0x5208", // 21000 gas
+        // Optional parameters:
+        // gas: "0x5208", // 21000 gas
         // data: "0x", // No additional data for a simple transfer
       };
       
@@ -223,7 +223,7 @@ const ContributePage = () => {
           backgroundColor: '#fff',
         },
         embeddedWallets: {
-          createOnLogin: 'users-without-wallets',
+          createOnLogin: 'all-users',
           noPromptOnSignature: false,
         }
       }}
