@@ -13,7 +13,11 @@ const Header = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="empty-space"></div>
+      <div className="header-logo">
+        <Link to="/">
+          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+        </Link>
+      </div>
       <nav className="main-nav">
         <ul className="nav-links">
           <li><Link to="/tv">TV</Link></li>

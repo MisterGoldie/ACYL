@@ -36,6 +36,18 @@ body {
   z-index: 1000;
 }
 
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.circle-header-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
 .main-nav {
   display: flex;
   align-items: center;
