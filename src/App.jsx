@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import HomePage from "./pages/HomePage";
 import TVPage from "./pages/TVPage";
 import FilmPage from "./pages/FilmPage";
@@ -7,20 +8,34 @@ import RadioPage from "./pages/RadioPage";
 import StreamPage from "./pages/StreamPage";
 import ContributePage from "./pages/ContributePage";
 import DiscoverPage from "./pages/DiscoverPage";
+import "./styles/transitions.css";
+
+// Animated routes wrapper
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <div className="page-transition-container">
+      <AnimatePresence mode="wait" initial={false}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/tv" element={<TVPage />} />
+          <Route path="/film" element={<FilmPage />} />
+          <Route path="/radio" element={<RadioPage />} />
+          <Route path="/stream" element={<StreamPage />} />
+          <Route path="/contribute" element={<ContributePage />} />
+          <Route path="/discover" element={<DiscoverPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+      </AnimatePresence>
+    </div>
+  );
+};
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/tv" element={<TVPage />} />
-        <Route path="/film" element={<FilmPage />} />
-        <Route path="/radio" element={<RadioPage />} />
-        <Route path="/stream" element={<StreamPage />} />
-        <Route path="/contribute" element={<ContributePage />} />
-        <Route path="/discover" element={<DiscoverPage />} />
-        <Route path="*" element={<HomePage />} />
-      </Routes>
+      <AnimatedRoutes />
     </BrowserRouter>
   );
 }
