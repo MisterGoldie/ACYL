@@ -89,7 +89,7 @@ const FilmContent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
       >
-        <h2 className="soundtrack-title">Featured Soundtrack</h2>
+        <h2 className="soundtrack-title">Featured Artist</h2>
         <iframe 
           src="https://open.spotify.com/embed/album/5wHRZCFMhWTk399TLXkdBi?utm_source=generator" 
           width="100%" 
