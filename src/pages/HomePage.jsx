@@ -44,7 +44,7 @@ const Header = () => {
 const HomeContent = () => {
   return (
     <motion.div 
-      className="page-content"
+      className="page-content homepage-content"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
@@ -83,16 +83,18 @@ const HomePage = () => {
         },
       }}
     >
-      <motion.div 
-        className="multicolored-bg"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <Header />
-        <HomeContent />
-      </motion.div>
+      <div className="mobile-scroll-container">
+        <motion.div 
+          className="multicolored-bg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Header />
+          <HomeContent />
+        </motion.div>
+      </div>
     </PrivyProvider>
   );
 };

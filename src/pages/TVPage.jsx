@@ -116,16 +116,18 @@ const TVPage = () => {
         },
       }}
     >
-      <motion.div 
-        className="multicolored-bg"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <Header />
-        <TVContent />
-      </motion.div>
+      <div className="mobile-scroll-container">
+        <motion.div 
+          className="tv-bg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Header />
+          <TVContent />
+        </motion.div>
+      </div>
     </PrivyProvider>
   );
 };

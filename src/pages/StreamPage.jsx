@@ -96,16 +96,18 @@ const StreamPage = () => {
         },
       }}
     >
-      <motion.div 
-        className="stream-bg"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <Header />
-        <StreamContent />
-      </motion.div>
+      <div className="mobile-scroll-container">
+        <motion.div 
+          className="stream-bg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Header />
+          <StreamContent />
+        </motion.div>
+      </div>
     </PrivyProvider>
   );
 };

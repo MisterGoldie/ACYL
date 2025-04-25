@@ -7,6 +7,7 @@
   width: 100%;
   background: linear-gradient(135deg, #ff9966 0%, #ff5e62 50%, #b03060 100%);
   background-attachment: fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
