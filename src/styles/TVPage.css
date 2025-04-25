@@ -1,0 +1,67 @@
+/* Import the base styles from HomePage.css */
+@import './HomePage.css';
+
+/* Override the background for the TV page */
+.tv-bg {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 50%, #7303c0 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* TV page specific styles */
+.tv-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.tv-headline {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.2;
+}
+
+.tv-description {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.tv-description p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.coming-soon {
+  margin-top: 2rem;
+}
+
+.coming-soon h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+/* Active link in navigation */
+.nav-links li a.active {
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+}

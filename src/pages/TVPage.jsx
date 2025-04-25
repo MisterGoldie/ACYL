@@ -1,9 +1,9 @@
 import React from "react";
-import { PrivyProvider } from "@privy-io/react-auth";
 import { motion } from "framer-motion";
+import { PrivyProvider } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
-import "../styles/HomePage.css";
+import "../styles/TVPage.css";
 
 const Header = () => {
   return (
@@ -16,7 +16,7 @@ const Header = () => {
       <div className="empty-space"></div>
       <nav className="main-nav">
         <ul className="nav-links">
-          <li><Link to="/tv">TV</Link></li>
+          <li><Link to="/tv" className="active">TV</Link></li>
           <li><Link to="/film">Film</Link></li>
           <li><Link to="/radio">Radio</Link></li>
           <li><Link to="/stream">Stream</Link></li>
@@ -34,28 +34,61 @@ const Header = () => {
   );
 };
 
-const HomeContent = () => {
+const TVContent = () => {
   return (
     <motion.div 
-      className="page-content"
+      className="tv-content"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <div className="acyl-description-container">
-        <img src="/bighomepagelogo.png" alt="ACYL Logo" className="acyl-big-logo" />
-        <p className="acyl-description-body">
-          Welcome to Any Colour You Like, a new age media legacy company that champions independent voices and experimental storytelling. We believe that creativity thrives when it isn’t restricted, and we’re here to amplify the ideas that mainstream media overlooks. Our platform is home for the unconventional. A space for fearless filmmakers, writers, and creators who push limits, reimagine formats, and challenge perspectives.
+      <motion.h1 
+        className="tv-headline"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        A Network by Creators, for Creators
+      </motion.h1>
+      
+      <motion.div 
+        className="tv-description"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+      >
+        <p>
+          At Any Colour You Like we're redefining television as a space where creativity 
+          knows no bounds. Built by creators, for creators, we are a platform that celebrates 
+          bold ideas, diverse perspectives, and groundbreaking stories.
         </p>
-        <p className="acyl-description-body">
-          At ACYL we celebrate the power of risk taking in media. Whether it’s a bold documentary, an experimental series, or a genre-defying art piece, our mission is to give a platform for work that disrupts, inspires, and evolves. Dive into a world where new ideas flourish, and join us in redefining the future of media.
+        <p>
+          Here, content isn't dictated by formulas or trends. It's driven by passion and 
+          innovation. We empower creators to share their vision with audiences who crave 
+          fresh, authentic perspectives. From compelling dramas and laugh-out-loud 
+          comedies to thought-provoking documentaries and experimental formats, we're 
+          giving creators the freedom to make the stories they want to tell.
         </p>
-      </div>
+        <p>
+          This isn't just a network, it's a creative community. Join us as we revolutionize 
+          television, amplify independent voices, and bring creator-driven content to the 
+          forefront.
+        </p>
+      </motion.div>
+      
+      <motion.div 
+        className="coming-soon"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
+        <h2>Coming Soon</h2>
+      </motion.div>
     </motion.div>
   );
 };
 
-const HomePage = () => {
+const TVPage = () => {
   return (
     <PrivyProvider
       appId="cm9wa9olg004yl70mwjt9n1x9"
@@ -77,16 +110,16 @@ const HomePage = () => {
       }}
     >
       <motion.div 
-        className="multicolored-bg"
+        className="tv-bg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
         <Header />
-        <HomeContent />
+        <TVContent />
       </motion.div>
     </PrivyProvider>
   );
 };
 
-export default HomePage;
+export default TVPage;

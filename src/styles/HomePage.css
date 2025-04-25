@@ -58,6 +58,15 @@ body {
   padding: 0.5rem 0;
 }
 
+.nav-links > li > a {
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links > li > a.active {
+  border-bottom: 2px solid white;
+  font-weight: 600;
+}
+
 .nav-links li a:hover {
   opacity: 0.8;
 }
@@ -103,11 +112,14 @@ body {
   transition: background-color 0.2s ease;
   text-align: center;
   font-size: 0.95rem;
+  border-bottom: none !important;
 }
 
 .dropdown-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+
 
 .logo {
   font-size: 1.5rem;
@@ -192,6 +204,43 @@ body {
   max-width: 90%;
   width: 420px;
   height: auto;
+}
+
+/* Discover page styles */
+.discover-bg {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #6c00ff 0%, #ab47bc 33%, #ff5252 66%, #ff9800 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.discover-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.discover-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: white;
+  line-height: 1.2;
+}
+
+.discover-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .acyl-description-title {

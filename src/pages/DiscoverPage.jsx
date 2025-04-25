@@ -34,7 +34,7 @@ const Header = () => {
   );
 };
 
-const HomeContent = () => {
+const DiscoverContent = () => {
   return (
     <motion.div 
       className="page-content"
@@ -42,20 +42,19 @@ const HomeContent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <div className="acyl-description-container">
-        <img src="/bighomepagelogo.png" alt="ACYL Logo" className="acyl-big-logo" />
-        <p className="acyl-description-body">
-          Welcome to Any Colour You Like, a new age media legacy company that champions independent voices and experimental storytelling. We believe that creativity thrives when it isn’t restricted, and we’re here to amplify the ideas that mainstream media overlooks. Our platform is home for the unconventional. A space for fearless filmmakers, writers, and creators who push limits, reimagine formats, and challenge perspectives.
-        </p>
-        <p className="acyl-description-body">
-          At ACYL we celebrate the power of risk taking in media. Whether it’s a bold documentary, an experimental series, or a genre-defying art piece, our mission is to give a platform for work that disrupts, inspires, and evolves. Dive into a world where new ideas flourish, and join us in redefining the future of media.
+      <div className="discover-container">
+        <h1 className="discover-title">Discover Bold, Independent Stories</h1>
+        <p className="discover-description">
+          The ACYL catalog is your gateway to a world of creativity and imagination. Dive 
+          into a curated catalog of independent films, radio programs, documentaries, and 
+          experimental works that celebrate diverse voices and bold storytelling.
         </p>
       </div>
     </motion.div>
   );
 };
 
-const HomePage = () => {
+const DiscoverPage = () => {
   return (
     <PrivyProvider
       appId="cm9wa9olg004yl70mwjt9n1x9"
@@ -77,16 +76,16 @@ const HomePage = () => {
       }}
     >
       <motion.div 
-        className="multicolored-bg"
+        className="discover-bg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
         <Header />
-        <HomeContent />
+        <DiscoverContent />
       </motion.div>
     </PrivyProvider>
   );
 };
 
-export default HomePage;
+export default DiscoverPage;

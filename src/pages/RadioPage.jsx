@@ -1,9 +1,9 @@
 import React from "react";
-import { PrivyProvider } from "@privy-io/react-auth";
 import { motion } from "framer-motion";
+import { PrivyProvider } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
-import "../styles/HomePage.css";
+import "../styles/RadioPage.css";
 
 const Header = () => {
   return (
@@ -18,7 +18,7 @@ const Header = () => {
         <ul className="nav-links">
           <li><Link to="/tv">TV</Link></li>
           <li><Link to="/film">Film</Link></li>
-          <li><Link to="/radio">Radio</Link></li>
+          <li><Link to="/radio" className="active">Radio</Link></li>
           <li><Link to="/stream">Stream</Link></li>
           <li className="more-dropdown">
             <Link to="#">More <span className="dropdown-arrow">▼</span></Link>
@@ -34,28 +34,56 @@ const Header = () => {
   );
 };
 
-const HomeContent = () => {
+const RadioContent = () => {
   return (
     <motion.div 
-      className="page-content"
+      className="radio-content"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <div className="acyl-description-container">
-        <img src="/bighomepagelogo.png" alt="ACYL Logo" className="acyl-big-logo" />
-        <p className="acyl-description-body">
-          Welcome to Any Colour You Like, a new age media legacy company that champions independent voices and experimental storytelling. We believe that creativity thrives when it isn’t restricted, and we’re here to amplify the ideas that mainstream media overlooks. Our platform is home for the unconventional. A space for fearless filmmakers, writers, and creators who push limits, reimagine formats, and challenge perspectives.
+      <motion.div
+        className="radio-logo"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        <h2 className="radio-text">RADIO</h2>
+      </motion.div>
+      
+      <motion.h1 
+        className="radio-headline"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+      >
+        Broadcasting freedom. Building community.
+      </motion.h1>
+      
+      <motion.div 
+        className="radio-description"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
+        <p>
+          At ACYL Radio, we're more than just a radio station. We're a hub for creativity, a 
+          source for local voices, and a connection to the heartbeat of our community. 
+          Independently owned and operated, we champion authentic programming, 
+          unfiltered conversations, and music that resonates with your soul.
         </p>
-        <p className="acyl-description-body">
-          At ACYL we celebrate the power of risk taking in media. Whether it’s a bold documentary, an experimental series, or a genre-defying art piece, our mission is to give a platform for work that disrupts, inspires, and evolves. Dive into a world where new ideas flourish, and join us in redefining the future of media.
+        <p>
+          By supporting ACYL Radio, you're keeping the spirit of independence alive and 
+          thriving. So, whether you're tuning in during your morning coffee, your daily 
+          grind, or your late-night musings, know that you're part of something real, raw, 
+          and truly independent.
         </p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
 
-const HomePage = () => {
+const RadioPage = () => {
   return (
     <PrivyProvider
       appId="cm9wa9olg004yl70mwjt9n1x9"
@@ -77,16 +105,16 @@ const HomePage = () => {
       }}
     >
       <motion.div 
-        className="multicolored-bg"
+        className="radio-bg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
         <Header />
-        <HomeContent />
+        <RadioContent />
       </motion.div>
     </PrivyProvider>
   );
 };
 
-export default HomePage;
+export default RadioPage;

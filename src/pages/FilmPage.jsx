@@ -1,9 +1,9 @@
 import React from "react";
-import { PrivyProvider } from "@privy-io/react-auth";
 import { motion } from "framer-motion";
+import { PrivyProvider } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
-import "../styles/HomePage.css";
+import "../styles/FilmPage.css";
 
 const Header = () => {
   return (
@@ -17,7 +17,7 @@ const Header = () => {
       <nav className="main-nav">
         <ul className="nav-links">
           <li><Link to="/tv">TV</Link></li>
-          <li><Link to="/film">Film</Link></li>
+          <li><Link to="/film" className="active">Film</Link></li>
           <li><Link to="/radio">Radio</Link></li>
           <li><Link to="/stream">Stream</Link></li>
           <li className="more-dropdown">
@@ -34,28 +34,54 @@ const Header = () => {
   );
 };
 
-const HomeContent = () => {
+const FilmContent = () => {
   return (
     <motion.div 
-      className="page-content"
+      className="film-content"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <div className="acyl-description-container">
-        <img src="/bighomepagelogo.png" alt="ACYL Logo" className="acyl-big-logo" />
-        <p className="acyl-description-body">
-          Welcome to Any Colour You Like, a new age media legacy company that champions independent voices and experimental storytelling. We believe that creativity thrives when it isn’t restricted, and we’re here to amplify the ideas that mainstream media overlooks. Our platform is home for the unconventional. A space for fearless filmmakers, writers, and creators who push limits, reimagine formats, and challenge perspectives.
+      <motion.h1 
+        className="film-headline"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        Independent Stories. Boundless Creativity
+      </motion.h1>
+      
+      <motion.div 
+        className="film-description"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+      >
+        <p>
+          The ACYL Film catalog is a curated collection of bold, diverse, and visionary 
+          films crafted by independent creators from around the globe.
         </p>
-        <p className="acyl-description-body">
-          At ACYL we celebrate the power of risk taking in media. Whether it’s a bold documentary, an experimental series, or a genre-defying art piece, our mission is to give a platform for work that disrupts, inspires, and evolves. Dive into a world where new ideas flourish, and join us in redefining the future of media.
+        <p>
+          Every film in our catalog is a testament to the power of storytelling. Raw, 
+          authentic, and uninhibited by convention. From compelling animations and 
+          thought-provoking documentaries to experimental shorts, this is where 
+          creativity and originality take center stage.
         </p>
-      </div>
+        <p>
+          Discover fresh voices, celebrate untold stories, and support the independent 
+          creators who are reshaping the art of filmmaking. Whether you're an avid film 
+          enthusiast, an industry professional, or simply curious, the ACYL Film catalog 
+          invites you to dive into a world of cinematic brilliance that thrives outside the 
+          mainstream.
+        </p>
+      </motion.div>
+      
+      {/* Film showcase section removed */}
     </motion.div>
   );
 };
 
-const HomePage = () => {
+const FilmPage = () => {
   return (
     <PrivyProvider
       appId="cm9wa9olg004yl70mwjt9n1x9"
@@ -77,16 +103,16 @@ const HomePage = () => {
       }}
     >
       <motion.div 
-        className="multicolored-bg"
+        className="film-bg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
         <Header />
-        <HomeContent />
+        <FilmContent />
       </motion.div>
     </PrivyProvider>
   );
 };
 
-export default HomePage;
+export default FilmPage;

@@ -1,0 +1,138 @@
+/* Import the base styles from HomePage.css */
+@import './HomePage.css';
+
+/* Override the background for the Contribute page */
+.contribute-bg {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #00b4d8 0%, #03a688 50%, #00d4b1 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Contribute page specific styles */
+.contribute-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.contribute-headline {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.2;
+}
+
+.contribute-description {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.contribute-description p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.membership-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.membership-card {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 300px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-logo.dark {
+  background-color: black;
+}
+
+.logo-letter {
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+}
+
+.card-logo.dark .logo-letter {
+  color: white;
+}
+
+.membership-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.join-button {
+  background-color: white;
+  color: #03a688;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.join-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.benefits-section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}

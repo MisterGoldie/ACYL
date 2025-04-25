@@ -1,0 +1,51 @@
+/* Import the base styles from HomePage.css */
+@import './HomePage.css';
+
+/* Override the background for the Stream page */
+.stream-bg {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0b0c2a 0%, #2b0a3d 50%, #1e0b4b 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Stream page specific styles */
+.stream-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.stream-headline {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.2;
+}
+
+.stream-description {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stream-description p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
