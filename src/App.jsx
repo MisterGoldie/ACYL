@@ -16,18 +16,20 @@ const AnimatedRoutes = () => {
   
   return (
     <div className="page-transition-container">
-      <AnimatePresence mode="wait" initial={false}>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/tv" element={<TVPage />} />
-          <Route path="/film" element={<FilmPage />} />
-          <Route path="/radio" element={<RadioPage />} />
-          <Route path="/stream" element={<StreamPage />} />
-          <Route path="/contribute" element={<ContributePage />} />
-          <Route path="/discover" element={<DiscoverPage />} />
-          <Route path="*" element={<HomePage />} />
-        </Routes>
-      </AnimatePresence>
+      <div className="full-height-container">
+        <AnimatePresence mode="wait" initial={false}>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/tv" element={<TVPage />} />
+            <Route path="/film" element={<FilmPage />} />
+            <Route path="/radio" element={<RadioPage />} />
+            <Route path="/stream" element={<StreamPage />} />
+            <Route path="/contribute" element={<ContributePage />} />
+            <Route path="/discover" element={<DiscoverPage />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        </AnimatePresence>
+      </div>
     </div>
   );
 };

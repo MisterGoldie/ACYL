@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   background-color: #000; /* Prevents white flash */
 }
@@ -9,6 +10,35 @@
 /* Set the page background to black to prevent white flash */
 body {
   background-color: #000;
+}
+
+/* Page transition styles */
+
+/* Ensure the app container fills the screen */
+#root {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global styles to ensure backgrounds extend properly */
+html, body, #root, .page-transition-container, .full-height-container {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.full-height-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Transition styles */

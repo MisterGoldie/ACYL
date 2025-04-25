@@ -109,18 +109,17 @@ const FilmPage = () => {
         },
       }}
     >
-      <div className="mobile-scroll-container">
-        <motion.div 
-          className="film-bg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Header />
-          <FilmContent />
-        </motion.div>
-      </div>
+      <motion.div 
+        className="film-bg"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        style={{ minHeight: '100vh', height: '100%' }}
+      >
+        <Header />
+        <FilmContent />
+      </motion.div>
     </PrivyProvider>
   );
 };

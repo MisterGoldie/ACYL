@@ -4,21 +4,29 @@
   box-sizing: border-box;
 }
 
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
   min-height: 100vh;
+  height: 100%;
   position: relative;
 }
 
 .multicolored-bg {
   min-height: 100vh;
+  height: 100%;
   width: 100%;
   background: linear-gradient(135deg, #0f62fe 0%, #00b4d8 33%, #ff5e62 66%, #ff9966 100%);
   background-attachment: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
