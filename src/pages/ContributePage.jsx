@@ -118,7 +118,7 @@ const ContributePage = () => {
     <PrivyProvider
       appId="cm9wa9olg004yl70mwjt9n1x9"
       config={{
-        loginMethods: ['email', 'wallet', 'google', 'sms'],
+        loginMethods: ['email', 'wallet', 'google', 'sms', 'farcaster'],
         appearance: {
           theme: 'light',
           accentColor: '#0f62fe',
