@@ -13,6 +13,21 @@ const Header = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="empty-space"></div>
+      <nav className="main-nav">
+        <ul className="nav-links">
+          <li><a href="#">TV</a></li>
+          <li><a href="#">Film</a></li>
+          <li><a href="#">Radio</a></li>
+          <li><a href="#">Stream</a></li>
+          <li className="more-dropdown">
+            <a href="#">More <span className="dropdown-arrow">▼</span></a>
+            <div className="dropdown-menu">
+              <a href="#" className="dropdown-item">Contribute</a>
+              <a href="#" className="dropdown-item">Discover</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
       <LoginComponent />
     </motion.header>
   );
@@ -26,7 +41,15 @@ const HomeContent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      {/* Add your main page content here */}
+      <div className="acyl-description-container">
+        <img src="/bighomepagelogo.png" alt="ACYL Logo" className="acyl-big-logo" />
+        <p className="acyl-description-body">
+          Welcome to Any Colour You Like, a new age media legacy company that champions independent voices and experimental storytelling. We believe that creativity thrives when it isn’t restricted, and we’re here to amplify the ideas that mainstream media overlooks. Our platform is home for the unconventional. A space for fearless filmmakers, writers, and creators who push limits, reimagine formats, and challenge perspectives.
+        </p>
+        <p className="acyl-description-body">
+          At ACYL we celebrate the power of risk taking in media. Whether it’s a bold documentary, an experimental series, or a genre-defying art piece, our mission is to give a platform for work that disrupts, inspires, and evolves. Dive into a world where new ideas flourish, and join us in redefining the future of media.
+        </p>
+      </div>
     </motion.div>
   );
 };
@@ -38,12 +61,13 @@ const HomePage = () => {
       config={{
         loginMethods: ['email', 'wallet', 'google', 'sms'],
         appearance: {
-          theme: 'dark',
+          theme: 'light',
           accentColor: '#0f62fe',
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: 'https://acyl.world/logo.png',
+          logo: '/acylprivylogo.png',
+          backgroundColor: '#fff',
         },
         embeddedWallets: {
           createOnLogin: 'all-users',

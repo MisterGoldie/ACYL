@@ -36,6 +36,79 @@ body {
   z-index: 1000;
 }
 
+.main-nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  padding: 0.5rem 0;
+}
+
+.nav-links li a:hover {
+  opacity: 0.8;
+}
+
+.more-dropdown {
+  position: relative;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  min-width: 140px;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+}
+
+.more-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -67,6 +140,76 @@ body {
   width: 100%;
   padding: 2rem;
 }
+
+.acyl-description-container {
+  /* Container removed: all visual styles stripped, but spacing preserved via child elements */
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0;
+  text-align: center;
+}
+
+.acyl-big-logo {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  max-width: 90%;
+  width: 420px;
+  height: auto;
+  /* No border-radius or shadow */
+}
+
+.acyl-description-title, .acyl-description-body {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #fff;
+}
+
+.acyl-description-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.acyl-description-body {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+/* This is the only .acyl-big-logo rule - no container styling */
+.acyl-big-logo {
+  display: block;
+  margin: 2rem auto 3rem auto;
+  max-width: 90%;
+  width: 420px;
+  height: auto;
+}
+
+.acyl-description-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.acyl-description-body {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+  color: #f3f3f3;
+  font-weight: 400;
+}
+
 
 .privy-button {
   background: #0f62fe;
