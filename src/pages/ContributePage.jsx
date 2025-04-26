@@ -65,8 +65,12 @@ const ContributeContent = () => {
         return;
       }
       
-      // Get the first wallet (or you could let the user choose which wallet to use)
-      const wallet = wallets[0];
+      // Find external wallet if available (non-Privy wallet)
+      let externalWallet = wallets.find(wallet => wallet.walletClientType !== 'privy');
+      
+      // If no external wallet is found, use the first available wallet
+      const wallet = externalWallet || wallets[0];
+      console.log("Using wallet:", wallet.address, "Type:", wallet.walletClientType);
       
       // Get the Ethereum provider from the wallet
       const provider = await wallet.getEthereumProvider();
@@ -216,14 +220,14 @@ const ContributePage = () => {
         appearance: {
           theme: 'light',
           accentColor: '#0f62fe',
-          showWalletLoginFirst: false,
+          showWalletLoginFirst: true, // Prioritize wallet login
           layout: 'modal',
           defaultView: 'login',
           logo: '/acylprivylogo.png',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
-          createOnLogin: 'all-users',
+          createOnLogin: 'users-without-wallets', // Only create embedded wallets for users without external wallets
           noPromptOnSignature: false,
         }
       }}
