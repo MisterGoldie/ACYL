@@ -82,7 +82,46 @@ const FilmContent = () => {
           mainstream.
         </p>
       </motion.div>
-      
+      <img 
+        src="/images/film/gtlwithtext.png" 
+        alt="Group Think Love With Text" 
+        className="film-feature-image"
+        style={{
+          display: 'block',
+          margin: '2.5rem auto 0 auto',
+          maxWidth: '1000px'
+        }}
+      />
+      <img 
+        src="/images/film/isowithtext.png" 
+        alt="ISO With Text" 
+        className="film-feature-image"
+        style={{
+          display: 'block',
+          margin: '2.5rem auto 0 auto',
+          maxWidth: '1000px'
+        }}
+      />
+      <img 
+        src="/images/film/ifiwithtext.png" 
+        alt="IFI With Text" 
+        className="film-feature-image"
+        style={{
+          display: 'block',
+          margin: '2.5rem auto 0 auto',
+          maxWidth: '1000px'
+        }}
+      />
+      <img 
+        src="/images/film/ddwithtext.png" 
+        alt="DD With Text" 
+        className="film-feature-image"
+        style={{
+          display: 'block',
+          margin: '2.5rem auto 0 auto',
+          maxWidth: '1000px'
+        }}
+      />
       <motion.div
         className="spotify-player-container"
         initial={{ opacity: 0, y: 20 }}
