@@ -56,6 +56,71 @@ const DiscoverContent = () => {
           into a curated catalog of independent films, radio programs, documentaries, and 
           experimental works that celebrate diverse voices and bold storytelling.
         </p>
+        <img 
+          src="/groupthinklove.png" 
+          alt="Group Think Love" 
+          className="discover-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '700px',
+            width: '100%',
+            borderRadius: '18px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
+          }}
+        />
+        <img 
+          src="/iso.png" 
+          alt="ISO Film Still" 
+          className="discover-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '700px',
+            width: '100%',
+            borderRadius: '18px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
+          }}
+        />
+        <img 
+          src="/arthouse.png" 
+          alt="Arthouse Film Still" 
+          className="discover-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '700px',
+            width: '100%',
+            borderRadius: '18px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
+          }}
+        />
+        <img 
+          src="/ifoundit.png" 
+          alt="I Found It Film Still" 
+          className="discover-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '700px',
+            width: '100%',
+            borderRadius: '18px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
+          }}
+        />
+        <img 
+          src="/salem.png" 
+          alt="Salem Film Still" 
+          className="discover-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '700px',
+            width: '100%',
+            borderRadius: '18px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
+          }}
+        />
       </div>
     </motion.div>
   );
