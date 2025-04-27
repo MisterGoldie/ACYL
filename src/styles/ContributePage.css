@@ -1,5 +1,6 @@
 /* Import the base styles from HomePage.css */
 @import './HomePage.css';
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
 
 /* Override the background for the Contribute page */
 .contribute-bg {
@@ -32,6 +33,7 @@
 }
 
 .contribute-headline {
+  font-family: 'Instrument Serif', serif !important;
   font-size: 4rem;
   font-weight: 300;
   margin-bottom: 2rem;

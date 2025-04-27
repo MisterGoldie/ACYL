@@ -1,5 +1,6 @@
 /* Import the base styles from HomePage.css */
 @import './HomePage.css';
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
 
 /* Override the background for the Film page */
 .film-bg {
@@ -19,6 +20,10 @@
 }
 
 /* Film page specific styles */
+.film-headline {
+  font-family: 'Instrument Serif', serif !important;
+}
+
 .film-content {
   flex: 1;
   display: flex;
