@@ -57,7 +57,7 @@ const DiscoverContent = () => {
           experimental works that celebrate diverse voices and bold storytelling.
         </p>
         <img 
-          src="/groupthinklove.webp" 
+          src="/groupthinklove.png" 
           alt="Group Think Love" 
           className="discover-feature-image"
           style={{
@@ -70,7 +70,7 @@ const DiscoverContent = () => {
           }}
         />
         <img 
-          src="/iso.webp" 
+          src="/iso.png" 
           alt="ISO Film Still" 
           className="discover-feature-image"
           style={{
@@ -83,7 +83,7 @@ const DiscoverContent = () => {
           }}
         />
         <img 
-          src="/arthouse.webp" 
+          src="/arthouse.png" 
           alt="Arthouse Film Still" 
           className="discover-feature-image"
           style={{
@@ -96,7 +96,7 @@ const DiscoverContent = () => {
           }}
         />
         <img 
-          src="/ifoundit.webp" 
+          src="/ifoundit.png" 
           alt="I Found It Film Still" 
           className="discover-feature-image"
           style={{
@@ -109,7 +109,7 @@ const DiscoverContent = () => {
           }}
         />
         <img 
-          src="/salem.webp" 
+          src="/salem.png" 
           alt="Salem Film Still" 
           className="discover-feature-image"
           style={{
