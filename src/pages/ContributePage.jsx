@@ -73,7 +73,8 @@ const MemberCard = () => {
 
 // Separate component for the patron membership card
 const PatronCard = () => {
-  const { authenticated, login, user } = usePrivy();
+  const privy = usePrivy();
+  const { authenticated, login, user, ready, linkWallet, unlinkWallet, sendTransaction, createWallet } = privy;
   const { wallets } = useWallets();
   const [isProcessing, setIsProcessing] = useState(false);
   const [transactionStatus, setTransactionStatus] = useState(null);
@@ -88,130 +89,92 @@ const PatronCard = () => {
       setIsProcessing(true);
       setTransactionStatus("processing");
       
-      // Check if user has connected wallets
-      if (!wallets || wallets.length === 0) {
-        console.log("No wallets found");
-        setTransactionStatus("failed");
-        setIsProcessing(false);
-        return;
-      }
-      
-      // Log all available wallets for debugging
-      console.log("All available wallets:", wallets.map(w => ({ 
-        type: w.walletClientType, 
-        address: w.address,
-        connectorType: w.connectorType
-      })));
-      
-      // Determine login method from user data (already obtained at component level)
+      // Determine login method from user data
       const loginMethod = user?.phone ? 'phone' : 
                         user?.email ? 'email' : 
                         user?.wallet ? 'wallet' : 'unknown';
       
       console.log("User login method:", loginMethod);
       
-      let selectedWallet;
-      
-      // For phone/email logins, prioritize the embedded Privy wallet
-      if (loginMethod === 'phone' || loginMethod === 'email') {
-        selectedWallet = wallets.find(wallet => wallet.walletClientType === 'privy' && wallet.connectorType === 'embedded');
-        console.log("Using embedded wallet for phone/email login");
-      }
-      
-      // For wallet logins, use the connected external wallet
-      if (!selectedWallet && loginMethod === 'wallet') {
-        selectedWallet = wallets.find(wallet => wallet.walletClientType === 'metamask');
-        if (!selectedWallet) {
-          selectedWallet = wallets.find(wallet => wallet.walletClientType !== 'privy');
-        }
-        console.log("Using external wallet for wallet login");
-      }
-      
-      // Fallback to any available wallet
-      if (!selectedWallet) {
-        selectedWallet = wallets[0];
-        console.log("Falling back to first available wallet");
-      }
-      
-      const wallet = selectedWallet;
-      
-      // Validate wallet address - ensure it's a valid Ethereum address
-      if (!wallet || !wallet.address || typeof wallet.address !== 'string' || !wallet.address.startsWith('0x')) {
-        console.error("Invalid wallet address format", wallet?.address);
-        setTransactionStatus("failed");
-        setIsProcessing(false);
-        return;
-      }
-      
-      console.log("Using wallet:", wallet.address, "Type:", wallet.walletClientType);
-      
-      // Get the Ethereum provider from the wallet
-      const provider = await wallet.getEthereumProvider();
-      
-      if (!provider) {
-        console.error("Failed to get Ethereum provider");
-        setTransactionStatus("failed");
-        setIsProcessing(false);
-        return;
-      }
-      
-      // Check if the user's address is available from the provider
-      const accounts = await provider.request({ method: 'eth_accounts' });
-      if (!accounts || accounts.length === 0) {
-        console.error("No accounts available from provider");
-        setTransactionStatus("failed");
-        setIsProcessing(false);
-        return;
-      }
-      
-      const fromAddress = accounts[0]; // Use the actual active address from the provider
-      console.log("Transaction from address:", fromAddress);
-      
-      // Switch to Base network first
-      try {
-        await provider.request({
-          method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x2105' }], // Chain ID for Base Mainnet (8453 in hex)
-        });
-      } catch (switchError) {
-        // This error code indicates that the chain has not been added to the wallet
-        if (switchError.code === 4902) {
-          await provider.request({
-            method: 'wallet_addEthereumChain',
-            params: [
-              {
-                chainId: '0x2105', // Base Mainnet (8453 in hex)
-                chainName: 'Base',
-                nativeCurrency: {
-                  name: 'ETH',
-                  symbol: 'ETH',
-                  decimals: 18,
-                },
-                rpcUrls: ['https://mainnet.base.org'],
-                blockExplorerUrls: ['https://basescan.org'],
-              },
-            ],
-          });
-        } else {
-          throw switchError; // Re-throw other errors
-        }
-      }
-      
-      // Prepare transaction parameters with explicit from address
-      const transactionParameters = {
-        from: fromAddress, // Explicitly include sender address
+      // Transaction parameters
+      const transactionParams = {
         to: "0x76A3B9340A2ae2144c0Ba37B04bD5Be3535Ac1A1", // ACYL treasury address
         value: "0x38D7EA4C68000", // 0.001 ETH in hex (approximately $1)
-        gas: "0x5208", // 21000 gas in hex
       };
       
-      console.log("Transaction parameters:", transactionParameters);
+      let txHash;
       
-      // Send the transaction using the provider
-      const txHash = await provider.request({
-        method: 'eth_sendTransaction',
-        params: [transactionParameters],
-      });
+      // For phone/email logins (embedded wallets), use Privy's sendTransaction
+      if (loginMethod === 'phone' || loginMethod === 'email') {
+        console.log("Using Privy's sendTransaction for embedded wallet");
+        
+        // Define the transaction request for Privy's sendTransaction
+        const transactionRequest = {
+          chainId: 8453, // Base Mainnet
+          ...transactionParams
+        };
+        
+        console.log("Transaction request for embedded wallet:", transactionRequest);
+        
+        // Use Privy's sendTransaction which handles funding UI automatically
+        txHash = await sendTransaction(transactionRequest);
+      } 
+      // For wallet logins (external wallets like MetaMask), use the wallet directly
+      else {
+        console.log("Using direct wallet transaction for external wallet");
+        
+        // Find the connected external wallet
+        const externalWallet = wallets.find(w => w.walletClientType === 'metamask') || 
+                              wallets.find(w => w.walletClientType !== 'privy') || 
+                              wallets[0];
+        
+        if (!externalWallet) {
+          throw new Error("No wallet found");
+        }
+        
+        console.log("Using wallet:", externalWallet.address, "Type:", externalWallet.walletClientType);
+        
+        // Get the provider from the wallet
+        const provider = await externalWallet.getEthereumProvider();
+        
+        // Switch to Base network
+        await provider.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: '0x2105' }], // Chain ID for Base (8453 in hex)
+        }).catch(async (switchError) => {
+          // Add the network if it doesn't exist
+          if (switchError.code === 4902) {
+            await provider.request({
+              method: 'wallet_addEthereumChain',
+              params: [{
+                chainId: '0x2105',
+                chainName: 'Base',
+                nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
+                rpcUrls: ['https://mainnet.base.org'],
+                blockExplorerUrls: ['https://basescan.org'],
+              }],
+            });
+          } else {
+            throw switchError;
+          }
+        });
+        
+        // Get the accounts
+        const accounts = await provider.request({ method: 'eth_accounts' });
+        if (!accounts || accounts.length === 0) {
+          throw new Error("No accounts available");
+        }
+        
+        // Send the transaction
+        txHash = await provider.request({
+          method: 'eth_sendTransaction',
+          params: [{
+            from: accounts[0],
+            ...transactionParams,
+            gas: "0x5208", // 21000 gas in hex
+          }],
+        });
+      }
       
       console.log("Transaction sent:", txHash);
       setTransactionStatus("success");
