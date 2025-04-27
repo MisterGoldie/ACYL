@@ -73,7 +73,7 @@ const MemberCard = () => {
 
 // Separate component for the patron membership card
 const PatronCard = () => {
-  const { authenticated, login } = usePrivy();
+  const { authenticated, login, user } = usePrivy();
   const { wallets } = useWallets();
   const [isProcessing, setIsProcessing] = useState(false);
   const [transactionStatus, setTransactionStatus] = useState(null);
@@ -96,15 +96,76 @@ const PatronCard = () => {
         return;
       }
       
-      // Find external wallet if available (non-Privy wallet)
-      let externalWallet = wallets.find(wallet => wallet.walletClientType !== 'privy');
+      // Log all available wallets for debugging
+      console.log("All available wallets:", wallets.map(w => ({ 
+        type: w.walletClientType, 
+        address: w.address,
+        connectorType: w.connectorType
+      })));
       
-      // If no external wallet is found, use the first available wallet
-      const wallet = externalWallet || wallets[0];
+      // Determine login method from user data (already obtained at component level)
+      const loginMethod = user?.phone ? 'phone' : 
+                        user?.email ? 'email' : 
+                        user?.wallet ? 'wallet' : 'unknown';
+      
+      console.log("User login method:", loginMethod);
+      
+      let selectedWallet;
+      
+      // For phone/email logins, prioritize the embedded Privy wallet
+      if (loginMethod === 'phone' || loginMethod === 'email') {
+        selectedWallet = wallets.find(wallet => wallet.walletClientType === 'privy' && wallet.connectorType === 'embedded');
+        console.log("Using embedded wallet for phone/email login");
+      }
+      
+      // For wallet logins, use the connected external wallet
+      if (!selectedWallet && loginMethod === 'wallet') {
+        selectedWallet = wallets.find(wallet => wallet.walletClientType === 'metamask');
+        if (!selectedWallet) {
+          selectedWallet = wallets.find(wallet => wallet.walletClientType !== 'privy');
+        }
+        console.log("Using external wallet for wallet login");
+      }
+      
+      // Fallback to any available wallet
+      if (!selectedWallet) {
+        selectedWallet = wallets[0];
+        console.log("Falling back to first available wallet");
+      }
+      
+      const wallet = selectedWallet;
+      
+      // Validate wallet address - ensure it's a valid Ethereum address
+      if (!wallet || !wallet.address || typeof wallet.address !== 'string' || !wallet.address.startsWith('0x')) {
+        console.error("Invalid wallet address format", wallet?.address);
+        setTransactionStatus("failed");
+        setIsProcessing(false);
+        return;
+      }
+      
       console.log("Using wallet:", wallet.address, "Type:", wallet.walletClientType);
       
       // Get the Ethereum provider from the wallet
       const provider = await wallet.getEthereumProvider();
+      
+      if (!provider) {
+        console.error("Failed to get Ethereum provider");
+        setTransactionStatus("failed");
+        setIsProcessing(false);
+        return;
+      }
+      
+      // Check if the user's address is available from the provider
+      const accounts = await provider.request({ method: 'eth_accounts' });
+      if (!accounts || accounts.length === 0) {
+        console.error("No accounts available from provider");
+        setTransactionStatus("failed");
+        setIsProcessing(false);
+        return;
+      }
+      
+      const fromAddress = accounts[0]; // Use the actual active address from the provider
+      console.log("Transaction from address:", fromAddress);
       
       // Switch to Base network first
       try {
@@ -131,14 +192,20 @@ const PatronCard = () => {
               },
             ],
           });
+        } else {
+          throw switchError; // Re-throw other errors
         }
       }
       
-      // Prepare transaction parameters
+      // Prepare transaction parameters with explicit from address
       const transactionParameters = {
+        from: fromAddress, // Explicitly include sender address
         to: "0x76A3B9340A2ae2144c0Ba37B04bD5Be3535Ac1A1", // ACYL treasury address
         value: "0x38D7EA4C68000", // 0.001 ETH in hex (approximately $1)
+        gas: "0x5208", // 21000 gas in hex
       };
+      
+      console.log("Transaction parameters:", transactionParameters);
       
       // Send the transaction using the provider
       const txHash = await provider.request({
@@ -257,14 +324,14 @@ const ContributePage = () => {
         appearance: {
           theme: 'light',
           accentColor: '#0f62fe',
-          showWalletLoginFirst: true, // Prioritize wallet login
+          showWalletLoginFirst: false, // Don't prioritize wallet login
           layout: 'modal',
           defaultView: 'login',
           logo: '/acylprivylogo.png',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
-          createOnLogin: 'users-without-wallets', // Only create embedded wallets for users without external wallets
+          createOnLogin: 'all-users', // Create embedded wallets for all users
           noPromptOnSignature: false,
         }
       }}
