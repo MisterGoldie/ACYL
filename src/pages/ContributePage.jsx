@@ -41,8 +41,39 @@ const Header = () => {
   );
 };
 
-const ContributeContent = () => {
-  const { authenticated, user, ready, login } = usePrivy();
+// Separate component for the free membership card
+const MemberCard = () => {
+  return (
+    <div className="membership-card">
+      <div className="card-logo">
+        <img src="/freemember.png" alt="ACYL Member" className="logo-image" />
+      </div>
+      <h3>ACYL Member</h3>
+      <div className="price">Free</div>
+      <button className="join-button">Join</button>
+      <p className="card-description">
+        Join the community and receive updates and get access to members-only content and drops
+      </p>
+      <div className="benefits-section">
+        <div className="benefits-title">Benefits</div>
+        <ul className="benefits-list">
+          <li>
+            <span className="bullet">●</span>
+            Receive updates on new drops and releases
+          </li>
+          <li>
+            <span className="bullet">●</span>
+            Access members-only content and perks
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+// Separate component for the patron membership card
+const PatronCard = () => {
+  const { authenticated, login } = usePrivy();
   const { wallets } = useWallets();
   const [isProcessing, setIsProcessing] = useState(false);
   const [transactionStatus, setTransactionStatus] = useState(null);
@@ -107,9 +138,6 @@ const ContributeContent = () => {
       const transactionParameters = {
         to: "0x76A3B9340A2ae2144c0Ba37B04bD5Be3535Ac1A1", // ACYL treasury address
         value: "0x38D7EA4C68000", // 0.001 ETH in hex (approximately $1)
-        // Optional parameters:
-        // gas: "0x5208", // 21000 gas
-        // data: "0x", // No additional data for a simple transfer
       };
       
       // Send the transaction using the provider
@@ -128,6 +156,56 @@ const ContributeContent = () => {
       setIsProcessing(false);
     }
   };
+  
+  return (
+    <div className="membership-card">
+      <div className="card-logo dark">
+        <img src="/paidmember.png" alt="ACYL Patron" className="logo-image" />
+      </div>
+      <h3>ACYL Patron</h3>
+      <div className="price">$1.00</div>
+      <button 
+        className={`join-button ${isProcessing ? 'processing' : ''}`} 
+        onClick={handlePatronTransaction}
+        disabled={isProcessing || !authenticated}
+      >
+        {isProcessing ? 'Processing...' : 'Join'}
+      </button>
+      {transactionStatus === "success" && (
+        <div className="transaction-status success">Payment successful! Welcome, Patron!</div>
+      )}
+      {transactionStatus === "failed" && (
+        <div className="transaction-status error">Payment failed. Please try again.</div>
+      )}
+      <p className="card-description">
+        Contribute to the growth of ACYL with a custom donation. 100% of your donation goes into the ACYL Treasury
+      </p>
+      <div className="benefits-section">
+        <div className="benefits-title">Benefits</div>
+        <ul className="benefits-list">
+          <li>
+            <span className="bullet">●</span>
+            Same benefits as ACYL Member
+          </li>
+          <li>
+            <span className="bullet">●</span>
+            You help independent creators bring bold, untold stories to life
+          </li>
+          <li>
+            <span className="bullet">●</span>
+            Create opportunities for artists to reach global audiences
+          </li>
+          <li>
+            <span className="bullet">●</span>
+            Champion diverse voices in the industry
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const ContributeContent = () => {
   return (
     <motion.div 
       className="contribute-content"
@@ -163,49 +241,8 @@ const ContributeContent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
       >
-        <div className="membership-card">
-          <div className="card-logo">
-            <span className="logo-letter">a</span>
-          </div>
-          <h3>ACYL Member</h3>
-          <div className="price">Free</div>
-          <button className="join-button">Join</button>
-          <p className="card-description">
-            Join the community and receive updates and get access to members-only content and drops
-          </p>
-          <div className="benefits-section">
-            <h4>Benefits</h4>
-            {/* Benefits would be listed here */}
-          </div>
-        </div>
-        
-        <div className="membership-card">
-          <div className="card-logo dark">
-            <span className="logo-letter">a</span>
-          </div>
-          <h3>ACYL Patron</h3>
-          <div className="price">$1.00</div>
-          <button 
-            className={`join-button ${isProcessing ? 'processing' : ''}`} 
-            onClick={handlePatronTransaction}
-            disabled={isProcessing || !authenticated}
-          >
-            {isProcessing ? 'Processing...' : 'Join'}
-          </button>
-          {transactionStatus === "success" && (
-            <div className="transaction-status success">Payment successful! Welcome, Patron!</div>
-          )}
-          {transactionStatus === "failed" && (
-            <div className="transaction-status error">Payment failed. Please try again.</div>
-          )}
-          <p className="card-description">
-            Contribute to the growth of ACYL with a custom donation. 100% of your donation goes into the ACYL Treasury
-          </p>
-          <div className="benefits-section">
-            <h4>Benefits</h4>
-            {/* Benefits would be listed here */}
-          </div>
-        </div>
+        <MemberCard />
+        <PatronCard />
       </motion.div>
     </motion.div>
   );
