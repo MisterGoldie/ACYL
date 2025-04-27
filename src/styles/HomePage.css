@@ -47,10 +47,9 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  z-index: 2000;
+  z-index: 1000;
 }
 
 .header-logo {

@@ -31,15 +31,9 @@
     min-height: 100vh !important;
     height: 100% !important;
     position: relative;
-    padding-top: 64px !important; /* Add padding for the header */
     padding-bottom: 8rem;
     overflow-y: visible;
     background-attachment: fixed !important;
-  }
-  
-  /* Special fix for homepage */
-  .multicolored-bg {
-    padding-top: 64px !important;
   }
   /* Header adjustments */
   .site-header {
@@ -100,28 +94,7 @@
   }
   
   /* Content adjustments */
-  /* Add padding to content containers to prevent header overlap */
-  .tv-content,
-  .film-content,
-  .radio-content,
-  .stream-content,
-  .contribute-content,
-  .discover-content,
-  .page-content,
-  .homepage-content {
-    padding-top: 80px !important;
-    margin-top: 0 !important;
-  }
-  
-  /* Extra fix for homepage content */
-  .homepage-content {
-    padding-top: 100px !important;
-  }
-  
-  /* Fix for homepage description container */
-  .acyl-description-container {
-    padding-top: 20px !important;
-  }
+  /* No special fixes here - we'll use a different approach */
   .page-content {
     padding: 1rem;
     overflow-y: auto;

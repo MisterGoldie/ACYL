@@ -1,0 +1,27 @@
+/* Mobile-specific styles for HomePage only */
+@media screen and (max-width: 768px) {
+  /* Only target the homepage header */
+  .multicolored-bg .site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+  
+  /* Push content down to prevent overlap with header */
+  .multicolored-bg .homepage-content {
+    padding-top: 70px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Adjust the description container spacing */
+  .multicolored-bg .acyl-description-container {
+    padding-top: 20px;
+  }
+  
+  /* Ensure the big logo has proper spacing */
+  .multicolored-bg .acyl-big-logo {
+    margin-top: 20px;
+  }
+}
