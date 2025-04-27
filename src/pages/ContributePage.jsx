@@ -46,7 +46,7 @@ const MemberCard = () => {
   return (
     <div className="membership-card">
       <div className="card-logo">
-        <img src="/freemember.png" alt="ACYL Member" className="logo-image" />
+        <img src="/images/contribute/freemember.png" alt="ACYL Member" className="logo-image" />
       </div>
       <h3>ACYL Member</h3>
       <div className="price">Free</div>
@@ -160,7 +160,7 @@ const PatronCard = () => {
   return (
     <div className="membership-card">
       <div className="card-logo dark">
-        <img src="/paidmember.png" alt="ACYL Patron" className="logo-image" />
+        <img src="/images/contribute/paidmember.png" alt="ACYL Patron" className="logo-image" />
       </div>
       <h3>ACYL Patron</h3>
       <div className="price">$1.00</div>
