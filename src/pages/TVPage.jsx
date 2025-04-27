@@ -90,6 +90,28 @@ const TVContent = () => {
         transition={{ delay: 0.8, duration: 0.6 }}
       >
         <h2>Coming Soon</h2>
+        <img 
+          src="/arthousefont.png" 
+          alt="Art House Basel Logo" 
+          className="tv-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '700px',
+            width: '100%'
+          }}
+        />
+        <img 
+          src="/afuerafont.png" 
+          alt="Afuera Font Logo" 
+          className="tv-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '700px',
+            width: '100%'
+          }}
+        />
       </motion.div>
     </motion.div>
   );
