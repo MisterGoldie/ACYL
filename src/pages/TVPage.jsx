@@ -91,7 +91,7 @@ const TVContent = () => {
       >
         <h2>Coming Soon</h2>
         <img 
-          src="/arthousefont.png" 
+          src="/arthousefont.webp" 
           alt="Art House Basel Logo" 
           className="tv-feature-image"
           style={{
@@ -102,7 +102,7 @@ const TVContent = () => {
           }}
         />
         <img 
-          src="/afuerafont.png" 
+          src="/afuerafont.webp" 
           alt="Afuera Font Logo" 
           className="tv-feature-image"
           style={{
