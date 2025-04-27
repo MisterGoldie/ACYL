@@ -4,6 +4,7 @@ import { PrivyProvider, usePrivy, useWallets } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import TransactionHandler from "../components/TransactionHandler";
 import "../styles/ContributePage.css";
 import "../styles/MobileMenu.css";
 
@@ -73,118 +74,19 @@ const MemberCard = () => {
 
 // Separate component for the patron membership card
 const PatronCard = () => {
-  const privy = usePrivy();
-  const { authenticated, login, user, ready, linkWallet, unlinkWallet, sendTransaction, createWallet } = privy;
-  const { wallets } = useWallets();
-  const [isProcessing, setIsProcessing] = useState(false);
+  const { authenticated, login } = usePrivy();
   const [transactionStatus, setTransactionStatus] = useState(null);
   
-  const handlePatronTransaction = async () => {
-    if (!authenticated) {
-      login();
-      return;
-    }
-    
-    try {
-      setIsProcessing(true);
-      setTransactionStatus("processing");
-      
-      // Determine login method from user data
-      const loginMethod = user?.phone ? 'phone' : 
-                        user?.email ? 'email' : 
-                        user?.wallet ? 'wallet' : 'unknown';
-      
-      console.log("User login method:", loginMethod);
-      
-      // Transaction parameters
-      const transactionParams = {
-        to: "0x76A3B9340A2ae2144c0Ba37B04bD5Be3535Ac1A1", // ACYL treasury address
-        value: "0x38D7EA4C68000", // 0.001 ETH in hex (approximately $1)
-      };
-      
-      let txHash;
-      
-      // For phone/email logins (embedded wallets), use Privy's sendTransaction
-      if (loginMethod === 'phone' || loginMethod === 'email') {
-        console.log("Using Privy's sendTransaction for embedded wallet");
-        
-        // Define the transaction request for Privy's sendTransaction
-        const transactionRequest = {
-          chainId: 8453, // Base Mainnet
-          ...transactionParams
-        };
-        
-        console.log("Transaction request for embedded wallet:", transactionRequest);
-        
-        // Use Privy's sendTransaction which handles funding UI automatically
-        txHash = await sendTransaction(transactionRequest);
-      } 
-      // For wallet logins (external wallets like MetaMask), use the wallet directly
-      else {
-        console.log("Using direct wallet transaction for external wallet");
-        
-        // Find the connected external wallet
-        const externalWallet = wallets.find(w => w.walletClientType === 'metamask') || 
-                              wallets.find(w => w.walletClientType !== 'privy') || 
-                              wallets[0];
-        
-        if (!externalWallet) {
-          throw new Error("No wallet found");
-        }
-        
-        console.log("Using wallet:", externalWallet.address, "Type:", externalWallet.walletClientType);
-        
-        // Get the provider from the wallet
-        const provider = await externalWallet.getEthereumProvider();
-        
-        // Switch to Base network
-        await provider.request({
-          method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x2105' }], // Chain ID for Base (8453 in hex)
-        }).catch(async (switchError) => {
-          // Add the network if it doesn't exist
-          if (switchError.code === 4902) {
-            await provider.request({
-              method: 'wallet_addEthereumChain',
-              params: [{
-                chainId: '0x2105',
-                chainName: 'Base',
-                nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
-                rpcUrls: ['https://mainnet.base.org'],
-                blockExplorerUrls: ['https://basescan.org'],
-              }],
-            });
-          } else {
-            throw switchError;
-          }
-        });
-        
-        // Get the accounts
-        const accounts = await provider.request({ method: 'eth_accounts' });
-        if (!accounts || accounts.length === 0) {
-          throw new Error("No accounts available");
-        }
-        
-        // Send the transaction
-        txHash = await provider.request({
-          method: 'eth_sendTransaction',
-          params: [{
-            from: accounts[0],
-            ...transactionParams,
-            gas: "0x5208", // 21000 gas in hex
-          }],
-        });
-      }
-      
-      console.log("Transaction sent:", txHash);
-      setTransactionStatus("success");
-      
-    } catch (error) {
-      console.error("Error processing payment:", error);
-      setTransactionStatus("failed");
-    } finally {
-      setIsProcessing(false);
-    }
+  // Handle transaction success
+  const handleTransactionSuccess = (txHash) => {
+    console.log("Transaction successful:", txHash);
+    setTransactionStatus("success");
+  };
+  
+  // Handle transaction error
+  const handleTransactionError = (error) => {
+    console.error("Transaction failed:", error);
+    setTransactionStatus("failed");
   };
   
   return (
@@ -194,13 +96,19 @@ const PatronCard = () => {
       </div>
       <h3>ACYL Patron</h3>
       <div className="price">$1.00</div>
-      <button 
-        className={`join-button ${isProcessing ? 'processing' : ''}`} 
-        onClick={handlePatronTransaction}
-        disabled={isProcessing || !authenticated}
+      <TransactionHandler
+        amount="0x38D7EA4C68000" // 0.001 ETH in hex (approximately $1)
+        recipientAddress="0x76A3B9340A2ae2144c0Ba37B04bD5Be3535Ac1A1" // ACYL treasury address
+        onSuccess={handleTransactionSuccess}
+        onError={handleTransactionError}
       >
-        {isProcessing ? 'Processing...' : 'Join'}
-      </button>
+        <button 
+          className="join-button"
+          disabled={!authenticated}
+        >
+          {transactionStatus === "processing" ? 'Processing...' : 'Join'}
+        </button>
+      </TransactionHandler>
       {transactionStatus === "success" && (
         <div className="transaction-status success">Payment successful! Welcome, Patron!</div>
       )}
