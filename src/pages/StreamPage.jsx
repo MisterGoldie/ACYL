@@ -71,6 +71,28 @@ const StreamContent = () => {
           something exciting to watch.
         </p>
       </motion.div>
+      <img 
+        src="/images/stream/salemstream.png" 
+        alt="Salem Stream" 
+        className="stream-feature-image"
+        style={{
+          display: 'block',
+          margin: '2.5rem auto 0 auto',
+          maxWidth: '700px',
+          width: '100%'
+        }}
+      />
+      <img 
+        src="/images/stream/swsstream.png" 
+        alt="SWS Stream" 
+        className="stream-feature-image"
+        style={{
+          display: 'block',
+          margin: '2.5rem auto 0 auto',
+          maxWidth: '700px',
+          width: '100%'
+        }}
+      />
     </motion.div>
   );
 };

@@ -49,13 +49,22 @@ const RadioContent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
+      <img 
+        src="/images/radio/radiologo.png" 
+        alt="Radio Logo" 
+        style={{
+          display: 'block',
+          margin: '0 auto 1.5rem auto',
+          maxWidth: '900px',
+          width: '96vw'
+        }}
+      />
       <motion.div
         className="radio-logo"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        <h2 className="radio-text">RADIO</h2>
       </motion.div>
       
       <motion.h1 
@@ -86,6 +95,17 @@ const RadioContent = () => {
           and truly independent.
         </p>
       </motion.div>
+      <img 
+        src="/images/radio/latasha.gif" 
+        alt="Latasha" 
+        className="radio-feature-image"
+        style={{
+          display: 'block',
+          margin: '2.5rem auto 0 auto',
+          maxWidth: '500px',
+          borderRadius: '20px'
+        }}
+      />
     </motion.div>
   );
 };
