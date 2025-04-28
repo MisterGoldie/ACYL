@@ -22,7 +22,16 @@
     width: 100%;
   }
   
-  /* Ensure images are responsive */
+  /* Fix film feature images to display properly on mobile */
+  .film-feature-image {
+    max-width: 100% !important; /* Override inline styles */
+    width: 90% !important;
+    height: auto !important;
+    margin: 1.5rem auto !important;
+    object-fit: contain !important;
+  }
+  
+  /* Ensure all images are responsive */
   .film-bg img {
     max-width: 100%;
     height: auto;
@@ -36,5 +45,21 @@
     overflow-y: auto !important;
     position: relative !important;
     padding-bottom: 4rem;
+    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+  }
+  
+  /* Make the description text more readable on mobile */
+  .film-description p {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Adjust the Spotify and podcast containers */
+  .spotify-player-container,
+  .podplayr-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 1.5rem auto !important;
   }
 }
