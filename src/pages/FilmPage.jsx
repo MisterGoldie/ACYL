@@ -1,9 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { PrivyProvider } from "@privy-io/react-auth";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import OptimizedImage from "../components/OptimizedImage";
 import "../styles/FilmPage.css";
 import "../styles/MobileMenu.css";
 import "../styles/FilmPageMobile.css"; // Mobile-specific fixes for film page
@@ -18,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -84,7 +85,7 @@ const FilmContent = () => {
         </p>
       </motion.div>
       <Link to="/groupthinklove" style={{ display: 'block', textDecoration: 'none' }}>
-        <img 
+        <OptimizedImage 
           src="/images/film/gtlwithtext.png" 
           alt="Group Think Love With Text" 
           className="film-feature-image"
@@ -98,7 +99,7 @@ const FilmContent = () => {
         />
       </Link>
       <Link to="/isolation" style={{ display: 'block', textDecoration: 'none' }}>
-        <img 
+        <OptimizedImage 
           src="/images/film/isowithtext.png" 
           alt="ISO With Text" 
           className="film-feature-image"
@@ -112,7 +113,7 @@ const FilmContent = () => {
         />
       </Link>
       <Link to="/ifoundit" style={{ display: 'block', textDecoration: 'none' }}>
-        <img 
+        <OptimizedImage 
           src="/images/film/ifiwithtext.png" 
           alt="IFI With Text" 
           className="film-feature-image"
@@ -126,7 +127,7 @@ const FilmContent = () => {
         />
       </Link>
       <Link to="/digitaldaydream" style={{ display: 'block', textDecoration: 'none' }}>
-        <img 
+        <OptimizedImage 
           src="/images/film/ddwithtext.png" 
           alt="DD With Text" 
           className="film-feature-image"

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import OptimizedImage from "../components/OptimizedImage";
 import "../styles/DiscoverPage.css"; // Main styles for Discover page
 import "../styles/MobileMenu.css";
 import "../styles/DiscoverPageMobile.css"; // Mobile-specific fixes for Discover page
@@ -18,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -58,7 +59,7 @@ const DiscoverContent = () => {
           experimental works that celebrate diverse voices and bold storytelling.
         </p>
         <Link to="/groupthinklove" style={{ display: 'block', textDecoration: 'none' }}>
-          <img 
+          <OptimizedImage 
             src="/images/discover/groupthinklove.png" 
             alt="Group Think Love" 
             className="discover-feature-image"
@@ -75,7 +76,7 @@ const DiscoverContent = () => {
           />
         </Link>
         <Link to="/isolation" style={{ display: 'block', textDecoration: 'none' }}>
-          <img 
+          <OptimizedImage 
             src="/images/discover/iso.png" 
             alt="ISO Film Still" 
             className="discover-feature-image"
@@ -91,7 +92,7 @@ const DiscoverContent = () => {
             }}
           />
         </Link>
-        <img 
+        <OptimizedImage 
           src="/images/discover/arthouse.png" 
           alt="Arthouse Film Still" 
           className="discover-feature-image"
@@ -105,7 +106,7 @@ const DiscoverContent = () => {
           }}
         />
         <Link to="/ifoundit" style={{ display: 'block', textDecoration: 'none' }}>
-          <img 
+          <OptimizedImage 
             src="/images/discover/ifoundit.png" 
             alt="I Found It Film Still" 
             className="discover-feature-image"
@@ -122,7 +123,7 @@ const DiscoverContent = () => {
           />
         </Link>
         <Link to="/salemtries" style={{ display: 'block', textDecoration: 'none' }}>
-          <img 
+          <OptimizedImage 
             src="/images/discover/salem.png" 
             alt="Salem Film Still" 
             className="discover-feature-image"

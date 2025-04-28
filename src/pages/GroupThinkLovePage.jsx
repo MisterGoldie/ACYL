@@ -4,6 +4,7 @@ import { PrivyProvider, usePrivy } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import OptimizedImage from "../components/OptimizedImage";
 import "../styles/FilmPage.css"; // Reusing Film page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/GroupThinkLovePageMobile.css"; // Mobile-specific styles for GroupThinkLove page
@@ -41,7 +42,7 @@ const GroupThinkLoveContent = () => {
         </p>
       </motion.div>
       
-      <img 
+      <OptimizedImage 
         src="/images/groupthinklove/gtlwithtext.png" 
         alt="Group Think Love With Text" 
         style={{

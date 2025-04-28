@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import OptimizedImage from "../components/OptimizedImage";
 import "../styles/HomePage.css";
 import "../styles/MobileMenu.css";
 import "../styles/HomePageMobile.css"; // Mobile-specific fixes for homepage only
@@ -18,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -51,7 +52,7 @@ const HomeContent = () => {
       transition={{ delay: 0.3, duration: 0.5 }}
     >
       <div className="acyl-description-container">
-        <img src="/bighomepagelogo.png" alt="ACYL Logo" className="acyl-big-logo" />
+        <OptimizedImage src="/bighomepagelogo.png" alt="ACYL Logo" className="acyl-big-logo" />
         <p className="acyl-description-body">
           Welcome to Any Colour You Like, a new age media legacy company that champions independent voices and experimental storytelling. We believe that creativity thrives when it isn’t restricted, and we’re here to amplify the ideas that mainstream media overlooks. Our platform is home for the unconventional. A space for fearless filmmakers, writers, and creators who push limits, reimagine formats, and challenge perspectives.
         </p>

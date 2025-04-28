@@ -4,6 +4,7 @@ import { PrivyProvider } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import OptimizedImage from "../components/OptimizedImage";
 import "../styles/TVPage.css";
 import "../styles/MobileMenu.css";
 import "../styles/TVPageMobile.css"; // Mobile-specific fixes for TV page
@@ -18,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -91,7 +92,7 @@ const TVContent = () => {
         transition={{ delay: 0.8, duration: 0.6 }}
       >
         <h2>Coming Soon</h2>
-        <img 
+        <OptimizedImage 
           src="/images/tv/arthousefont.png" 
           alt="Art House Basel Logo" 
           className="tv-feature-image"
@@ -102,7 +103,7 @@ const TVContent = () => {
             width: '100%'
           }}
         />
-        <img 
+        <OptimizedImage 
           src="/images/tv/afuerafont.png" 
           alt="Afuera Font Logo" 
           className="tv-feature-image"

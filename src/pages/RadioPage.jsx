@@ -4,6 +4,7 @@ import { PrivyProvider } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import OptimizedImage from "../components/OptimizedImage";
 import "../styles/RadioPage.css";
 import "../styles/MobileMenu.css";
 import "../styles/RadioPageMobile.css"; // Mobile-specific fixes for radio page
@@ -18,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -50,7 +51,7 @@ const RadioContent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <img 
+      <OptimizedImage 
         src="/images/radio/radiologo.png" 
         alt="Radio Logo" 
         style={{

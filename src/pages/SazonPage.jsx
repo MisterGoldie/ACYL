@@ -4,6 +4,7 @@ import { PrivyProvider, usePrivy } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import OptimizedImage from "../components/OptimizedImage";
 import "../styles/StreamPage.css"; // Reusing Stream page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/SazonPageMobile.css"; // Mobile-specific styles for Sazon page
@@ -19,7 +20,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -78,9 +79,9 @@ const SazonContent = () => {
         </p>
       </motion.div>
       
-      <img 
+      <OptimizedImage 
         src="/images/sazon/swsstream.png" 
-        alt="Sazon With Santi Stream" 
+        alt="Sazon Stream" 
         style={{
           display: 'block',
           margin: '2.5rem auto 0 auto',

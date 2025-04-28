@@ -4,6 +4,7 @@ import { PrivyProvider, usePrivy, useWallets } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import OptimizedImage from "../components/OptimizedImage";
 import TransactionHandler from "../components/TransactionHandler";
 import "../styles/ContributePage.css";
 import "../styles/MobileMenu.css";
@@ -19,7 +20,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -48,7 +49,7 @@ const MemberCard = () => {
   return (
     <div className="membership-card">
       <div className="card-logo">
-        <img src="/images/contribute/freemember.png" alt="ACYL Member" className="logo-image" />
+        <OptimizedImage src="/images/contribute/freemember.png" alt="ACYL Member" className="logo-image" />
       </div>
       <h3>ACYL Member</h3>
       <div className="price">Free</div>
@@ -93,7 +94,7 @@ const PatronCard = () => {
   return (
     <div className="membership-card">
       <div className="card-logo dark">
-        <img src="/images/contribute/paidmember.png" alt="ACYL Patron" className="logo-image" />
+        <OptimizedImage src="/images/contribute/paidmember.png" alt="ACYL Patron" className="logo-image" />
       </div>
       <h3>ACYL Patron</h3>
       <div className="price">$1.00</div>

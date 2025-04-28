@@ -4,6 +4,7 @@ import { PrivyProvider, usePrivy } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
+import OptimizedImage from "../components/OptimizedImage";
 import "../styles/FilmPage.css"; // Reusing Film page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/IsolationPageMobile.css"; // Mobile-specific styles for Isolation page
@@ -19,7 +20,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -71,7 +72,7 @@ const IsolationContent = () => {
         </p>
       </motion.div>
       
-      <img 
+      <OptimizedImage 
         src="/images/isolation/isowithtext.png" 
         alt="Isolation With Text" 
         style={{
