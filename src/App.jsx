@@ -13,6 +13,7 @@ import IsolationPage from "./pages/IsolationPage";
 import IFoundItPage from "./pages/IFoundItPage";
 import DigitalDaydreamPage from "./pages/DigitalDaydreamPage";
 import SalemTriesPage from "./pages/SalemTriesPage";
+import SazonPage from "./pages/SazonPage";
 import "./styles/transitions.css";
 
 // Animated routes wrapper
@@ -43,6 +44,7 @@ const AnimatedRoutes = () => {
             <Route path="/ifoundit" element={<IFoundItPage />} />
             <Route path="/digitaldaydream" element={<DigitalDaydreamPage />} />
             <Route path="/salemtries" element={<SalemTriesPage />} />
+            <Route path="/sazon" element={<SazonPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </AnimatePresence>

@@ -87,17 +87,21 @@ const StreamContent = () => {
           }}
         />
       </Link>
-      <img 
-        src="/images/stream/swsstream.png" 
-        alt="SWS Stream" 
-        className="stream-feature-image"
-        style={{
-          display: 'block',
-          margin: '2.5rem auto 0 auto',
-          maxWidth: '700px',
-          width: '100%'
-        }}
-      />
+      <Link to="/sazon" style={{ display: 'block', textDecoration: 'none' }}>
+        <img 
+          src="/images/stream/swsstream.png" 
+          alt="SWS Stream" 
+          className="stream-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '700px',
+            width: '100%',
+            cursor: 'pointer',
+            transition: 'transform 0.3s ease'
+          }}
+        />
+      </Link>
     </motion.div>
   );
 };
