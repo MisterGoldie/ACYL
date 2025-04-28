@@ -74,7 +74,7 @@ const RadioContent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
       >
-        Broadcasting freedom. Building community.
+        Broadcasting freedom.<span className="line-break"></span> Building community.
       </motion.h1>
       
       <motion.div 
