@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
-import "../styles/HomePage.css";
+import "../styles/DiscoverPage.css"; // Main styles for Discover page
 import "../styles/MobileMenu.css";
 import "../styles/DiscoverPageMobile.css"; // Mobile-specific fixes for Discover page
 

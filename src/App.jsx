@@ -9,6 +9,7 @@ import StreamPage from "./pages/StreamPage";
 import ContributePage from "./pages/ContributePage";
 import DiscoverPage from "./pages/DiscoverPage";
 import GroupThinkLovePage from "./pages/GroupThinkLovePage";
+import IsolationPage from "./pages/IsolationPage";
 import "./styles/transitions.css";
 
 // Animated routes wrapper
@@ -35,6 +36,7 @@ const AnimatedRoutes = () => {
             <Route path="/contribute" element={<ContributePage />} />
             <Route path="/discover" element={<DiscoverPage />} />
             <Route path="/groupthinklove" element={<GroupThinkLovePage />} />
+            <Route path="/isolation" element={<IsolationPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </AnimatePresence>

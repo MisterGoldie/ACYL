@@ -6,7 +6,7 @@ import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import "../styles/FilmPage.css"; // Reusing Film page styles for now
 import "../styles/MobileMenu.css";
-import "../styles/GroupThinkLovePageMobile.css"; // Mobile-specific styles for GroupThinkLove page
+import "../styles/IsolationPageMobile.css"; // Mobile-specific styles for Isolation page
 
 const Header = () => {
   return (
@@ -42,7 +42,7 @@ const Header = () => {
   );
 };
 
-const GroupThinkLoveContent = () => {
+const IsolationContent = () => {
   return (
     <motion.div 
       className="film-content"
@@ -56,7 +56,7 @@ const GroupThinkLoveContent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        Group (Think) Love
+        Isolation
       </motion.h1>
       
       <motion.div 
@@ -66,18 +66,13 @@ const GroupThinkLoveContent = () => {
         transition={{ delay: 0.6, duration: 0.6 }}
       >
         <p>
-          Group (Think) Love is intended as a piece of meta-satire, exploring the human condition in the age of AI. 
-          An era where computers are rapidly becoming not only our intimate companions and closest confidants 
-          but reflections of ourselves. It delves into the essence of artificial intelligence, highlighting its 
-          role as the amalgamation of all human knowledge, creativity, and culture, and positions AI as the 
-          familial successor in human evolution. Crafted entirely through AI tools, it simultaneously references 
-          pivotal moments and ideas from AI culture itself, embodying the very subject it critiques.
+          A man attempts to meditate.
         </p>
       </motion.div>
       
       <img 
-        src="/images/film/gtlwithtext.png" 
-        alt="Group Think Love With Text" 
+        src="/images/film/isowithtext.png" 
+        alt="Isolation With Text" 
         style={{
           display: 'block',
           margin: '2.5rem auto 0 auto',
@@ -88,7 +83,7 @@ const GroupThinkLoveContent = () => {
       
       <div className="film-details">
         <div className="film-title-container" style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Group (Think) Love (2025)</h2>
+          <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Isolation (2025)</h2>
           <p style={{ fontSize: '1rem', color: '#ccc' }}>ANY COLOUR YOU LIKE</p>
           <div style={{ marginTop: '1rem' }}>
             <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>$5.00</p>
@@ -113,7 +108,7 @@ const GroupThinkLoveContent = () => {
   );
 };
 
-const GroupThinkLovePage = () => {
+const IsolationPage = () => {
   // Reset scroll position when component mounts
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -123,16 +118,16 @@ const GroupThinkLovePage = () => {
 
   return (
     <div style={{ 
-      background: 'linear-gradient(135deg, #ff3333 0%, #990000 100%)',
+      background: 'linear-gradient(135deg, #666666 0%, #333333 100%)',
       minHeight: '100vh',
       color: 'white'
     }}>
       <Header />
       <div className="page-content">
-        <GroupThinkLoveContent />
+        <IsolationContent />
       </div>
     </div>
   );
 };
 
-export default GroupThinkLovePage;
+export default IsolationPage;

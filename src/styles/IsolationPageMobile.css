@@ -1,0 +1,59 @@
+/* Mobile-specific styles for IsolationPage only */
+@media screen and (max-width: 768px) {
+  /* Only target the isolation page header */
+  .site-header {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+  
+  /* Adjust content spacing */
+  .page-content {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Center content and improve readability */
+  .film-content {
+    padding: 1rem !important;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Adjust headline size and spacing */
+  .film-headline {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Ensure images are responsive */
+  .film-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 1.5rem auto !important;
+  }
+  
+  /* Adjust film details container */
+  .film-details {
+    padding: 1rem !important;
+  }
+  
+  /* Make the title and mint button more mobile-friendly */
+  .film-title-container h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  .film-title-container button {
+    padding: 0.6rem 1.8rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Ensure the container starts at the top */
+  body {
+    display: block !important;
+    overflow-x: hidden !important;
+  }
+}

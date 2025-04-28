@@ -1,0 +1,117 @@
+/* DiscoverPage.css - Main styles for the Discover page */
+
+.discover-bg {
+  background-color: #000;
+  min-height: 100vh;
+  color: white;
+}
+
+.discover-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.discover-headline {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.discover-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 900;
+}
+
+.discover-feature-image {
+  display: block;
+  margin: 2.5rem auto;
+  max-width: 100%;
+  border-radius: 18px;
+  transition: transform 0.3s ease;
+}
+
+.discover-feature-image:hover {
+  transform: scale(1.02);
+}
+
+.discover-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.discover-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Discover showcase section */
+.discover-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.discover-item {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discover-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.discover-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.discover-item-content {
+  padding: 1.5rem;
+}
+
+.discover-item-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.discover-item-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .discover-content {
+    padding: 3rem 2rem;
+  }
+  
+  .discover-headline {
+    font-size: 3.5rem;
+  }
+  
+  .discover-description {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
