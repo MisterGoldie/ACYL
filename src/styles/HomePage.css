@@ -239,7 +239,7 @@ body {
   font-feature-settings: 'kern' 1;
   font-kerning: normal;
   color: rgba(255, 255, 255, 0.95); /* Slightly off-white for better contrast */
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1); /* Subtle text shadow for better definition */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* More pronounced drop shadow for better legibility */
 }
 
 /* This is the only .acyl-big-logo rule - no container styling */
