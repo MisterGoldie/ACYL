@@ -22,12 +22,22 @@
     width: 100%;
   }
   
+  /* Adjust space between description text and images */
+  .stream-description p {
+    margin-bottom: 0.75rem !important;
+  }
+  
   /* Ensure images and media players are responsive */
   .stream-bg img,
   .stream-bg iframe,
   .stream-bg video {
     max-width: 100%;
     height: auto;
+  }
+  
+  /* Reduce spacing between text and first image */
+  .stream-feature-image {
+    margin-top: 1rem !important;
   }
   
   /* Ensure the container starts at the top */
