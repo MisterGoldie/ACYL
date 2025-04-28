@@ -1,0 +1,49 @@
+/* Mobile-specific styles for IFoundItPage only */
+@media screen and (max-width: 768px) {
+  /* Only target the IFoundIt page header */
+  .site-header {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+  
+  /* Adjust content spacing */
+  .page-content {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Center content and improve readability */
+  .film-content {
+    padding: 1rem !important;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Make the main text more readable on mobile */
+  .film-description h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .film-description h2 {
+    font-size: 2rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Adjust the layout for the image and details section */
+  .film-details {
+    text-align: center !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  /* Ensure the container starts at the top */
+  body {
+    display: block !important;
+    overflow-x: hidden !important;
+  }
+}

@@ -111,16 +111,20 @@ const FilmContent = () => {
           }}
         />
       </Link>
-      <img 
-        src="/images/film/ifiwithtext.png" 
-        alt="IFI With Text" 
-        className="film-feature-image"
-        style={{
-          display: 'block',
-          margin: '2.5rem auto 0 auto',
-          maxWidth: '1000px'
-        }}
-      />
+      <Link to="/ifoundit" style={{ display: 'block', textDecoration: 'none' }}>
+        <img 
+          src="/images/film/ifiwithtext.png" 
+          alt="IFI With Text" 
+          className="film-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '1000px',
+            cursor: 'pointer',
+            transition: 'transform 0.3s ease'
+          }}
+        />
+      </Link>
       <img 
         src="/images/film/ddwithtext.png" 
         alt="DD With Text" 
