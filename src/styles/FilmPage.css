@@ -126,10 +126,45 @@
   font-weight: 900;
 }
 
-/* Film showcase section removed */
+/* Film posters horizontal layout */
+.film-posters-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
 
-/* Clickable image hover effect */
-.film-feature-image:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+.film-poster-link {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  flex: 0 0 auto;
+  width: 220px;
+}
+
+.film-poster-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.film-poster-link:hover .film-poster-image {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Media queries for responsive grid */
+@media screen and (max-width: 768px) {
+  .film-posters-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
 }

@@ -84,62 +84,36 @@ const FilmContent = () => {
           mainstream.
         </p>
       </motion.div>
-      <Link to="/groupthinklove" style={{ display: 'block', textDecoration: 'none' }}>
-        <OptimizedImage 
-          src="/images/film/gtlwithtext.png" 
-          alt="Group Think Love With Text" 
-          className="film-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '1000px',
-            cursor: 'pointer',
-            transition: 'transform 0.3s ease'
-          }}
-        />
-      </Link>
-      <Link to="/isolation" style={{ display: 'block', textDecoration: 'none' }}>
-        <OptimizedImage 
-          src="/images/film/isowithtext.png" 
-          alt="ISO With Text" 
-          className="film-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '1000px',
-            cursor: 'pointer',
-            transition: 'transform 0.3s ease'
-          }}
-        />
-      </Link>
-      <Link to="/ifoundit" style={{ display: 'block', textDecoration: 'none' }}>
-        <OptimizedImage 
-          src="/images/film/ifiwithtext.png" 
-          alt="IFI With Text" 
-          className="film-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '1000px',
-            cursor: 'pointer',
-            transition: 'transform 0.3s ease'
-          }}
-        />
-      </Link>
-      <Link to="/digitaldaydream" style={{ display: 'block', textDecoration: 'none' }}>
-        <OptimizedImage 
-          src="/images/film/ddwithtext.png" 
-          alt="DD With Text" 
-          className="film-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '1000px',
-            cursor: 'pointer',
-            transition: 'transform 0.3s ease'
-          }}
-        />
-      </Link>
+      <div className="film-posters-grid">
+        <Link to="/isolation" className="film-poster-link">
+          <OptimizedImage 
+            src="/images/film/isoposter.png" 
+            alt="Isolation" 
+            className="film-poster-image"
+          />
+        </Link>
+        <Link to="/ifoundit" className="film-poster-link">
+          <OptimizedImage 
+            src="/images/film/ifiposter.png" 
+            alt="I Found It" 
+            className="film-poster-image"
+          />
+        </Link>
+        <Link to="/digitaldaydream" className="film-poster-link">
+          <OptimizedImage 
+            src="/images/film/ddposter.png" 
+            alt="Digital Daydream" 
+            className="film-poster-image"
+          />
+        </Link>
+        <Link to="/groupthinklove" className="film-poster-link">
+          <OptimizedImage 
+            src="/images/film/gtlposter.png" 
+            alt="Group Think Love" 
+            className="film-poster-image"
+          />
+        </Link>
+      </div>
     </motion.div>
   );
 };
