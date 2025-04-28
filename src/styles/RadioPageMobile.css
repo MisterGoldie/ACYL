@@ -25,7 +25,7 @@
   /* Ensure the radio logo image is perfectly centered */
   .radio-content img[src*="radiologo.png"] {
     display: block !important;
-    margin: 0 auto 1.5rem !important;
+    margin: 0 auto 0.5rem !important;
     max-width: 100% !important;
     width: 90% !important; /* Slightly reduced from 96vw to avoid overflow */
     position: relative !important;
@@ -44,16 +44,31 @@
   /* Make the headline display on two lines */
   .radio-headline {
     display: block;
-    max-width: 280px;
+    max-width: 320px;
     margin: 0 auto;
     white-space: normal !important;
     line-height: 1.4 !important;
-    font-size: 24px !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
   }
   
   /* Force a line break between the two phrases */
   .radio-headline .line-break {
     display: block;
+  }
+  
+  /* Add spacing between headline and description */
+  .radio-description {
+    margin-top: 2rem !important;
+  }
+  
+  /* Reduce spacing between last paragraph and latasha.gif */
+  .radio-content img[src*="latasha.gif"],
+  .page-content img[src*="latasha.gif"],
+  img.radio-feature-image {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: -1.5rem !important;
   }
   
   /* Ensure the container starts at the top */
