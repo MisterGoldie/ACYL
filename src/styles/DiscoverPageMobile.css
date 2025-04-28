@@ -1,0 +1,47 @@
+/* Mobile-specific styles for DiscoverPage only */
+@media screen and (max-width: 768px) {
+  /* Only target the discover page header */
+  .discover-bg .site-header {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+  
+  /* Adjust content spacing */
+  .discover-bg .page-content {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Center content and improve readability */
+  .discover-content {
+    padding: 1rem !important;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Make grid/card layouts stack on mobile */
+  .discover-grid,
+  .discover-cards {
+    display: block !important;
+    width: 100%;
+  }
+  
+  .discover-card,
+  .discover-item {
+    width: 100% !important;
+    margin: 1rem 0 !important;
+  }
+  
+  /* Ensure the container starts at the top */
+  .discover-bg {
+    display: block !important;
+    min-height: 100vh !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    position: relative !important;
+    padding-bottom: 4rem;
+  }
+}

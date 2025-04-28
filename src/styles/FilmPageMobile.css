@@ -1,0 +1,40 @@
+/* Mobile-specific styles for FilmPage only */
+@media screen and (max-width: 768px) {
+  /* Only target the film page header */
+  .film-bg .site-header {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+  
+  /* Adjust content spacing */
+  .film-bg .page-content {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Center content and improve readability */
+  .film-content {
+    padding: 1rem !important;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Ensure images are responsive */
+  .film-bg img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure the container starts at the top */
+  .film-bg {
+    display: block !important;
+    min-height: 100vh !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    position: relative !important;
+    padding-bottom: 4rem;
+  }
+}

@@ -1,0 +1,42 @@
+/* Mobile-specific styles for StreamPage only */
+@media screen and (max-width: 768px) {
+  /* Only target the stream page header */
+  .stream-bg .site-header {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+  
+  /* Adjust content spacing */
+  .stream-bg .page-content {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Center content and improve readability */
+  .stream-content {
+    padding: 1rem !important;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Ensure images and media players are responsive */
+  .stream-bg img,
+  .stream-bg iframe,
+  .stream-bg video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure the container starts at the top */
+  .stream-bg {
+    display: block !important;
+    min-height: 100vh !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    position: relative !important;
+    padding-bottom: 4rem;
+  }
+}

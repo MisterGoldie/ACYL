@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PrivyProvider } from "@privy-io/react-auth";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -64,6 +64,17 @@ const HomeContent = () => {
 };
 
 const HomePage = () => {
+  useEffect(() => {
+    // More aggressive scroll reset with multiple approaches
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    
+    // Force layout recalculation
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+  }, []);
   return (
     <PrivyProvider
       appId="cm9wa9olg004yl70mwjt9n1x9"

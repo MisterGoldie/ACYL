@@ -6,6 +6,7 @@ import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import "../styles/RadioPage.css";
 import "../styles/MobileMenu.css";
+import "../styles/RadioPageMobile.css"; // Mobile-specific fixes for radio page
 
 const Header = () => {
   return (

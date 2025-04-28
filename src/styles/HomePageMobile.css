@@ -1,27 +1,45 @@
 /* Mobile-specific styles for HomePage only */
 @media screen and (max-width: 768px) {
+  /* Reset any scroll position on page load */
+  html, body {
+    scroll-behavior: auto !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100%;
+  }
+  
   /* Only target the homepage header */
   .multicolored-bg .site-header {
-    position: fixed !important;
+    position: sticky !important; /* Change from fixed to sticky */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 2000;
   }
   
-  /* Push content down to prevent overlap with header */
+  /* Adjust content spacing - reduce excessive padding */
   .multicolored-bg .homepage-content {
-    padding-top: 70px !important;
+    padding-top: 20px !important; /* Reduced from 70px */
     margin-top: 0 !important;
   }
   
   /* Adjust the description container spacing */
   .multicolored-bg .acyl-description-container {
-    padding-top: 20px;
+    padding-top: 10px;
   }
   
-  /* Ensure the big logo has proper spacing */
+  /* Ensure the big logo has proper spacing but not excessive */
   .multicolored-bg .acyl-big-logo {
-    margin-top: 20px;
+    margin-top: 10px;
+  }
+  
+  /* Fix the container to ensure it starts at the top */
+  .multicolored-bg {
+    display: block !important;
+    min-height: 100vh !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    position: relative !important;
   }
 }

@@ -6,6 +6,7 @@ import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import "../styles/StreamPage.css";
 import "../styles/MobileMenu.css";
+import "../styles/StreamPageMobile.css"; // Mobile-specific fixes for Stream page
 
 const Header = () => {
   return (

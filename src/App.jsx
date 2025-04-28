@@ -14,6 +14,13 @@ import "./styles/transitions.css";
 const AnimatedRoutes = () => {
   const location = useLocation();
   
+  // Reset scroll position on route change
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }, [location.pathname]);
+  
   return (
     <div className="page-transition-container">
       <div className="full-height-container">

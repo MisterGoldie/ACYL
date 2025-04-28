@@ -6,6 +6,7 @@ import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import "../styles/TVPage.css";
 import "../styles/MobileMenu.css";
+import "../styles/TVPageMobile.css"; // Mobile-specific fixes for TV page
 
 const Header = () => {
   return (

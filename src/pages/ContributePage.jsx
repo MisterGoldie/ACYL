@@ -7,6 +7,7 @@ import MobileMenu from "../components/MobileMenu";
 import TransactionHandler from "../components/TransactionHandler";
 import "../styles/ContributePage.css";
 import "../styles/MobileMenu.css";
+import "../styles/ContributePageMobile.css"; // Mobile-specific fixes for Contribute page
 
 const Header = () => {
   return (

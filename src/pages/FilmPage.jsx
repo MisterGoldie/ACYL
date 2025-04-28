@@ -6,6 +6,7 @@ import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import "../styles/FilmPage.css";
 import "../styles/MobileMenu.css";
+import "../styles/FilmPageMobile.css"; // Mobile-specific fixes for film page
 
 const Header = () => {
   return (

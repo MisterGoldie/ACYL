@@ -6,6 +6,7 @@ import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import "../styles/HomePage.css";
 import "../styles/MobileMenu.css";
+import "../styles/DiscoverPageMobile.css"; // Mobile-specific fixes for Discover page
 
 const Header = () => {
   return (
