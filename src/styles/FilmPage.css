@@ -7,9 +7,10 @@
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background: linear-gradient(135deg, #ff9966 0%, #ff5e62 50%, #b03060 100%);
+  background-image: url('/images/film/filmbg.png');
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -22,6 +23,8 @@
 /* Film page specific styles */
 .film-headline {
   font-family: 'Instrument Serif', serif !important;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  font-weight: 700;
 }
 
 .film-content {
@@ -34,6 +37,11 @@
   padding: 2rem;
   color: white;
   text-align: center;
+}
+
+.film-content p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: 500;
 }
 
 /* Spotify player styles */
@@ -55,6 +63,7 @@
   text-align: center;
   font-weight: 600;
   letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* PodPlayr styles */

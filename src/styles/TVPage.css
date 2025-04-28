@@ -7,9 +7,10 @@
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 50%, #7303c0 100%);
+  background-image: url('/images/tv/tvbg.png');
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -32,6 +33,10 @@
   text-align: center;
 }
 
+.tv-content h1, .tv-content h2, .tv-content h3, .tv-content h4, .tv-content h5, .tv-content h6 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 .tv-headline {
   font-family: 'Instrument Serif', serif !important;
   font-size: 3.5rem;
@@ -41,6 +46,7 @@
   text-align: center;
   max-width: 800px;
   line-height: 1.2;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 .tv-description {
@@ -54,6 +60,7 @@
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .coming-soon {
@@ -64,6 +71,7 @@
   font-size: 2.5rem;
   font-weight: 500;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Active link in navigation */

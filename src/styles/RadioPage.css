@@ -7,9 +7,10 @@
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background: linear-gradient(135deg, #121212 0%, #2c2c2c 50%, #3a3a3a 100%);
+  background-image: url('/images/radio/radiobg.png');
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -32,6 +33,10 @@
   text-align: center;
 }
 
+.radio-content h1, .radio-content h2, .radio-content h3, .radio-content h4, .radio-content h5, .radio-content h6 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 .radio-logo {
   position: relative;
   margin-bottom: 1rem;
@@ -44,6 +49,7 @@
   color: white;
   text-align: center;
   margin-bottom: 1rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 .radio-headline {
@@ -57,6 +63,7 @@
   font-family: 'Instrument Serif', serif;
   white-space: nowrap;
   overflow-x: auto;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 700px) {
@@ -78,4 +85,5 @@
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }

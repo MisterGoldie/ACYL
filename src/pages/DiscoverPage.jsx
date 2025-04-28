@@ -170,7 +170,14 @@ const DiscoverPage = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
-        style={{ minHeight: '100vh', height: '100%' }}
+        style={{ 
+          minHeight: '100vh', 
+          height: '100%',
+          backgroundImage: 'url("/images/discover/discoverbg.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
       >
         <Header />
         <DiscoverContent />

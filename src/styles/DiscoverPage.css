@@ -1,7 +1,10 @@
 /* DiscoverPage.css - Main styles for the Discover page */
 
 .discover-bg {
-  background-color: #000;
+  background-image: url('/images/discover/discoverbg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   color: white;
 }
