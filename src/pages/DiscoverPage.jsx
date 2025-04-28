@@ -57,32 +57,40 @@ const DiscoverContent = () => {
           into a curated catalog of independent films, radio programs, documentaries, and 
           experimental works that celebrate diverse voices and bold storytelling.
         </p>
-        <img 
-          src="/images/discover/groupthinklove.png" 
-          alt="Group Think Love" 
-          className="discover-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '700px',
-            width: '100%',
-            borderRadius: '18px',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
-          }}
-        />
-        <img 
-          src="/images/discover/iso.png" 
-          alt="ISO Film Still" 
-          className="discover-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '700px',
-            width: '100%',
-            borderRadius: '18px',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
-          }}
-        />
+        <Link to="/groupthinklove" style={{ display: 'block', textDecoration: 'none' }}>
+          <img 
+            src="/images/discover/groupthinklove.png" 
+            alt="Group Think Love" 
+            className="discover-feature-image"
+            style={{
+              display: 'block',
+              margin: '2.5rem auto 0 auto',
+              maxWidth: '700px',
+              width: '100%',
+              borderRadius: '18px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+              cursor: 'pointer',
+              transition: 'transform 0.3s ease'
+            }}
+          />
+        </Link>
+        <Link to="/isolation" style={{ display: 'block', textDecoration: 'none' }}>
+          <img 
+            src="/images/discover/iso.png" 
+            alt="ISO Film Still" 
+            className="discover-feature-image"
+            style={{
+              display: 'block',
+              margin: '2.5rem auto 0 auto',
+              maxWidth: '700px',
+              width: '100%',
+              borderRadius: '18px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+              cursor: 'pointer',
+              transition: 'transform 0.3s ease'
+            }}
+          />
+        </Link>
         <img 
           src="/images/discover/arthouse.png" 
           alt="Arthouse Film Still" 
@@ -96,32 +104,40 @@ const DiscoverContent = () => {
             boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
           }}
         />
-        <img 
-          src="/images/discover/ifoundit.png" 
-          alt="I Found It Film Still" 
-          className="discover-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '700px',
-            width: '100%',
-            borderRadius: '18px',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
-          }}
-        />
-        <img 
-          src="/images/discover/salem.png" 
-          alt="Salem Film Still" 
-          className="discover-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '700px',
-            width: '100%',
-            borderRadius: '18px',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
-          }}
-        />
+        <Link to="/ifoundit" style={{ display: 'block', textDecoration: 'none' }}>
+          <img 
+            src="/images/discover/ifoundit.png" 
+            alt="I Found It Film Still" 
+            className="discover-feature-image"
+            style={{
+              display: 'block',
+              margin: '2.5rem auto 0 auto',
+              maxWidth: '700px',
+              width: '100%',
+              borderRadius: '18px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+              cursor: 'pointer',
+              transition: 'transform 0.3s ease'
+            }}
+          />
+        </Link>
+        <Link to="/salemtries" style={{ display: 'block', textDecoration: 'none' }}>
+          <img 
+            src="/images/discover/salem.png" 
+            alt="Salem Film Still" 
+            className="discover-feature-image"
+            style={{
+              display: 'block',
+              margin: '2.5rem auto 0 auto',
+              maxWidth: '700px',
+              width: '100%',
+              borderRadius: '18px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+              cursor: 'pointer',
+              transition: 'transform 0.3s ease'
+            }}
+          />
+        </Link>
       </div>
     </motion.div>
   );
