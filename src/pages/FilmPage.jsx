@@ -139,41 +139,6 @@ const FilmContent = () => {
           }}
         />
       </Link>
-      <motion.div
-        className="spotify-player-container"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.6 }}
-      >
-        <h2 className="soundtrack-title">Featured Artist</h2>
-        <iframe 
-          src="https://open.spotify.com/embed/album/5wHRZCFMhWTk399TLXkdBi?utm_source=generator" 
-          width="100%" 
-          height="352" 
-          frameBorder="0" 
-          allowFullScreen="" 
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-          loading="lazy"
-        ></iframe>
-      </motion.div>
-      
-      <motion.div
-        className="podplayr-container"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.0, duration: 0.6 }}
-      >
-        <h2 className="podcast-title">Featured Podcast</h2>
-        <iframe 
-          src="https://podplayr.xyz/widget?contract=0x79428737e60a8a8db494229638eaa5e52874b6fb&tokenId=79428737ea&theme=dark&size=large" 
-          width="100%" 
-          height="80" 
-          frameBorder="0" 
-          allowTransparency="true" 
-          allow="encrypted-media; autoplay" 
-          style={{ borderRadius: "12px" }}
-        ></iframe>
-      </motion.div>
     </motion.div>
   );
 };
