@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { PrivyProvider } from "@privy-io/react-auth";
+import { PrivyProvider, usePrivy } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
@@ -8,6 +8,7 @@ import "../styles/FilmPage.css"; // Reusing Film page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/IFoundItPageMobile.css"; // Mobile-specific styles for IFoundIt page
 
+// Header component that uses Privy hooks
 const Header = () => {
   return (
     <motion.header 
@@ -134,6 +135,7 @@ const IFoundItContent = () => {
   );
 };
 
+// Main page component
 const IFoundItPage = () => {
   // Reset scroll position when component mounts
   React.useEffect(() => {
@@ -143,16 +145,50 @@ const IFoundItPage = () => {
   }, []);
 
   return (
-    <div style={{ 
-      background: 'black',
-      minHeight: '100vh',
-      color: 'white'
-    }}>
+    <PrivyProvider
+      appId="cm9wa9olg004yl70mwjt9n1x9"
+      config={{
+        loginMethods: ['email', 'wallet', 'google', 'sms', 'farcaster'],
+        appearance: {
+          theme: 'light',
+          accentColor: '#0f62fe',
+          showWalletLoginFirst: false,
+          layout: 'modal',
+          defaultView: 'login',
+          logo: '/acylprivylogo.png',
+          backgroundColor: '#fff',
+        },
+        embeddedWallets: {
+          createOnLogin: 'all-users',
+          noPromptOnSignature: false,
+        },
+      }}
+    >
+      <IFoundItPageContent />
+    </PrivyProvider>
+  );
+};
+
+// Content wrapper that uses Privy hooks
+const IFoundItPageContent = () => {
+  return (
+    <motion.div
+      className="film-bg"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      style={{ 
+        background: 'black',
+        minHeight: '100vh',
+        color: 'white'
+      }}
+    >
       <Header />
       <div className="page-content">
         <IFoundItContent />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
