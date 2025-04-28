@@ -10,6 +10,9 @@ html, body, #root {
   height: 100%;
   min-height: 100vh;
   font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -222,13 +225,21 @@ body {
   font-size: 0.95rem; /* Reduced from 1.08rem to make text smaller */
   line-height: 1.6;
   margin-bottom: 1.1rem;
-  font-weight: 400;
+  font-weight: 900 !important; /* Force maximum thickness with !important */
+  letter-spacing: -0.06em; /* Added tracking of -60 */
   text-align: center;
   max-width: 700px; /* Reduced from 800px to match screenshot */
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1;
+  font-kerning: normal;
+  color: rgba(255, 255, 255, 0.95); /* Slightly off-white for better contrast */
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1); /* Subtle text shadow for better definition */
 }
 
 /* This is the only .acyl-big-logo rule - no container styling */

@@ -29,6 +29,15 @@
     padding-top: 10px;
   }
   
+  /* Ensure description text is semi-bold on mobile */
+  .multicolored-bg .acyl-description-body {
+    font-weight: 900 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    letter-spacing: -0.06em !important;
+    padding: 0 0.8rem !important;
+  }
+  
   /* Ensure the big logo has proper spacing but not excessive */
   .multicolored-bg .acyl-big-logo {
     margin-top: 10px;
