@@ -76,7 +76,7 @@ const GroupThinkLoveContent = () => {
       </motion.div>
       
       <img 
-        src="/images/film/gtlwithtext.png" 
+        src="/images/groupthinklove/gtlwithtext.png" 
         alt="Group Think Love With Text" 
         style={{
           display: 'block',

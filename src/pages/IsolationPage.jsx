@@ -71,7 +71,7 @@ const IsolationContent = () => {
       </motion.div>
       
       <img 
-        src="/images/film/isowithtext.png" 
+        src="/images/isolation/isowithtext.png" 
         alt="Isolation With Text" 
         style={{
           display: 'block',

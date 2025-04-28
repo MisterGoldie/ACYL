@@ -80,7 +80,7 @@ const IFoundItContent = () => {
       
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
         <img 
-          src="/images/film/ifiwithtext.png" 
+          src="/images/ifoundit/ifiwithtext.png" 
           alt="I Found It With Text" 
           style={{
             display: 'block',

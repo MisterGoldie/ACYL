@@ -78,7 +78,7 @@ const DigitalDaydreamContent = () => {
       </motion.div>
       
       <img 
-        src="/images/film/ddwithtext.png" 
+        src="/images/digitaldaydream/ddwithtext.png" 
         alt="Digital Daydream With Text" 
         style={{
           display: 'block',
