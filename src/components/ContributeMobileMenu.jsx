@@ -3,29 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/MobileMenu.css';
 
-// Custom styles to fix the close button position on the Contribute page
-const contributePageStyles = {
-  overlay: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
-  menu: {
-    borderRadius: '0 0 0 1rem',
-    height: '100vh',
-  },
-  closeButton: {
-    position: 'absolute',
-    top: '1rem',
-    right: '1rem',
-  }
-};
-
-const MobileMenu = () => {
+const ContributeMobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  
-  // Check if we're on the Contribute page
-  const isContributePage = location.pathname === '/contribute';
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -42,8 +22,20 @@ const MobileMenu = () => {
         className="hamburger-button" 
         onClick={toggleMenu}
         aria-label="Toggle menu"
+        style={{
+          background: 'transparent',
+          border: 'none',
+          color: 'white',
+          fontSize: '2rem',
+          cursor: 'pointer',
+          padding: '0.5rem',
+          marginLeft: 'auto',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
       >
-        <span className="hamburger-icon">≡</span>
+        <span style={{ display: 'block', lineHeight: 1 }}>≡</span>
       </button>
 
       <AnimatePresence>
@@ -54,7 +46,10 @@ const MobileMenu = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            style={isContributePage ? contributePageStyles.overlay : {}}
+            style={{
+              justifyContent: 'flex-end',
+              alignItems: 'flex-start'
+            }}
           >
             <motion.div 
               className="mobile-menu"
@@ -62,19 +57,33 @@ const MobileMenu = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              style={isContributePage ? contributePageStyles.menu : {}}
+              style={{
+                height: '100vh',
+                borderRadius: '0 0 0 1rem'
+              }}
             >
-              <button 
-                className="close-button"
-                onClick={toggleMenu}
-                aria-label="Close menu"
-                style={isContributePage ? contributePageStyles.closeButton : {}}
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+              <div style={{ 
+                position: 'absolute', 
+                top: '1rem', 
+                right: '1rem', 
+                zIndex: 9999 
+              }}>
+                <button 
+                  onClick={toggleMenu}
+                  aria-label="Close menu"
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: 0
+                  }}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
               
               <nav className="mobile-nav">
                 <Link to="/tv" className="mobile-nav-item">TV</Link>
@@ -92,4 +101,4 @@ const MobileMenu = () => {
   );
 };
 
-export default MobileMenu;
+export default ContributeMobileMenu;

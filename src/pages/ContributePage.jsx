@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { PrivyProvider, usePrivy, useWallets } from "@privy-io/react-auth";
 import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
-import MobileMenu from "../components/MobileMenu";
+import ContributeMobileMenu from "../components/ContributeMobileMenu";
 import OptimizedImage from "../components/OptimizedImage";
 import TransactionHandler from "../components/TransactionHandler";
 import "../styles/ContributePage.css";
@@ -39,7 +39,7 @@ const Header = () => {
         </ul>
       </nav>
       <LoginComponent />
-      <MobileMenu />
+      <ContributeMobileMenu />
     </motion.header>
   );
 };
