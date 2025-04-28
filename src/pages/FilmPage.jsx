@@ -83,16 +83,20 @@ const FilmContent = () => {
           mainstream.
         </p>
       </motion.div>
-      <img 
-        src="/images/film/gtlwithtext.png" 
-        alt="Group Think Love With Text" 
-        className="film-feature-image"
-        style={{
-          display: 'block',
-          margin: '2.5rem auto 0 auto',
-          maxWidth: '1000px'
-        }}
-      />
+      <Link to="/groupthinklove" style={{ display: 'block', textDecoration: 'none' }}>
+        <img 
+          src="/images/film/gtlwithtext.png" 
+          alt="Group Think Love With Text" 
+          className="film-feature-image"
+          style={{
+            display: 'block',
+            margin: '2.5rem auto 0 auto',
+            maxWidth: '1000px',
+            cursor: 'pointer',
+            transition: 'transform 0.3s ease'
+          }}
+        />
+      </Link>
       <img 
         src="/images/film/isowithtext.png" 
         alt="ISO With Text" 
