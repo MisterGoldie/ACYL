@@ -93,9 +93,8 @@ const DigitalDaydreamContent = () => {
       <div className="film-details">
         <div className="film-title-container" style={{ textAlign: 'center', marginTop: '3rem' }}>
           <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Digital Daydream (2025)</h2>
-          <p style={{ fontSize: '1rem', color: '#333' }}>ANY COLOUR YOU LIKE</p>
+
           <div style={{ marginTop: '1rem' }}>
-            <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>NFT on Base Network</p>
             
             {/* Direct Mint Button to Manifold */}
             <a 
