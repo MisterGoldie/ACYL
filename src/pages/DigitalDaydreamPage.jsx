@@ -95,9 +95,15 @@ const DigitalDaydreamContent = () => {
           <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Digital Daydream (2025)</h2>
           <p style={{ fontSize: '1rem', color: '#333' }}>ANY COLOUR YOU LIKE</p>
           <div style={{ marginTop: '1rem' }}>
-            <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>$5.00</p>
-            <button 
+            <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>NFT on Base Network</p>
+            
+            {/* Direct Mint Button to Manifold */}
+            <a 
+              href="https://app.manifold.xyz/c/digital-daydream" 
+              target="_blank" 
+              rel="noopener noreferrer" 
               style={{
+                display: 'inline-block',
                 padding: '0.75rem 2rem',
                 backgroundColor: '#333',
                 color: 'white',
@@ -105,11 +111,13 @@ const DigitalDaydreamContent = () => {
                 borderRadius: '50px',
                 fontSize: '1rem',
                 fontWeight: 'bold',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                textDecoration: 'none',
+                margin: '20px auto',
               }}
             >
-              Mint
-            </button>
+              Mint on Manifold
+            </a>
           </div>
         </div>
       </div>
