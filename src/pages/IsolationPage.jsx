@@ -51,39 +51,98 @@ const IsolationContent = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
+      style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}
     >
-      <motion.h1 
-        className="film-headline"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
+      {/* Main title absolutely centered on the page */}
+      <div 
+        style={{
+          position: 'absolute',
+          top: '2%',
+          left: '0',
+          right: '0',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 10
+        }}
       >
-        Isolation
-      </motion.h1>
+        <motion.div 
+          className="film-headline"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          style={{ 
+            width: '45%',
+            maxWidth: '500px'
+          }}
+        >
+          <OptimizedImage 
+            src="/images/isolation/isotitle.png?v=8" 
+            alt="Isolation" 
+            style={{ 
+              width: '100%',
+              display: 'block'
+            }}
+          />
+        </motion.div>
+      </div>
       
+      {/* Meditate text image on the left side */}
       <motion.div 
         className="film-description"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
+        style={{ 
+          position: 'absolute',
+          top: '35%',
+          left: '15%',
+          zIndex: 5,
+          width: '20%'
+        }}
       >
-        <p>
-          A man attempts to meditate.
-        </p>
+        <OptimizedImage 
+          src="/images/isolation/meditatetext.png?v=3" 
+          alt="A man attempts to meditate." 
+          style={{ 
+            width: '100%',
+            display: 'block'
+          }}
+        />
       </motion.div>
       
-      <OptimizedImage 
-        src="/images/isolation/isowithtext.png" 
-        alt="Isolation With Text" 
-        style={{
-          display: 'block',
-          margin: '2.5rem auto 0 auto',
-          maxWidth: '1000px',
-          width: '100%'
-        }}
-      />
+      {/* Toilet element removed as requested */}
       
-      <div className="film-details">
+      {/* Prisoner on the right */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        style={{ 
+          position: 'absolute',
+          bottom: '5%',
+          right: '5%',
+          zIndex: 4,
+          width: '20%'
+        }}
+      >
+        <OptimizedImage 
+          src="/images/isolation/prisoner.png?v=2" 
+          alt="Prisoner meditating" 
+          style={{
+            width: '100%',
+            display: 'block'
+          }}
+        />
+      </motion.div>
+      
+      {/* Fly element removed as requested */}
+      
+      {/* Small Isolation logo removed as requested */}
+      
+      {/* Mint button and details - hidden initially */}
+      <div className="film-details" style={{ display: 'none' }}>
         <div className="film-title-container" style={{ textAlign: 'center', marginTop: '3rem' }}>
           <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Isolation (2025)</h2>
           <p style={{ fontSize: '1rem', color: '#ccc' }}>ANY COLOUR YOU LIKE</p>
@@ -154,7 +213,10 @@ const IsolationPageContent = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ 
-        background: 'linear-gradient(135deg, #666666 0%, #333333 100%)',
+        background: 'url("/images/isolation/isobg.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         color: 'white'
       }}
