@@ -159,7 +159,10 @@ const GroupThinkLovePageContent = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ 
-        background: 'linear-gradient(135deg, #ff3333 0%, #990000 100%)',
+        background: 'url("/images/groupthinklove/gtlbg.webp")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         color: 'white'
       }}

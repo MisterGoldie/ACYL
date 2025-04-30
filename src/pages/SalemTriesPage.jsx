@@ -168,7 +168,10 @@ const SalemTriesPageContent = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ 
-        background: 'linear-gradient(135deg, #2e8b57 0%, #1a5130 100%)',
+        background: 'url("/images/salemtries/salemtriesbg.webp")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         color: 'white'
       }}

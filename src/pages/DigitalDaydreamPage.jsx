@@ -168,9 +168,12 @@ const DigitalDaydreamPageContent = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ 
-        background: 'linear-gradient(135deg, #87CEEB 0%, #4682B4 100%)',
+        background: 'url("/images/digitaldaydream/ddbg.webp")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
-        color: '#333'
+        color: 'white'
       }}
     >
       <Header />

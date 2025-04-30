@@ -180,7 +180,10 @@ const IFoundItPageContent = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ 
-        background: 'black',
+        background: 'url("/images/ifoundit/ifibg.webp")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         color: 'white'
       }}
