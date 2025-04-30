@@ -52,31 +52,32 @@ const SazonContent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <motion.h1 
+      <motion.div 
         className="stream-headline"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
+        style={{ textAlign: 'center', marginBottom: '2rem' }}
       >
-        Sazon With Santi
-      </motion.h1>
+        <OptimizedImage 
+          src="/images/sazon/swslogo.png" 
+          alt="Seasoning With Sazon" 
+          style={{ maxWidth: '80%', margin: '0 auto' }}
+        />
+      </motion.div>
       
       <motion.div 
         className="stream-description"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
+        style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}
       >
-        <p>
-          Sazon With Santi brings the vibrant flavors of Latin cuisine to your screen. Join 
-          Santiago as he explores traditional recipes, modern fusion dishes, and the cultural 
-          stories behind every meal.
-        </p>
-        <p>
-          More than just a cooking stream, Sazon With Santi celebrates the rich culinary 
-          heritage of Latin America while creating a space for community, conversation, and 
-          connection through food.
-        </p>
+        <OptimizedImage 
+          src="/images/sazon/swsbanner.png" 
+          alt="Mr. Sazon profile and description" 
+          style={{ width: '100%', margin: '0 auto' }}
+        />
       </motion.div>
       
       <OptimizedImage 
@@ -91,7 +92,7 @@ const SazonContent = () => {
       />
       
       <div className="stream-details" style={{ textAlign: 'center', marginTop: '3rem' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Sazon With Santi (2025)</h2>
+        <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Seasoning With Sazon (2025)</h2>
         <p style={{ fontSize: '1rem', color: '#ccc' }}>ANY COLOUR YOU LIKE</p>
         <div style={{ marginTop: '1rem' }}>
           <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>$5.00</p>
@@ -168,7 +169,10 @@ const SazonPageContent = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ 
-        background: 'linear-gradient(135deg, #8B0000 0%, #006400 100%)',
+        background: 'url("/images/sazon/swsbg.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         color: 'white'
       }}
