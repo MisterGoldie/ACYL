@@ -1,59 +1,114 @@
 /* Mobile-specific styles for IsolationPage only */
 @media screen and (max-width: 768px) {
-  /* Only target the isolation page header */
+  /* Override general container properties */
   .site-header {
-    position: sticky !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2000;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 2000 !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
   }
   
-  /* Adjust content spacing */
+  /* Force full height for the page content */
   .page-content {
-    padding-top: 20px !important;
-    margin-top: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100vh !important;
+    width: 100% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    overflow: hidden !important;
   }
   
-  /* Center content and improve readability */
+  /* Make sure the background fills the whole screen */
+  .film-bg {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    z-index: 1 !important;
+  }
+  
+  /* Adjust the content container */
   .film-content {
-    padding: 1rem !important;
-    text-align: center;
-    width: 100%;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 5 !important;
   }
   
-  /* Adjust headline size and spacing */
-  .film-headline {
-    font-size: 2rem !important;
-    margin-bottom: 1.5rem !important;
-    line-height: 1.2 !important;
+  /* ISOTITLE - Force it to be visible and properly sized */
+  /* Target exactly the title container */
+  .film-content > div:first-of-type {
+    position: fixed !important;
+    top: 60px !important; /* Below header */
+    left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10 !important;
   }
   
-  /* Ensure images are responsive */
+  /* Make the title properly sized */
+  .film-content .film-headline {
+    width: 90% !important;
+    max-width: none !important;
+  }
+  
+  /* MEDITATE TEXT - Make sure it appears */
+  .film-content .film-description {
+    position: fixed !important;
+    left: 10% !important;
+    top: 45% !important;
+    width: 50% !important;
+    z-index: 10 !important;
+  }
+  
+  /* PRISONER IMAGE - Position at bottom right */
+  .film-content > div:nth-of-type(3) {
+    position: fixed !important;
+    bottom: 5% !important;
+    right: 5% !important;
+    width: 35% !important;
+    z-index: 10 !important;
+  }
+  
+  /* Make sure all images are visible */
   .film-content img {
     max-width: 100% !important;
-    height: auto !important;
-    margin: 1.5rem auto !important;
-  }
-  
-  /* Adjust film details container */
-  .film-details {
-    padding: 1rem !important;
-  }
-  
-  /* Make the title and mint button more mobile-friendly */
-  .film-title-container h2 {
-    font-size: 1.8rem !important;
-  }
-  
-  .film-title-container button {
-    padding: 0.6rem 1.8rem !important;
-    font-size: 0.9rem !important;
-  }
-  
-  /* Ensure the container starts at the top */
-  body {
     display: block !important;
-    overflow-x: hidden !important;
+    opacity: 1 !important;
+    height: auto !important;
+  }
+  
+  /* Hide details on mobile */
+  .film-details {
+    display: none !important;
+  }
+  
+  /* Prevent scrolling */
+  body {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* Force elements with motion to be visible */
+  .motion-div, .motion-header {
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+    visibility: visible !important;
   }
 }
