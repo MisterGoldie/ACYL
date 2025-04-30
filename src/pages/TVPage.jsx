@@ -92,17 +92,7 @@ const TVContent = () => {
         transition={{ delay: 0.8, duration: 0.6 }}
       >
         <h2>Coming Soon</h2>
-        <OptimizedImage 
-          src="/images/tv/arthousefont.png" 
-          alt="Art House Basel Logo" 
-          className="tv-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '700px',
-            width: '100%'
-          }}
-        />
+        {/* Arthouse image removed */}
         <OptimizedImage 
           src="/images/tv/afuerafont.png" 
           alt="Afuera Font Logo" 

@@ -92,19 +92,7 @@ const DiscoverContent = () => {
             }}
           />
         </Link>
-        <OptimizedImage 
-          src="/images/discover/arthouse.png" 
-          alt="Arthouse Film Still" 
-          className="discover-feature-image"
-          style={{
-            display: 'block',
-            margin: '2.5rem auto 0 auto',
-            maxWidth: '700px',
-            width: '100%',
-            borderRadius: '18px',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.25)'
-          }}
-        />
+        {/* Arthouse image removed */}
         <Link to="/ifoundit" style={{ display: 'block', textDecoration: 'none' }}>
           <OptimizedImage 
             src="/images/discover/ifoundit.png" 
