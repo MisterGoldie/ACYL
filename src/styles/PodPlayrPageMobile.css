@@ -1,0 +1,71 @@
+/* Mobile-specific styles for PodPlayrPage only */
+
+/* Animation keyframes for mobile components */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+  /* Only target the PodPlayr page header */
+  .site-header {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+  
+  /* Adjust content spacing */
+  .page-content {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Center content and improve readability */
+  .stream-content {
+    padding: 1rem !important;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Adjust headline size and spacing */
+  .stream-headline {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Ensure images are responsive */
+  .stream-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 1.5rem auto !important;
+  }
+  
+  /* Adjust stream details container */
+  .stream-details {
+    padding: 1rem !important;
+  }
+  
+  /* Make the title and buttons more mobile-friendly */
+  .stream-details h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  .stream-details button {
+    padding: 0.6rem 1.8rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Add a specific background for PodPlayr */
+  .podplayr-bg {
+    background: linear-gradient(to bottom, #1E1525, #2D1B69, #4B0082) !important;
+    min-height: 100vh;
+  }
+}

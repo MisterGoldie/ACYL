@@ -83,6 +83,7 @@ const MobileMenu = () => {
                 <Link to="/stream" className="mobile-nav-item">Stream</Link>
                 <Link to="/contribute" className="mobile-nav-item">Contribute</Link>
                 <Link to="/discover" className="mobile-nav-item">Discover</Link>
+                <Link to="/podplayr" className="mobile-nav-item">PODPLAYR</Link>
               </nav>
             </motion.div>
           </motion.div>
