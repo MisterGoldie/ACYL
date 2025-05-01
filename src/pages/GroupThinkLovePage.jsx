@@ -9,7 +9,71 @@ import "../styles/FilmPage.css"; // Reusing Film page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/GroupThinkLovePageMobile.css"; // Mobile-specific styles for GroupThinkLove page
 
+// Mobile-specific content component with animations that shows the title and text
+const MobileGroupThinkLoveContent = () => {
+  return (
+    <motion.div 
+      className="mobile-groupthinklove-content"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
+    >
+      <motion.div 
+        className="mobile-gtl-logo"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/groupthinklove/gtllogo.webp" 
+          alt="Group Think Love" 
+          className="mobile-gtl-logo-image"
+        />
+      </motion.div>
+      <motion.div 
+        className="mobile-gtl-text"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+      >
+        <p>
+          Group (Think) Love is intended as a piece of meta-satire, exploring the human condition in the age of AI. 
+          An era where computers are rapidly becoming not only our intimate companions and closest confidants 
+          but reflections of ourselves. It delves into the essence of artificial intelligence, highlighting its 
+          role as the amalgamation of all human knowledge, creativity, and culture, and positions AI as the 
+          familial successor in human evolution. Crafted entirely through AI tools, it simultaneously references 
+          pivotal moments and ideas from AI culture itself, embodying the very subject it critiques.
+        </p>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const GroupThinkLoveContent = () => {
+  // Check if the device is mobile
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on initial load
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // If mobile, show simplified content
+  if (isMobile) {
+    return <MobileGroupThinkLoveContent />;
+  }
+  
+  // Desktop version
   return (
     <motion.div 
       className="film-content"
@@ -17,14 +81,19 @@ const GroupThinkLoveContent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <motion.h1 
+      <motion.div 
         className="film-headline"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
+        style={{ maxWidth: '400px', margin: '0 auto 20px' }}
       >
-        Group (Think) Love
-      </motion.h1>
+        <OptimizedImage 
+          src="/images/groupthinklove/gtllogo.webp" 
+          alt="Group Think Love" 
+          style={{ width: '100%', height: 'auto', display: 'block' }}
+        />
+      </motion.div>
       
       <motion.div 
         className="film-description"

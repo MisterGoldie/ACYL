@@ -1,65 +1,118 @@
-/* Mobile-specific styles for FilmPage only */
+/* Mobile-specific styles for main FilmPage only */
+/* These styles should NOT affect individual film pages like Isolation, I Found It, etc. */
+
+/* Animation keyframes for mobile components */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @media screen and (max-width: 768px) {
-  /* Only target the film page header */
+  /* Basic header styling */
   .film-bg .site-header {
-    position: sticky !important;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     z-index: 2000;
+    background-color: transparent;
   }
   
-  /* Adjust content spacing */
-  .film-bg .page-content {
-    padding-top: 20px !important;
-    margin-top: 0 !important;
-  }
-  
-  /* Center content and improve readability */
-  .film-content {
-    padding: 1rem !important;
-    text-align: center;
+  /* Mobile-specific component styling */
+  .mobile-film-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0 20px 0;
     width: 100%;
+    position: relative;
   }
   
-  /* Fix film feature images to display properly on mobile */
-  .film-feature-image {
-    max-width: 100% !important; /* Override inline styles */
-    width: 90% !important;
-    height: auto !important;
-    margin: 1.5rem auto !important;
-    object-fit: contain !important;
+  .mobile-film-headline {
+    font-size: 28px;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    padding: 0 15px;
+    width: 90%;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    font-family: 'Instrument Serif', serif !important;
+    font-weight: 700;
   }
   
-  /* Ensure all images are responsive */
-  .film-bg img {
-    max-width: 100%;
-    height: auto;
+  .mobile-film-description {
+    width: 85%;
+    margin: 0 auto;
   }
   
-  /* Ensure the container starts at the top */
+  .mobile-film-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    display: block;
+    width: 100%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: 'Inter', Arial, sans-serif;
+  }
+  
+  .mobile-film-description p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Hide only the main Film page desktop component */
+  body:not([class*="isolation"]):not([class*="ifoundit"]):not([class*="digitaldaydream"]):not([class*="groupthinklove"]) .film-page-main .film-content {
+    display: none !important;
+  }
+  
+  /* Basic container styling */
   .film-bg {
-    display: block !important;
-    min-height: 100vh !important;
-    height: 100% !important;
-    overflow-y: auto !important;
-    position: relative !important;
-    padding-bottom: 4rem;
-    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
   }
   
-  /* Make the description text more readable on mobile */
-  .film-description p {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-    margin-bottom: 1rem !important;
+  /* Reset column styles only for the main Film page */
+  .film-page-main * {
+    column-count: 1 !important;
+    column-width: auto !important;
+    columns: auto !important;
+    column-gap: 0 !important;
   }
   
-  /* Adjust the Spotify and podcast containers */
-  .spotify-player-container,
-  .podplayr-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 1.5rem auto !important;
+  /* Hide the desktop film posters grid only on main Film page */
+  .film-page-main .film-posters-grid {
+    display: none !important;
+  }
+  
+  /* Style the mobile film posters grid - single column */
+  .film-page-main .mobile-film-posters-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 80%;
+    margin: 40px auto;
+  }
+  
+  .film-page-main .mobile-film-poster-link {
+    width: 100%;
+    display: block;
+  }
+  
+  .film-page-main .mobile-film-poster-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .film-page-main .mobile-film-poster-image:hover {
+    transform: scale(1.05);
   }
 }

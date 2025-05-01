@@ -1,49 +1,97 @@
 /* Mobile-specific styles for IFoundItPage only */
+
+/* Animation keyframes for mobile components */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @media screen and (max-width: 768px) {
-  /* Only target the IFoundIt page header */
+  /* Keep only the header and background visible */
+  
+  /* Header styling */
   .site-header {
     position: sticky !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2000;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 2000 !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
   }
   
-  /* Adjust content spacing */
-  .page-content {
-    padding-top: 20px !important;
-    margin-top: 0 !important;
+  /* Style the mobile content container with logo and text */
+  .mobile-ifoundit-content {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    padding-top: 80px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
   
-  /* Center content and improve readability */
-  .film-content {
-    padding: 1rem !important;
-    text-align: center;
-    width: 100%;
+  /* Style the logo image - much larger */
+  .mobile-ifoundit-logo {
+    width: 95% !important;
+    max-width: 600px !important;
+    margin: 0 auto 50px !important;
+    z-index: 100 !important;
   }
   
-  /* Make the main text more readable on mobile */
-  .film-description h1 {
-    font-size: 1.5rem !important;
-    line-height: 1.4 !important;
-    margin-bottom: 1.5rem !important;
-  }
-  
-  .film-description h2 {
-    font-size: 2rem !important;
-    margin-top: 2rem !important;
-    margin-bottom: 2rem !important;
-  }
-  
-  /* Adjust the layout for the image and details section */
-  .film-details {
-    text-align: center !important;
-    margin-top: 1.5rem !important;
-  }
-  
-  /* Ensure the container starts at the top */
-  body {
+  .mobile-ifi-logo-image {
+    width: 100% !important;
+    height: auto !important;
     display: block !important;
-    overflow-x: hidden !important;
+  }
+  
+  /* Add the requested text via CSS - positioned lower */
+  .mobile-ifoundit-text {
+    position: absolute !important;
+    top: 260px !important; /* Increased from 120px to 260px to create more space */
+    left: 0 !important;
+    right: 0 !important;
+    width: 85% !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+    line-height: 1.4 !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-ifoundit-text::after {
+    content: "FROM MOVING OUT FOR COLLEGE TO THE BIG CITY IN 2018, CHARLES FOX DOCUMENTS HIS DISCOVERY OF THE TALENTED UNDERGROUND MUSIC SCENE IN CHICAGO. A COMMUNITY THAT SEEMS TO CONTINUE GROWING." !important;
+  }
+  
+  /* Make sure background image is visible and covers the screen */
+  .film-bg {
+    min-height: 100vh !important;
+    height: 100% !important;
+    width: 100% !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+  }
+  
+  /* Hide all other content as a fallback */
+  .film-content,
+  .film-description,
+  .film-details {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
   }
 }

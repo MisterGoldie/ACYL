@@ -44,7 +44,63 @@ const Header = () => {
   );
 };
 
+// Mobile-specific content component with logo image and animations
+const MobileIFoundItContent = () => {
+  return (
+    <motion.div 
+      className="mobile-ifoundit-content"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
+    >
+      <motion.div 
+        className="mobile-ifoundit-logo"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/ifoundit/ifilogo.webp" 
+          alt="I Found It" 
+          className="mobile-ifi-logo-image"
+        />
+      </motion.div>
+      <motion.div 
+        className="mobile-ifoundit-text"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+      ></motion.div>
+    </motion.div>
+  );
+};
+
 const IFoundItContent = () => {
+  // Check if the device is mobile
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on initial load
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // If mobile, show simplified content
+  if (isMobile) {
+    return <MobileIFoundItContent />;
+  }
+  
+  // Desktop version
+
   return (
     <motion.div 
       className="film-content"
@@ -52,6 +108,19 @@ const IFoundItContent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+        style={{ maxWidth: '800px', margin: '0 auto 60px', textAlign: 'center' }}
+      >
+        <OptimizedImage 
+          src="/images/ifoundit/ifilogo.webp" 
+          alt="I Found It" 
+          style={{ width: '100%', height: 'auto', display: 'block' }}
+        />
+      </motion.div>
+      
       <motion.div 
         className="film-description"
         initial={{ opacity: 0, y: 20 }}

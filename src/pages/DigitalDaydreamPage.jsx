@@ -44,7 +44,70 @@ const Header = () => {
   );
 };
 
+// Mobile-specific content component with animations that shows the title image and text
+const MobileDigitalDaydreamContent = () => {
+  return (
+    <motion.div 
+      className="mobile-digitaldaydream-content"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
+    >
+      <motion.div 
+        className="mobile-digitaldaydream-title"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/digitaldaydream/ddtitle.webp" 
+          alt="Digital Daydream" 
+          className="mobile-dd-title-image"
+        />
+      </motion.div>
+      <motion.div 
+        className="mobile-digitaldaydream-text"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+      >
+        <p>
+          Digital Daydream explores the intersection of technology and imagination in our increasingly connected world. Through stunning visuals and immersive storytelling, this film invites viewers to question the boundaries between reality and the digital realm.
+        </p>
+        <p>
+          As we navigate the ever-evolving landscape of virtual experiences, Digital Daydream offers a thought-provoking glimpse into a future where our dreams and digital lives become increasingly intertwined.
+        </p>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const DigitalDaydreamContent = () => {
+  // Check if the device is mobile
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on initial load
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // If mobile, show simplified content
+  if (isMobile) {
+    return <MobileDigitalDaydreamContent />;
+  }
+  
+  // Desktop version
+
   return (
     <motion.div 
       className="film-content"
@@ -52,14 +115,19 @@ const DigitalDaydreamContent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <motion.h1 
+      <motion.div 
         className="film-headline"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
+        style={{ maxWidth: '500px', margin: '0 auto' }}
       >
-        Digital Daydream
-      </motion.h1>
+        <OptimizedImage 
+          src="/images/digitaldaydream/ddtitle.webp" 
+          alt="Digital Daydream" 
+          style={{ width: '100%', height: 'auto' }}
+        />
+      </motion.div>
       
       <motion.div 
         className="film-description"

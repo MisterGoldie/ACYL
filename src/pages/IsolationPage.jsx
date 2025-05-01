@@ -44,7 +44,85 @@ const Header = () => {
   );
 };
 
+// Mobile-specific content component with animations that shows the same images as desktop
+const MobileIsolationContent = () => {
+  return (
+    <motion.div 
+      className="mobile-isolation-content"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
+    >
+      {/* Title image */}
+      <motion.div 
+        className="mobile-iso-title"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/isolation/isotitle.png?v=9" 
+          alt="Isolation" 
+          className="mobile-iso-title-image"
+        />
+      </motion.div>
+
+      {/* Meditate text image */}
+      <motion.div 
+        className="mobile-iso-meditate"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/isolation/meditatetext.png?v=4" 
+          alt="A man attempts to meditate." 
+          className="mobile-iso-meditate-image"
+        />
+      </motion.div>
+
+      {/* Prisoner image */}
+      <motion.div 
+        className="mobile-iso-prisoner"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/isolation/prisoner.png?v=3" 
+          alt="Prisoner meditating" 
+          className="mobile-iso-prisoner-image"
+        />
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const IsolationContent = () => {
+  // Check if the device is mobile
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on initial load
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // If mobile, show simplified content
+  if (isMobile) {
+    return <MobileIsolationContent />;
+  }
+  
+  // Desktop version
   return (
     <div className="film-content" style={{ position: 'relative', height: '100vh', width: '100%', overflow: 'hidden' }}>
       {/* Main title at the top center */}
