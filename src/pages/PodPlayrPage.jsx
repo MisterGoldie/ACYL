@@ -52,6 +52,11 @@ const PodPlayrContent = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}
     >
       <motion.div 
         className="stream-headline podplayr-logo-container"
@@ -68,11 +73,42 @@ const PodPlayrContent = () => {
         />
       </motion.div>
       
+      <motion.div
+        className="podplayr-video-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: '2rem',
+          marginBottom: '2rem',
+          width: '100%',
+          maxWidth: '800px',
+          margin: '2rem auto'
+        }}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            width: '100%',
+            borderRadius: '12px',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+          }}
+        >
+          <source src="/images/podplayr/ppintrovideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </motion.div>
+      
       <motion.div 
         className="stream-description"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.6 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
       >
         <p>
           PODPLAYR is our innovative platform for podcast discovery and enjoyment. 

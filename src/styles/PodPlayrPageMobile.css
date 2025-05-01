@@ -48,6 +48,20 @@
     margin: 1.5rem auto !important;
   }
   
+  /* Position video higher on mobile */
+  .podplayr-video-container {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    order: -1 !important;
+  }
+  
+  /* Make the video player responsive on mobile */
+  .podplayr-video-container video {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+  }
+  
   /* Adjust stream details container */
   .stream-details {
     padding: 1rem !important;
