@@ -122,24 +122,48 @@ const PodPlayrContent = () => {
         </p>
       </motion.div>
       
-      <iframe 
-        src="https://podplayr.xyz/widget?contract=0x79428737e60a8a8db494229638eaa5e52874b6fb&tokenId=79428737ea&theme=dark&size=large" 
-        width="100%" 
-        height="120px" 
-        frameBorder="0" 
-        scrolling="no"
-        allow="autoplay; encrypted-media" 
-        title="PODPLAYR Widget"
+      <motion.div
+        className="widget-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
         style={{
           marginTop: '3rem',
           marginBottom: '3rem',
-          border: 'none',
-          overflow: 'hidden',
-          background: 'transparent',
           maxWidth: '800px',
-          borderRadius: '12px'
+          width: '100%',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          borderRadius: '16px',
+          padding: '1.5rem',
+          background: 'rgba(20, 10, 30, 0.3)',
+          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
         }}
-      ></iframe>
+      >
+        <h3 style={{
+          fontSize: '1.2rem',
+          fontWeight: 'bold',
+          marginBottom: '1rem',
+          textAlign: 'center',
+          letterSpacing: '1px',
+          color: 'rgba(255, 255, 255, 0.9)'
+        }}>FEATURED SECTION MEDIA</h3>
+        
+        <iframe 
+          src="https://podplayr.xyz/widget?contract=0x79428737e60a8a8db494229638eaa5e52874b6fb&tokenId=79428737ea&theme=dark&size=large" 
+          width="100%" 
+          height="120px" 
+          frameBorder="0" 
+          scrolling="no"
+          allow="autoplay; encrypted-media" 
+          title="PODPLAYR Widget"
+          style={{
+            border: 'none',
+            overflow: 'hidden',
+            background: 'transparent',
+            borderRadius: '12px'
+          }}
+        ></iframe>
+      </motion.div>
     </motion.div>
   );
 };

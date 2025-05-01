@@ -62,6 +62,21 @@
     border-radius: 8px !important;
   }
   
+  /* Style the widget container for mobile */
+  .widget-container {
+    width: 100% !important;
+    padding: 1rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    order: 1 !important;
+  }
+  
+  /* Adjust featured section title on mobile */
+  .widget-container h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
   /* Adjust stream details container */
   .stream-details {
     padding: 1rem !important;
