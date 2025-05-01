@@ -121,6 +121,25 @@ const PodPlayrContent = () => {
           favorite creators and discover new voices in the ever-expanding podcast universe.
         </p>
       </motion.div>
+      
+      <iframe 
+        src="https://podplayr.xyz/widget?contract=0x79428737e60a8a8db494229638eaa5e52874b6fb&tokenId=79428737ea&theme=dark&size=large" 
+        width="100%" 
+        height="120px" 
+        frameBorder="0" 
+        scrolling="no"
+        allow="autoplay; encrypted-media" 
+        title="PODPLAYR Widget"
+        style={{
+          marginTop: '3rem',
+          marginBottom: '3rem',
+          border: 'none',
+          overflow: 'hidden',
+          background: 'transparent',
+          maxWidth: '800px',
+          borderRadius: '12px'
+        }}
+      ></iframe>
     </motion.div>
   );
 };
