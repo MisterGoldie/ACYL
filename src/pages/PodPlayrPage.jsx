@@ -111,14 +111,7 @@ const PodPlayrContent = () => {
         transition={{ delay: 0.7, duration: 0.6 }}
       >
         <p>
-          PODPLAYR is our innovative platform for podcast discovery and enjoyment. 
-          Designed for both casual listeners and podcast enthusiasts, PODPLAYR offers 
-          a seamless experience for exploring and enjoying audio content from creators around the world.
-        </p>
-        <p>
-          With curated collections, personalized recommendations, and an intuitive interface, 
-          PODPLAYR makes it easy to find your next favorite show. Stay connected with your 
-          favorite creators and discover new voices in the ever-expanding podcast universe.
+          PODPLAYR is a comprehensive web3 media player designed for the seamless playback of NFT audio, video, and visual content across multiple blockchain platforms. With its unique global tracking system, PODPLAYR combines play counts and likes for identical content regardless of where it's minted, creating a unified web3 music ecosystem. Discover trending content, build your personal library, and enjoy a mobile-optimized experience tailored for web3 music enthusiasts. Embed PODPLAYR widgets on your own site to showcase your favorite NFT content with style.
         </p>
       </motion.div>
       
