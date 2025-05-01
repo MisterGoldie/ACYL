@@ -52,14 +52,20 @@ const SalemTriesContent = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.5 }}
     >
-      <motion.h1 
-        className="stream-headline"
+      <motion.div 
+        className="stream-headline salem-logo-container"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
+        style={{ maxWidth: '800px', margin: '0 auto 40px', textAlign: 'center' }}
       >
-        Salem Tries
-      </motion.h1>
+        <OptimizedImage 
+          src="/images/salemtries/salemlogo.webp" 
+          alt="Salem Tries" 
+          className="salem-logo-image"
+          style={{ width: '100%', maxWidth: '600px' }}
+        />
+      </motion.div>
       
       <motion.div 
         className="stream-description"

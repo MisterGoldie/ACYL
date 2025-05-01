@@ -1,4 +1,15 @@
 /* Mobile-specific styles for SalemTriesPage only */
+
+/* Animation keyframes for mobile components */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @media screen and (max-width: 768px) {
   /* Only target the SalemTries page header */
   .site-header {
