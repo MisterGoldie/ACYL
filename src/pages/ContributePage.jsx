@@ -47,6 +47,17 @@ const Header = () => {
 
 // Separate component for the free membership card
 const MemberCard = () => {
+  const { authenticated, login } = usePrivy();
+  const [joinStatus, setJoinStatus] = useState(null);
+  
+  const handleJoin = () => {
+    if (!authenticated) {
+      login();
+    } else {
+      setJoinStatus("success");
+    }
+  };
+  
   return (
     <div className="membership-card">
       <div className="card-logo">
@@ -54,7 +65,15 @@ const MemberCard = () => {
       </div>
       <h3>ACYL Member</h3>
       <div className="price">Free</div>
-      <button className="join-button">Join</button>
+      <button 
+        className="join-button"
+        onClick={handleJoin}
+      >
+        {joinStatus === "processing" ? 'Processing...' : 'Join'}
+      </button>
+      {joinStatus === "success" && (
+        <div className="transaction-status success">Success! Welcome to ACYL!</div>
+      )}
       <p className="card-description">
         Join the community and receive updates and get access to members-only content and drops
       </p>
