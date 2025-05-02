@@ -98,17 +98,54 @@ const RadioContent = () => {
           and truly independent.
         </p>
       </motion.div>
-      <img 
-        src="/images/radio/latasha.gif" 
-        alt="Latasha" 
-        className="radio-feature-image"
+      <motion.div 
+        className="radio-gif-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.0, duration: 0.6 }}
         style={{
-          display: 'block',
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '40px',
           margin: '2.5rem auto 0 auto',
-          maxWidth: '500px',
-          borderRadius: '20px'
+          maxWidth: '1200px'
         }}
-      />
+      >
+        <OptimizedImage 
+          src="/images/radio/latasha.gif" 
+          alt="Latasha" 
+          className="radio-feature-image"
+          style={{
+            maxWidth: '350px',
+            width: '100%',
+            borderRadius: '20px',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+          }}
+        />
+        <OptimizedImage 
+          src="/images/radio/will.gif" 
+          alt="Will" 
+          className="radio-feature-image"
+          style={{
+            maxWidth: '350px',
+            width: '100%',
+            borderRadius: '20px',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+          }}
+        />
+        <OptimizedImage 
+          src="/images/radio/sazon.gif" 
+          alt="Sazon" 
+          className="radio-feature-image"
+          style={{
+            maxWidth: '350px',
+            width: '100%',
+            borderRadius: '20px',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+          }}
+        />
+      </motion.div>
     </motion.div>
   );
 };
