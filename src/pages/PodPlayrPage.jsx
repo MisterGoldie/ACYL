@@ -168,46 +168,59 @@ const PodPlayrContent = () => {
       </motion.div>
       
       <motion.div
-        className="widget-container"
+        className="podplayr-cta-container"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
         style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
           marginTop: '3rem',
           marginBottom: '3rem',
-          maxWidth: '800px',
           width: '100%',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          borderRadius: '16px',
-          padding: '1.5rem',
-          background: 'rgba(20, 10, 30, 0.3)',
-          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
+          maxWidth: '800px',
+          textAlign: 'center'
         }}
       >
-        <h3 style={{
-          fontSize: '1.2rem',
+        <h2 style={{
+          fontSize: '2rem',
           fontWeight: 'bold',
-          marginBottom: '1rem',
-          textAlign: 'center',
-          letterSpacing: '1px',
+          marginBottom: '2rem',
           color: 'rgba(255, 255, 255, 0.9)'
-        }}>FEATURED SECTION MEDIA</h3>
-        
-        <iframe 
-          src="https://podplayr.xyz/widget?contract=0x79428737e60a8a8db494229638eaa5e52874b6fb&tokenId=79428737ea&theme=dark&size=large" 
-          width="100%" 
-          height="120px" 
-          frameBorder="0" 
-          scrolling="no"
-          allow="autoplay; encrypted-media" 
-          title="PODPLAYR Widget"
+        }}>
+          Check out PODPLAYR
+        </h2>
+        <a 
+          href="https://podplayr.xyz" 
+          target="_blank" 
+          rel="noopener noreferrer"
           style={{
+            display: 'inline-block',
+            padding: '0.75rem 2.5rem',
+            backgroundColor: '#6A3DE8',
+            color: 'white',
             border: 'none',
-            overflow: 'hidden',
-            background: 'transparent',
-            borderRadius: '12px'
+            borderRadius: '50px',
+            fontSize: '1.1rem',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            textDecoration: 'none',
+            boxShadow: '0 4px 12px rgba(106, 61, 232, 0.3)',
+            transition: 'all 0.2s ease'
           }}
-        ></iframe>
+          onMouseOver={(e) => {
+            e.currentTarget.style.backgroundColor = '#7B4FFF';
+            e.currentTarget.style.transform = 'translateY(-2px)';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.backgroundColor = '#6A3DE8';
+            e.currentTarget.style.transform = 'translateY(0)';
+          }}
+        >
+          Visit PODPLAYR.xyz
+        </a>
       </motion.div>
     </motion.div>
   );
