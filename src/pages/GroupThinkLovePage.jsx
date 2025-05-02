@@ -160,7 +160,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <img src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -174,6 +174,7 @@ const Header = () => {
             <div className="dropdown-menu">
               <Link to="/contribute" className="dropdown-item">Contribute</Link>
               <Link to="/discover" className="dropdown-item">Discover</Link>
+              <Link to="/podplayr" className="dropdown-item">PODPLAYR</Link>
             </div>
           </li>
         </ul>
