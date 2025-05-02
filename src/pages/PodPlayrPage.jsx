@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import OptimizedImage from "../components/OptimizedImage";
+import OptimizedVideo from "../components/OptimizedVideo";
 import "../styles/StreamPage.css"; // Reusing Stream page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/PodPlayrPageMobile.css"; // Mobile-specific styles for PodPlayr page
@@ -88,20 +89,19 @@ const PodPlayrContent = () => {
           margin: '2rem auto'
         }}
       >
-        <video
+        <OptimizedVideo
+          src="/images/podplayr/ppintrovideo.mp4"
           autoPlay
           loop
           muted
           playsInline
+          keepPlaying={true}
           style={{
             width: '100%',
             borderRadius: '12px',
             boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
           }}
-        >
-          <source src="/images/podplayr/ppintrovideo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        />
       </motion.div>
       
       <motion.div 
@@ -129,20 +129,19 @@ const PodPlayrContent = () => {
             margin: '2rem auto'
           }}
         >
-          <video
+          <OptimizedVideo
+            src="/images/podplayr/privylogin.mp4"
             autoPlay
             loop
             muted
             playsInline
+            keepPlaying={true}
             style={{
               width: '100%',
               borderRadius: '12px',
               boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
             }}
-          >
-            <source src="/images/podplayr/privylogin.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          />
         </motion.div>
         
         <motion.div 
