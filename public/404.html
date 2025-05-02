@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACYL</title>
+  <script>
+    // Single Page App routing fix for GitHub Pages/Netlify
+    // https://github.com/rafgraph/spa-github-pages
+    // This script takes the current URL and converts the path and query
+    // string into a route that the SPA router can handle
+    (function() {
+      // Get the path from the URL
+      var path = window.location.pathname;
+      var search = window.location.search;
+      
+      // Redirect to the index.html with the full path in the URL
+      window.location.href = '/index.html' + search + 
+        (search ? '&' : '?') + 'redirect=' + encodeURIComponent(path);
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
