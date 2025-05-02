@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import OptimizedImage from "../components/OptimizedImage";
+import OptimizedVideo from "../components/OptimizedVideo";
 import "../styles/FilmPage.css"; // Reusing Film page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/IFoundItPageMobile.css"; // Mobile-specific styles for IFoundIt page
@@ -71,7 +72,38 @@ const MobileIFoundItContent = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-      ></motion.div>
+      >
+        <p>
+          FROM MOVING OUT FOR COLLEGE TO THE BIG CITY IN 2018, CHARLES FOX DOCUMENTS HIS DISCOVERY OF THE TALENTED UNDERGROUND MUSIC SCENE IN CHICAGO. A COMMUNITY THAT SEEMS TO CONTINUE GROWING.
+        </p>
+        
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          
+          <div style={{ marginTop: '1rem' }}>
+            {/* Direct Mint Button to Manifold */}
+            <a 
+              href="https://app.manifold.xyz/c/ifoundit" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{
+                display: 'inline-block',
+                padding: '0.75rem 2rem',
+                backgroundColor: '#333',
+                color: 'white',
+                border: 'none',
+                borderRadius: '50px',
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                textDecoration: 'none',
+                margin: '20px auto'
+              }}
+            >
+              Mint on Manifold
+            </a>
+          </div>
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -139,69 +171,108 @@ const IFoundItContent = () => {
           FROM MOVING OUT FOR COLLEGE TO THE BIG CITY IN 2018, CHARLES FOX DOCUMENTS HIS DISCOVERY OF THE TALENTED UNDERGROUND MUSIC SCENE IN CHICAGO. A COMMUNITY THAT SEEMS TO CONTINUE GROWING.
         </h1>
         
-        <h2 style={{ 
-          fontSize: '3rem', 
-          fontWeight: 'bold', 
-          marginTop: '3rem',
-          marginBottom: '3rem',
-          textTransform: 'uppercase'
-        }}>
-          AVAILABLE NOW
-        </h2>
-      </motion.div>
-      
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-        <OptimizedImage 
-          src="/images/ifoundit/ifiwithtext.png" 
-          alt="I Found It With Text" 
-          style={{
-            display: 'block',
-            maxWidth: '400px',
-            width: '100%'
-          }}
-        />
-        
-        <div className="film-details" style={{ textAlign: 'left' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>I Found It (2025)</h2>
-          <p style={{ fontSize: '1rem', color: '#ccc', display: 'flex', alignItems: 'center' }}>
-            <span style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              width: '24px', 
-              height: '24px', 
-              borderRadius: '50%', 
-              backgroundColor: 'white', 
-              marginRight: '0.5rem' 
-            }}>
-              <span style={{ color: 'black', fontSize: '0.7rem' }}>A</span>
-            </span>
-            ANY COLOUR YOU LIKE
-          </p>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          
           <div style={{ marginTop: '1rem' }}>
-            <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>$5.00</p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <button 
-                style={{
-                  padding: '0.75rem 2rem',
-                  backgroundColor: 'white',
-                  color: 'black',
-                  border: 'none',
-                  borderRadius: '50px',
-                  fontSize: '1rem',
-                  fontWeight: 'bold',
-                  cursor: 'pointer'
-                }}
-              >
-                Mint
-              </button>
-              <div style={{ display: 'flex', alignItems: 'center', fontSize: '0.9rem', color: '#ccc' }}>
-                <span>4 / 1000</span>
-              </div>
-            </div>
+            {/* Direct Mint Button to Manifold */}
+            <a 
+              href="https://app.manifold.xyz/c/ifoundit" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{
+                display: 'inline-block',
+                padding: '0.75rem 2rem',
+                backgroundColor: '#333',
+                color: 'white',
+                border: 'none',
+                borderRadius: '50px',
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                textDecoration: 'none',
+                margin: '20px auto'
+              }}
+            >
+              Mint on Manifold
+            </a>
           </div>
         </div>
-      </div>
+      </motion.div>
+      
+
+
+      <motion.div
+        className="ifoundit-video-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginTop: '3rem',
+          marginBottom: '3rem',
+          width: '100%',
+          maxWidth: '800px',
+          margin: '3rem auto'
+        }}
+      >
+        {/* Video with sound control - the useState for muted state */}
+        {(() => {
+          const [isMuted, setIsMuted] = React.useState(true);
+          
+          return (
+            <>
+              <OptimizedVideo
+                src="/images/ifoundit/ifisequence1.mp4"
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
+                keepPlaying={true}
+                style={{
+                  width: '100%',
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+                }}
+              />
+              
+              <button
+                onClick={() => setIsMuted(!isMuted)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginTop: '1.5rem',
+                  padding: '0.6rem 1.2rem',
+                  backgroundColor: 'rgba(50, 50, 50, 0.8)',
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  border: '1px solid rgba(100, 100, 100, 0.5)',
+                  borderRadius: '50px',
+                  fontSize: '0.9rem',
+                  fontWeight: '500',
+                  letterSpacing: '0.05em',
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
+                  transition: 'all 0.2s ease',
+                  backdropFilter: 'blur(4px)',
+                  WebkitBackdropFilter: 'blur(4px)'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(70, 70, 70, 0.9)';
+                  e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.3)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(50, 50, 50, 0.8)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.25)';
+                }}
+              >
+                {isMuted ? '🔇 Unmute Audio' : '🔊 Mute Audio'}
+              </button>
+            </>
+          );
+        })()}
+      </motion.div>
     </motion.div>
   );
 };
@@ -242,27 +313,38 @@ const IFoundItPage = () => {
 
 // Content wrapper that uses Privy hooks
 const IFoundItPageContent = () => {
+  // Check if the device is mobile
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on initial load
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   return (
-    <motion.div
-      className="film-bg"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      style={{ 
-        background: 'url("/images/ifoundit/ifibg.webp")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        minHeight: '100vh',
-        color: 'white'
-      }}
-    >
+    <div style={{ 
+      background: 'url("/images/ifoundit/ifibg.webp")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh',
+      color: 'white'
+    }}>
       <Header />
       <div className="page-content">
-        <IFoundItContent />
+        {isMobile ? <MobileIFoundItContent /> : <IFoundItContent />}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

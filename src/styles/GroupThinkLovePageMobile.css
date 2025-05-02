@@ -71,18 +71,15 @@
     word-wrap: break-word !important;
   }
   
-  /* Make background image scrollable with content */
+  /* Make background image visible the same way as DigitalDaydreamPageMobile.css */
   .film-bg {
-    min-height: 100% !important;
+    min-height: 100vh !important;
+    height: 100% !important;
     width: 100% !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    background-attachment: scroll !important; /* Changed from fixed to scroll */
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    z-index: -1 !important;
+    background-attachment: fixed !important;
   }
   
   /* Hide all other content as a fallback */
@@ -96,6 +93,21 @@
     width: 0 !important;
     overflow: hidden !important;
     position: absolute !important;
+  }
+  
+  /* COMPLETELY HIDE ALL VIDEO CONTENT ON MOBILE */
+  .groupthinklove-video-container,
+  .groupthinklove-secondary-videos,
+  video,
+  iframe {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -9999 !important;
   }
   
   /* Ensure the container allows scrolling */

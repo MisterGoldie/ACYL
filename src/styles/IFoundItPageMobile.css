@@ -28,11 +28,13 @@
   .mobile-ifoundit-content {
     position: relative !important;
     width: 100% !important;
+    height: auto !important;
     min-height: 100vh !important;
-    padding-top: 80px !important;
+    padding: 80px 0 120px !important; /* Added significant bottom padding */
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    overflow-y: visible !important;
   }
   
   /* Style the logo image - much larger */
@@ -49,14 +51,11 @@
     display: block !important;
   }
   
-  /* Add the requested text via CSS - positioned lower */
+  /* Text styling - removed absolute positioning to allow proper scrolling */
   .mobile-ifoundit-text {
-    position: absolute !important;
-    top: 260px !important; /* Increased from 120px to 260px to create more space */
-    left: 0 !important;
-    right: 0 !important;
+    position: relative !important;
     width: 85% !important;
-    margin: 0 auto !important;
+    margin: 20px auto 30px !important;
     padding: 20px !important;
     font-size: 24px !important;
     font-weight: bold !important;
@@ -67,11 +66,9 @@
     z-index: 100 !important;
   }
   
-  .mobile-ifoundit-text::after {
-    content: "FROM MOVING OUT FOR COLLEGE TO THE BIG CITY IN 2018, CHARLES FOX DOCUMENTS HIS DISCOVERY OF THE TALENTED UNDERGROUND MUSIC SCENE IN CHICAGO. A COMMUNITY THAT SEEMS TO CONTINUE GROWING." !important;
-  }
+  /* Removed ::after content to prevent duplicate text */
   
-  /* Make sure background image is visible and covers the screen */
+  /* Make sure background image is visible and covers the screen - match DigitalDaydreamPageMobile.css */
   .film-bg {
     min-height: 100vh !important;
     height: 100% !important;
@@ -93,5 +90,40 @@
     width: 0 !important;
     overflow: hidden !important;
     position: absolute !important;
+  }
+  
+  /* COMPLETELY HIDE ALL VIDEO CONTENT ON MOBILE */
+  .ifoundit-video-container,
+  video,
+  iframe {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -9999 !important;
+  }
+  
+  /* Ensure body and html are scrollable and not restricted in height */
+  body, html {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  
+  /* Make mint button fully visible and styled properly */
+  .mobile-ifoundit-text a {
+    display: inline-block !important;
+    margin: 30px auto 20px !important;
+    padding: 12px 24px !important;
+    background-color: #333 !important;
+    color: white !important;
+    border-radius: 50px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
   }
 }

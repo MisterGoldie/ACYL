@@ -78,6 +78,30 @@ const MobileDigitalDaydreamContent = () => {
         <p>
           As we navigate the ever-evolving landscape of virtual experiences, Digital Daydream offers a thought-provoking glimpse into a future where our dreams and digital lives become increasingly intertwined.
         </p>
+        
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <a 
+            href="https://app.manifold.xyz/c/digital-daydream" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="mobile-mint-button"
+            style={{
+              display: 'inline-block',
+              padding: '0.75rem 2rem',
+              backgroundColor: '#333',
+              color: 'white',
+              border: 'none',
+              borderRadius: '50px',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              margin: '20px auto'
+            }}
+          >
+            Mint on Manifold
+          </a>
+        </div>
       </motion.div>
     </motion.div>
   );
@@ -148,20 +172,10 @@ const DigitalDaydreamContent = () => {
         </p>
       </motion.div>
       
-      <OptimizedImage 
-        src="/images/digitaldaydream/ddwithtext.png" 
-        alt="Digital Daydream With Text" 
-        style={{
-          display: 'block',
-          margin: '2.5rem auto 0 auto',
-          maxWidth: '1000px',
-          width: '100%'
-        }}
-      />
+      {/* Removed ddwithtext.png image */}
       
       <div className="film-details">
         <div className="film-title-container" style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Digital Daydream (2025)</h2>
 
           <div style={{ marginTop: '1rem' }}>
             

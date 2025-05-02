@@ -56,4 +56,18 @@
     display: block !important;
     overflow-x: hidden !important;
   }
+  
+  /* COMPLETELY HIDE ALL VIDEO CONTENT ON MOBILE */
+  .sazon-video-container,
+  video,
+  iframe {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -9999 !important;
+  }
 }

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import OptimizedImage from "../components/OptimizedImage";
+import OptimizedVideo from "../components/OptimizedVideo";
 import "../styles/StreamPage.css"; // Reusing Stream page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/SazonPageMobile.css"; // Mobile-specific styles for Sazon page
@@ -80,47 +81,79 @@ const SazonContent = () => {
         />
       </motion.div>
       
-      <OptimizedImage 
-        src="/images/sazon/swsstream.png" 
-        alt="Sazon Stream" 
+      {/* Add the swstrailer1.mp4 video */}
+      <motion.div
+        className="sazon-video-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
         style={{
-          display: 'block',
-          margin: '2.5rem auto 0 auto',
-          maxWidth: '700px',
-          width: '100%'
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginTop: '3rem',
+          marginBottom: '3rem',
+          width: '100%',
+          maxWidth: '800px',
+          margin: '3rem auto'
         }}
-      />
-      
-      <div className="stream-details" style={{ textAlign: 'center', marginTop: '3rem' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Seasoning With Sazon (2025)</h2>
-        <p style={{ fontSize: '1rem', color: '#ccc' }}>ANY COLOUR YOU LIKE</p>
-        <div style={{ marginTop: '1rem' }}>
-          <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>$5.00</p>
-          <button 
-            style={{
-              padding: '0.75rem 2rem',
-              backgroundColor: 'white',
-              color: '#8B0000',
-              border: 'none',
-              borderRadius: '50px',
-              fontSize: '1rem',
-              fontWeight: 'bold',
-              cursor: 'pointer'
-            }}
-          >
-            Mint
-          </button>
-        </div>
-        
-        <div style={{ marginTop: '3rem' }}>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Stream Schedule</h3>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li style={{ margin: '0.5rem 0' }}>Wednesdays: 7PM - 9PM EST</li>
-            <li style={{ margin: '0.5rem 0' }}>Sundays: 4PM - 6PM EST</li>
-            <li style={{ margin: '0.5rem 0' }}>Special Events: Announced on Discord</li>
-          </ul>
-        </div>
-      </div>
+      >
+        {/* Video with sound control */}
+        {(() => {
+          const [isMuted, setIsMuted] = React.useState(true);
+          
+          return (
+            <>
+              <OptimizedVideo
+                src="/images/sazon/swstrailer1.mp4"
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
+                keepPlaying={true}
+                style={{
+                  width: '100%',
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+                }}
+              />
+              
+              <button
+                onClick={() => setIsMuted(!isMuted)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginTop: '1.5rem',
+                  padding: '0.6rem 1.2rem',
+                  backgroundColor: 'rgba(50, 50, 50, 0.8)',
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  border: '1px solid rgba(100, 100, 100, 0.5)',
+                  borderRadius: '50px',
+                  fontSize: '0.9rem',
+                  fontWeight: '500',
+                  letterSpacing: '0.05em',
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
+                  transition: 'all 0.2s ease',
+                  backdropFilter: 'blur(4px)',
+                  WebkitBackdropFilter: 'blur(4px)'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(70, 70, 70, 0.9)';
+                  e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.3)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(50, 50, 50, 0.8)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.25)';
+                }}
+              >
+                {isMuted ? '🔇 Unmute Audio' : '🔊 Mute Audio'}
+              </button>
+            </>
+          );
+        })()}
+      </motion.div>
     </motion.div>
   );
 };
