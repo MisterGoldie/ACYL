@@ -113,6 +113,59 @@ const PodPlayrContent = () => {
         <p>
           PODPLAYR is a comprehensive web3 media player designed for the seamless playback of NFT audio, video, and visual content across multiple blockchain platforms. With its unique global tracking system, PODPLAYR combines play counts and likes for identical content regardless of where it's minted, creating a unified web3 music ecosystem. Discover trending content, build your personal library, and enjoy a mobile-optimized experience tailored for web3 music enthusiasts. Embed PODPLAYR widgets on your own site to showcase your favorite NFT content with style.
         </p>
+        
+        <motion.div
+          className="podplayr-video-container"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '2rem',
+            marginBottom: '2rem',
+            width: '100%',
+            maxWidth: '800px',
+            margin: '2rem auto'
+          }}
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: '100%',
+              borderRadius: '12px',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+            }}
+          >
+            <source src="/images/podplayr/privylogin.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </motion.div>
+        
+        <motion.div 
+          className="stream-description"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          style={{ 
+            marginTop: '2rem',
+            maxWidth: '800px',
+            textAlign: 'left' 
+          }}
+        >
+          <p>
+            PODPLAYR offers a seamless login experience that puts you in control of your digital music collection. With a simple click, you can log in using your Farcaster account or connect your favorite crypto wallet. This hassle-free authentication keeps your liked tracks and playlists synchronized across all your devices.
+          </p>
+          <p>
+            The smart login system remembers your preferences even when you switch between devices, ensuring your favorite music is always just a tap away. For Farcaster users, PODPLAYR integrates directly with your existing account, making it even easier to jump in and start listening.
+          </p>
+          <p>
+            Your privacy and security remain a priority. PODPLAYR only requests the permissions it needs to provide you with a personalized music experience. Whether you're a web3 expert or just looking for great music, our login system keeps the technical details behind the scenes so you can focus on what matters most: enjoying your media
+          </p>
+        </motion.div>
       </motion.div>
       
       <motion.div
@@ -164,19 +217,39 @@ const PodPlayrContent = () => {
 // Main page component
 const PodPlayrPage = () => {
   return (
-    <motion.div 
-      className="page podplayr-bg"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      style={{
-        background: 'linear-gradient(to bottom, #1E1525, #2D1B69, #4B0082)',
-        minHeight: '100vh'
+    <PrivyProvider
+      appId="cm9wa9olg004yl70mwjt9n1x9"
+      config={{
+        loginMethods: ['email', 'wallet', 'google', 'sms', 'farcaster'],
+        appearance: {
+          theme: 'light',
+          accentColor: '#4B0082',
+          showWalletLoginFirst: false,
+          layout: 'modal',
+          defaultView: 'login',
+          logo: '/ppheaderlogo.png',
+          backgroundColor: '#fff',
+        },
+        embeddedWallets: {
+          createOnLogin: 'all-users',
+          noPromptOnSignature: false,
+        },
       }}
     >
-      <PodPlayrPageContent />
-    </motion.div>
+      <motion.div 
+        className="page podplayr-bg"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        style={{
+          background: 'linear-gradient(to bottom, #1E1525, #2D1B69, #4B0082)',
+          minHeight: '100vh'
+        }}
+      >
+        <PodPlayrPageContent />
+      </motion.div>
+    </PrivyProvider>
   );
 };
 
