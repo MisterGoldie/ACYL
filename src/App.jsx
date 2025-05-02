@@ -21,6 +21,19 @@ import "./styles/transitions.css";
 const AnimatedRoutes = () => {
   const location = useLocation();
   
+  // Check for redirect path in sessionStorage (for handling page refreshes)
+  React.useEffect(() => {
+    const redirectPath = sessionStorage.getItem('redirectPath');
+    if (redirectPath && redirectPath !== '/' && location.pathname === '/') {
+      // Clear the redirect path from sessionStorage
+      sessionStorage.removeItem('redirectPath');
+      // Navigate to the stored path
+      window.history.replaceState(null, '', redirectPath);
+      // Force a re-render without a full page reload
+      window.dispatchEvent(new Event('popstate'));
+    }
+  }, [location]);
+  
   // Reset scroll position on route change
   React.useEffect(() => {
     window.scrollTo(0, 0);
