@@ -219,7 +219,7 @@ const PodPlayrContent = () => {
             e.currentTarget.style.transform = 'translateY(0)';
           }}
         >
-          Visit PODPLAYR.xyz
+          Visit PODPLAYR
         </a>
       </motion.div>
     </motion.div>
