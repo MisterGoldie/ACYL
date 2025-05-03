@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import OptimizedImage from "../components/OptimizedImage";
+import OptimizedVideo from "../components/OptimizedVideo";
 import "../styles/FilmPage.css"; // Reusing Film page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/DigitalDaydreamPageMobile.css"; // Mobile-specific styles for DigitalDaydream page
@@ -170,36 +171,55 @@ const DigitalDaydreamContent = () => {
           offers a thought-provoking glimpse into a future where our dreams and digital lives 
           become increasingly intertwined.
         </p>
+        
+        {/* Direct Mint Button to Manifold - Moved up closer to text */}
+        <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+          <a 
+            href="https://app.manifold.xyz/c/digital-daydream" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style={{
+              display: 'inline-block',
+              padding: '0.75rem 2rem',
+              backgroundColor: '#333',
+              color: 'white',
+              border: 'none',
+              borderRadius: '50px',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              margin: '10px auto',
+            }}
+          >
+            Mint on Manifold
+          </a>
+        </div>
       </motion.div>
       
       {/* Removed ddwithtext.png image */}
       
       <div className="film-details">
-        <div className="film-title-container" style={{ textAlign: 'center', marginTop: '3rem' }}>
+        <div className="film-title-container" style={{ textAlign: 'center', marginTop: '1rem' }}>
 
-          <div style={{ marginTop: '1rem' }}>
+          <div style={{ marginTop: '0' }}>
             
-            {/* Direct Mint Button to Manifold */}
-            <a 
-              href="https://app.manifold.xyz/c/digital-daydream" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              style={{
-                display: 'inline-block',
-                padding: '0.75rem 2rem',
-                backgroundColor: '#333',
-                color: 'white',
-                border: 'none',
-                borderRadius: '50px',
-                fontSize: '1rem',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                margin: '20px auto',
-              }}
-            >
-              Mint on Manifold
-            </a>
+            {/* Video below mint button */}
+            <div className="dd-video-container" style={{ marginTop: '40px', maxWidth: '800px', margin: '0 auto' }}>
+              <OptimizedVideo
+                src="/images/digitaldaydream/ddsequence.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                keepPlaying={true}
+                style={{
+                  width: '100%',
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
