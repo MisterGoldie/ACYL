@@ -101,6 +101,12 @@
     visibility: hidden !important;
   }
   
+  /* Hide the isolation video container on mobile */
+  .isolation-video-container {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
   /* Make sure the background fills the whole screen */
   .film-bg {
     position: fixed !important;

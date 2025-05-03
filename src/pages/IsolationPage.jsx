@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import LoginComponent from "../components/LoginComponent";
 import MobileMenu from "../components/MobileMenu";
 import OptimizedImage from "../components/OptimizedImage";
+import OptimizedVideo from "../components/OptimizedVideo";
 import "../styles/FilmPage.css"; // Reusing Film page styles for now
 import "../styles/MobileMenu.css";
 import "../styles/IsolationPageMobile.css"; // Mobile-specific styles for Isolation page
@@ -177,7 +178,36 @@ const IsolationContent = () => {
           alt="A man attempts to meditate." 
           style={{ 
             width: '100%',
-            display: 'block'
+            display: 'block',
+            marginBottom: '20px'
+          }}
+        />
+      </div>
+      
+      {/* Isolation trailer video without mute button */}
+      <div 
+        style={{ 
+          position: 'absolute',
+          top: '55%',
+          left: '35%',
+          transform: 'translateX(-50%)',
+          zIndex: 6,
+          width: '100%',
+          maxWidth: '500px',
+          opacity: 1
+        }}
+      >
+        <OptimizedVideo
+          src="/images/isolation/isotrailer.mp4"
+          autoPlay
+          loop
+          muted={true}
+          playsInline
+          keepPlaying={true}
+          style={{
+            width: '100%',
+            borderRadius: '12px',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
           }}
         />
       </div>
