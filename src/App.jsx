@@ -15,6 +15,7 @@ import DigitalDaydreamPage from "./pages/DigitalDaydreamPage";
 import SalemTriesPage from "./pages/SalemTriesPage";
 import SazonPage from "./pages/SazonPage";
 import PodPlayrPage from "./pages/PodPlayrPage";
+import { preloadAllAssets } from "./utils/preloadAssets";
 import "./styles/transitions.css";
 
 // Animated routes wrapper
@@ -68,12 +69,39 @@ const AnimatedRoutes = () => {
   );
 };
 
-function App() {
+// Main app component
+const App = () => {
+  // State to track preloading status
+  const [assetsPreloaded, setAssetsPreloaded] = React.useState(false);
+  // Ref to prevent duplicate preloading in StrictMode
+  const preloadingStartedRef = React.useRef(false);
+  
+  // Preload assets when the app first mounts
+  React.useEffect(() => {
+    // Prevent duplicate preloading in development mode
+    if (preloadingStartedRef.current) return;
+    preloadingStartedRef.current = true;
+    
+    const preloadAssets = async () => {
+      try {
+        await preloadAllAssets();
+        setAssetsPreloaded(true);
+        console.log('All assets preloaded successfully');
+      } catch (error) {
+        console.warn('Asset preloading had some issues:', error);
+        // Still set to true so the app continues even if some assets fail
+        setAssetsPreloaded(true);
+      }
+    };
+    
+    preloadAssets();
+  }, []);
+  
   return (
     <BrowserRouter>
       <AnimatedRoutes />
     </BrowserRouter>
   );
-}
+};
 
 export default App;
