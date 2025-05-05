@@ -146,6 +146,30 @@ const RadioContent = () => {
           }}
         />
       </motion.div>
+      
+      <motion.div
+        className="mixcloud-widget-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        style={{
+          width: '100%',
+          maxWidth: '1200px',
+          margin: '3rem auto 2rem auto',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+        }}
+      >
+        <iframe 
+          width="100%" 
+          height="180" 
+          src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FACYLstudio%2Fplaylists%2Facyl-radio%2F" 
+          frameBorder="0" 
+          allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;"
+          title="ACYL Radio Mixcloud Player"
+        ></iframe>
+      </motion.div>
     </motion.div>
   );
 };

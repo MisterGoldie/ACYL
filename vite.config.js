@@ -1,20 +1,25 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import mkcert from 'vite-plugin-mkcert';
+import fs from 'fs';
+import path from 'path';
 
-// Check if HTTPS is disabled via environment variable
-const useHttps = process.env.DISABLE_HTTPS !== 'true';
+// Get the current directory
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
+// Check if certificates exist
+const certPath = path.join(__dirname, 'cert.crt');
+const keyPath = path.join(__dirname, 'cert.key');
+const certsExist = fs.existsSync(certPath) && fs.existsSync(keyPath);
 
 export default defineConfig({
-  plugins: [
-    react(),
-    // Only use mkcert when HTTPS is enabled
-    useHttps ? mkcert() : null
-  ].filter(Boolean),
+  plugins: [react()],
   server: {
     port: 3000,
     allowedHosts: ["1d83d49991eb.ngrok.app"],
-    https: useHttps, // Enable HTTPS conditionally
+    https: certsExist ? {
+      cert: fs.readFileSync(certPath),
+      key: fs.readFileSync(keyPath)
+    } : false,
   },
   preview: {
     port: 3000
