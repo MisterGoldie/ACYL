@@ -204,21 +204,64 @@ const DigitalDaydreamContent = () => {
 
           <div style={{ marginTop: '0' }}>
             
-            {/* Video below mint button */}
+            {/* Video below mint button with sound control */}
             <div className="dd-video-container" style={{ marginTop: '40px', maxWidth: '800px', margin: '0 auto' }}>
-              <OptimizedVideo
-                src="/images/digitaldaydream/ddsequence.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                keepPlaying={true}
-                style={{
-                  width: '100%',
-                  borderRadius: '12px',
-                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
-                }}
-              />
+              {(() => {
+                const [isMuted, setIsMuted] = React.useState(true);
+                
+                return (
+                  <>
+                    <OptimizedVideo
+                      src="/images/digitaldaydream/ddsequence.mp4"
+                      autoPlay
+                      loop
+                      muted={isMuted}
+                      playsInline
+                      keepPlaying={true}
+                      style={{
+                        width: '100%',
+                        borderRadius: '12px',
+                        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)'
+                      }}
+                    />
+                    
+                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                      <button
+                        onClick={() => setIsMuted(!isMuted)}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          marginTop: '1.5rem',
+                          padding: '0.6rem 1.2rem',
+                          backgroundColor: 'rgba(50, 50, 50, 0.8)',
+                          color: 'rgba(255, 255, 255, 0.9)',
+                          border: '1px solid rgba(100, 100, 100, 0.5)',
+                          borderRadius: '50px',
+                          fontSize: '0.9rem',
+                          fontWeight: '500',
+                          letterSpacing: '0.05em',
+                          cursor: 'pointer',
+                          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
+                          transition: 'all 0.2s ease',
+                          backdropFilter: 'blur(4px)',
+                          WebkitBackdropFilter: 'blur(4px)'
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.backgroundColor = 'rgba(70, 70, 70, 0.9)';
+                          e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.3)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.backgroundColor = 'rgba(50, 50, 50, 0.8)';
+                          e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.25)';
+                        }}
+                      >
+                        {isMuted ? '🔇 Unmute Audio' : '🔊 Mute Audio'}
+                      </button>
+                    </div>
+                  </>
+                );
+              })()}
             </div>
           </div>
         </div>
