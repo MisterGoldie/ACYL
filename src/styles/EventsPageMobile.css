@@ -84,11 +84,15 @@
   
   .mobile-events-description p {
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-align: center;
     color: white;
+    font-weight: 900;
+    display: block;
+    width: 100%;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-weight: 500;
+    font-family: 'Inter', Arial, sans-serif;
   }
   
   /* Mobile film posters grid */

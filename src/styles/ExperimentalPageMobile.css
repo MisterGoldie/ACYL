@@ -63,11 +63,15 @@
   
   .mobile-experimental-description p {
     font-size: 1.1rem !important;
-    line-height: 1.6 !important;
-    margin-bottom: 20px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
     color: white !important;
+    font-weight: 900 !important;
+    display: block !important;
+    width: 100% !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
-    font-weight: 500 !important;
+    font-family: 'Inter', Arial, sans-serif !important;
     white-space: normal !important; /* Ensure text wraps properly */
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;

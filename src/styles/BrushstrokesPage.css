@@ -60,8 +60,10 @@
 
 .brushstrokes-description p {
   margin-bottom: 25px;
-  font-weight: 500;
+  font-weight: 900;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.7;
 }
 
 /* Mobile styles */
