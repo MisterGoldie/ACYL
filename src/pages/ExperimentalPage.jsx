@@ -7,6 +7,7 @@ import MobileMenu from "../components/MobileMenu";
 import OptimizedImage from "../components/OptimizedImage";
 import OptimizedVideo from "../components/OptimizedVideo";
 import "../styles/ExperimentalPage.css";
+import "../styles/ExperimentalPageMobile.css";
 import "../styles/MobileMenu.css";
 
 const Header = () => {

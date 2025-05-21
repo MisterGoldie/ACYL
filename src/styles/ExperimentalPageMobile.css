@@ -1,0 +1,140 @@
+/* Mobile-specific styles for ExperimentalPage only */
+
+/* Animation keyframes for mobile components */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+  /* Basic header styling */
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 2000 !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+  }
+  
+  /* Style the mobile content container - ensure it's scrollable */
+  .mobile-experimental-content {
+    position: relative !important;
+    width: 100% !important;
+    padding: 60px 0 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    overflow-y: auto !important;
+  }
+  
+  /* Style the headline */
+  .mobile-experimental-headline {
+    font-size: 28px !important;
+    text-align: center !important;
+    margin: 0 auto 30px auto !important;
+    padding: 0 15px !important;
+    width: 90% !important;
+    color: white !important;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8) !important;
+    font-family: 'Instrument Serif', serif !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Style the text paragraphs */
+  .mobile-experimental-description {
+    position: relative !important;
+    width: 85% !important;
+    margin: 10px auto 80px !important; /* Added bottom margin for scrolling space */
+    padding: 10px !important;
+    text-align: center !important;
+    color: white !important;
+    z-index: 100 !important;
+    max-height: none !important; /* Ensure no height restriction */
+    overflow: visible !important;
+  }
+  
+  .mobile-experimental-description p {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+    font-weight: 500 !important;
+    white-space: normal !important; /* Ensure text wraps properly */
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+  
+  /* Make background image visible */
+  .experimental-bg {
+    min-height: 100vh !important;
+    height: 100% !important;
+    width: 100% !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+  }
+  
+  /* Hide desktop content */
+  .experimental-content,
+  .experimental-headline,
+  .experimental-description {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+  }
+  
+  /* COMPLETELY HIDE ALL VIDEO CONTENT ON MOBILE */
+  .experimental-video-container,
+  video,
+  iframe {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -9999 !important;
+  }
+  
+  /* Ensure the container allows scrolling */
+  body, html {
+    display: block !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+  
+  /* Make sure the page content is not fixed */
+  .page-content {
+    overflow: auto !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    position: relative !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mobile-experimental-headline {
+    font-size: 24px !important;
+  }
+  
+  .mobile-experimental-description p {
+    font-size: 1rem !important;
+  }
+}

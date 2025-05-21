@@ -7,6 +7,7 @@ import MobileMenu from "../components/MobileMenu";
 import OptimizedImage from "../components/OptimizedImage";
 import OptimizedVideo from "../components/OptimizedVideo";
 import "../styles/CyberJamPage.css";
+import "../styles/CyberJamPageMobile.css";
 import "../styles/MobileMenu.css";
 
 const Header = () => {
@@ -60,7 +61,7 @@ const MobileCyberJamContent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        CyberJam: Digital Music Festival
+        CyberJam
       </motion.h1>
       
       <motion.div 
