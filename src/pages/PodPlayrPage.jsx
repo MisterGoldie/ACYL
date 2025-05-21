@@ -35,6 +35,7 @@ const Header = () => {
             <div className="dropdown-menu">
               <Link to="/contribute" className="dropdown-item">Contribute</Link>
               <Link to="/discover" className="dropdown-item">Discover</Link>
+              <Link to="/events" className="dropdown-item">Events</Link>
               <Link to="/podplayr" className="dropdown-item active">PODPLAYR</Link>
             </div>
           </li>

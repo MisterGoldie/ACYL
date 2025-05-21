@@ -15,6 +15,11 @@ import DigitalDaydreamPage from "./pages/DigitalDaydreamPage";
 import SalemTriesPage from "./pages/SalemTriesPage";
 import SazonPage from "./pages/SazonPage";
 import PodPlayrPage from "./pages/PodPlayrPage";
+import EventsPage from "./pages/EventsPage";
+import BrushstrokesPage from "./pages/BrushstrokesPage";
+import ExperimentalPage from "./pages/ExperimentalPage";
+import DecentralympicsPage from "./pages/DecentralympicsPage";
+import CyberJamPage from "./pages/CyberJamPage";
 import { preloadAllAssets } from "./utils/preloadAssets";
 import "./styles/transitions.css";
 
@@ -61,6 +66,11 @@ const AnimatedRoutes = () => {
             <Route path="/salemtries" element={<SalemTriesPage />} />
             <Route path="/sazon" element={<SazonPage />} />
             <Route path="/podplayr" element={<PodPlayrPage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/brushstrokes" element={<BrushstrokesPage />} />
+            <Route path="/experimental" element={<ExperimentalPage />} />
+            <Route path="/decentralympics" element={<DecentralympicsPage />} />
+            <Route path="/cyberjam" element={<CyberJamPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </AnimatePresence>

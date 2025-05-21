@@ -15,11 +15,15 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    allowedHosts: ["1d83d49991eb.ngrok.app"],
-    https: certsExist ? {
-      cert: fs.readFileSync(certPath),
-      key: fs.readFileSync(keyPath)
-    } : false,
+    strictPort: true,
+    cors: true,
+    origin: 'https://79b769097498.ngrok.app',
+    proxy: {
+      '/.websocket': {
+        target: 'ws://localhost:3000',
+        ws: true
+      }
+    }
   },
   preview: {
     port: 3000

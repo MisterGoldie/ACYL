@@ -32,7 +32,8 @@ const Header = () => {
             <Link to="#">More <span className="dropdown-arrow">▼</span></Link>
             <div className="dropdown-menu">
               <Link to="/contribute" className="dropdown-item">Contribute</Link>
-              <Link to="/discover" className="dropdown-item">Discover</Link>
+              <Link to="/discover" className="dropdown-item active">Discover</Link>
+              <Link to="/events" className="dropdown-item">Events</Link>
               <Link to="/podplayr" className="dropdown-item">PODPLAYR</Link>
             </div>
           </li>

@@ -1,0 +1,101 @@
+/* Import the base styles and fonts */
+@import './HomePage.css';
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
+
+.events-bg {
+  /* Use the WebP version with PNG fallback */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/events/eventpagebg.webp');
+  /* Fallback for browsers that don't support WebP */
+  @supports not (background-image: url('/images/events/eventpagebg.webp')) {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/events/eventpagebg.png');
+  }
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+.events-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.events-headline {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.events-headline h1 {
+  font-family: 'Instrument Serif', serif !important;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+.events-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 60px;
+  max-width: 900px;
+}
+
+.events-description p {
+  margin-bottom: 25px;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Film posters grid styles */
+.film-posters-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 25px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.film-poster-link {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.film-poster-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.film-poster-link:hover .film-poster-image {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}

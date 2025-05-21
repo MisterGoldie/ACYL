@@ -1,0 +1,83 @@
+/* Mobile-specific styles for Events page */
+
+/* Animation keyframes for mobile components */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+  /* Basic header styling */
+  .events-bg .site-header {
+    position: relative;
+    width: 100%;
+    z-index: 2000;
+    background-color: transparent;
+  }
+  
+  /* Mobile-specific component styling */
+  .mobile-events-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0 20px 0;
+    width: 100%;
+    position: relative;
+  }
+  
+  .mobile-events-headline {
+    font-size: 28px;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    padding: 0 15px;
+    width: 90%;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    font-family: 'Instrument Serif', serif !important;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .mobile-events-description {
+    width: 85%;
+    margin: 0 auto;
+  }
+  
+  .mobile-events-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+  }
+  
+  /* Mobile film posters grid */
+  .film-posters-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 90%;
+    margin: 20px auto 40px;
+    padding: 0;
+  }
+  
+  .film-poster-link {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mobile-events-headline {
+    font-size: 24px;
+  }
+  
+  .mobile-events-description p {
+    font-size: 1rem;
+  }
+}
