@@ -70,19 +70,11 @@ const MobileExperimentalContent = () => {
         transition={{ delay: 0.6, duration: 0.6 }}
       >
         <p>
-          Experimental is ACYL's flagship showcase of avant-garde and boundary-pushing 
-          media from emerging creators. This event series explores the intersection of 
-          technology, art, and storytelling in bold new ways.
-        </p>
-        <p>
-          Each edition features a curated selection of works that challenge conventional 
-          formats and narrative structures, inviting audiences to experience media that 
-          defies categorization and reimagines what's possible in digital expression.
-        </p>
-        <p>
-          From interactive installations and immersive audio experiences to algorithmic 
-          filmmaking and AI-generated art, Experimental creates space for radical innovation 
-          and critical dialogue about the future of media creation and consumption.
+          Hosted at the iconic Angelika Theater in SoHo, The NYC Experimental Showcase was an evening dedicated to the bold,
+          the strange, and the beautifully independent. Following an open call that drew over 100 submissions from around the
+          world, curators William Ojeda and Jamee Cornelia handpicked a genre-spanning lineup. From raw
+          documentaries and surreal animations to AI-driven experiments and unconventional narratives. Every frame challenged
+          expectations. Every story pushed boundaries. It was a cinematic glimpse into the future of independent film.
         </p>
       </motion.div>
     </motion.div>
@@ -114,21 +106,11 @@ const ExperimentalContent = () => {
         transition={{ delay: 0.6, duration: 0.6 }}
       >
         <p>
-          Experimental is ACYL's flagship showcase of avant-garde and boundary-pushing 
-          media from emerging creators. This event series explores the intersection of 
-          technology, art, and storytelling in bold new ways.
-        </p>
-        
-        <p>
-          Each edition features a curated selection of works that challenge conventional 
-          formats and narrative structures, inviting audiences to experience media that 
-          defies categorization and reimagines what's possible in digital expression.
-        </p>
-        
-        <p>
-          From interactive installations and immersive audio experiences to algorithmic 
-          filmmaking and AI-generated art, Experimental creates space for radical innovation 
-          and critical dialogue about the future of media creation and consumption.
+          Hosted at the iconic Angelika Theater in SoHo, The NYC Experimental Showcase was an evening dedicated to the bold,
+          the strange, and the beautifully independent. Following an open call that drew over 100 submissions from around the
+          world, curators William Ojeda and Jamee Cornelia handpicked a genre-spanning lineup. From raw
+          documentaries and surreal animations to AI-driven experiments and unconventional narratives. Every frame challenged
+          expectations. Every story pushed boundaries. It was a cinematic glimpse into the future of independent film.
         </p>
       </motion.div>
       
