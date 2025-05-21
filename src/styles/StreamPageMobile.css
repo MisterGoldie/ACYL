@@ -41,7 +41,7 @@
   
   /* Adjust content spacing */
   .stream-bg .page-content {
-    padding-top: 20px !important;
+    padding-top: 80px !important; /* Increased from 20px to 80px to bring content down */
     margin-top: 0 !important;
   }
   
@@ -50,6 +50,21 @@
     padding: 1rem !important;
     text-align: center;
     width: 100%;
+    padding-top: 40px !important; /* Added additional top padding */
+  }
+  
+  /* Add consistent spacing between headline and description (60px) */
+  .stream-headline {
+    font-size: 28px;
+    text-align: center;
+    margin: 0 auto 60px auto !important; /* 60px spacing between title and paragraph */
+    padding: 0 15px;
+    width: 90%;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    font-family: 'Instrument Serif', serif !important;
+    font-weight: 700;
+    padding-top: 20px !important; /* Added padding to the title itself */
   }
   
   /* Adjust space between description text and images */
