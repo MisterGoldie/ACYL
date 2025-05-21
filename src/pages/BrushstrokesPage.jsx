@@ -165,7 +165,7 @@ const BrushstrokesContent = () => {
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  {isMuted ? 'Unmute Video' : 'Mute Video'}
+                  {isMuted ? '🔇 Unmute Video' : '🔊 Mute Video'}
                 </button>
               </div>
             </>
