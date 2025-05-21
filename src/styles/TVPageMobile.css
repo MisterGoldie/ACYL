@@ -20,6 +20,18 @@
     padding: 1rem !important;
     text-align: center;
     width: 100%;
+    margin-top: 40px !important; /* Add more space at the top of content */
+  }
+  
+  /* Add more space above the title and increase bottom margin */
+  .tv-headline {
+    margin-top: 40px !important;
+    margin-bottom: 60px !important; /* Increased from 40px to 60px */
+  }
+  
+  /* Ensure paragraph text has proper spacing */
+  .tv-description p {
+    margin-bottom: 1.5rem !important;
   }
   
   /* Ensure images are responsive */

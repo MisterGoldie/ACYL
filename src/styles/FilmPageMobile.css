@@ -33,7 +33,7 @@
   .mobile-film-headline {
     font-size: 28px;
     text-align: center;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 60px auto; /* Increased from 30px to 60px */
     padding: 0 15px;
     width: 90%;
     color: white;

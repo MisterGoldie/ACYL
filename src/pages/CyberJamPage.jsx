@@ -193,42 +193,54 @@ const CyberJamContent = () => {
 
 // Main page component
 const CyberJamPage = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on initial load
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   return (
     <PrivyProvider
-      appId="clqgp1gk500tml80fpwwjbj4p"
+      appId="cm9wa9olg004yl70mwjt9n1x9"
       config={{
-        loginMethods: ['email', 'wallet'],
+        loginMethods: ['email', 'wallet', 'google', 'sms', 'farcaster'],
         appearance: {
-          theme: 'dark',
-          accentColor: '#676FFF',
-          logo: 'https://acyl.xyz/logo.png',
+          theme: 'light',
+          accentColor: '#0f62fe',
+          showWalletLoginFirst: false,
+          layout: 'modal',
+          defaultView: 'login',
+          logo: '/acylprivylogo.png',
+          backgroundColor: '#fff',
         },
         embeddedWallets: {
           createOnLogin: 'all-users',
+          noPromptOnSignature: false,
         },
       }}
     >
-      <CyberJamPageContent />
+      <motion.div 
+        className="cyberjam-bg"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Header />
+        {isMobile ? <MobileCyberJamContent /> : <CyberJamContent />}
+      </motion.div>
     </PrivyProvider>
-  );
-};
-
-// Content wrapper that uses Privy hooks
-const CyberJamPageContent = () => {
-  // Determine if we're on mobile
-  const isMobile = window.innerWidth <= 768;
-  
-  return (
-    <motion.div 
-      className="cyberjam-bg"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <Header />
-      {isMobile ? <MobileCyberJamContent /> : <CyberJamContent />}
-    </motion.div>
   );
 };
 

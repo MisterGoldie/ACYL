@@ -307,13 +307,27 @@ const DigitalDaydreamPage = () => {
 
 // Content wrapper that uses Privy hooks
 const DigitalDaydreamPageContent = () => {
+  // Check if the device is mobile
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on initial load
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   return (
-    <motion.div
+    <div 
       className="film-bg"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
       style={{ 
         background: 'url("/images/digitaldaydream/ddbg.webp")',
         backgroundSize: 'cover',
@@ -325,9 +339,9 @@ const DigitalDaydreamPageContent = () => {
     >
       <Header />
       <div className="page-content">
-        <DigitalDaydreamContent />
+        {isMobile ? <MobileDigitalDaydreamContent /> : <DigitalDaydreamContent />}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

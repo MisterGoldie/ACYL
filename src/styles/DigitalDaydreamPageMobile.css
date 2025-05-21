@@ -27,8 +27,13 @@
   .mobile-digitaldaydream-content {
     position: relative !important;
     width: 100% !important;
+    height: auto !important;
     min-height: 100vh !important;
-    padding-top: 80px !important;
+    padding: 80px 0 120px !important; /* Match IFoundIt page padding */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    overflow-y: visible !important;
   }
   
   /* Style the title image */
@@ -50,9 +55,9 @@
   .mobile-digitaldaydream-text {
     position: relative !important;
     width: 85% !important;
-    margin: 20px auto !important;
-    padding: 10px !important;
-    font-size: 20px !important;
+    margin: 20px auto 30px !important;
+    padding: 20px !important;
+    font-size: 24px !important;
     font-weight: bold !important;
     text-align: center !important;
     color: white !important;
@@ -62,7 +67,7 @@
   }
   
   .mobile-digitaldaydream-text p {
-    margin-bottom: 16px !important;
+    margin-bottom: 24px !important;
   }
   
   /* Style the mint button */
@@ -80,7 +85,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
   }
   
-  /* Make sure background image is visible and covers the screen */
+  /* Make background image visible the same way as GroupThinkLovePageMobile.css */
   .film-bg {
     min-height: 100vh !important;
     height: 100% !important;
@@ -110,9 +115,20 @@
     position: absolute !important;
   }
   
-  /* Ensure the container starts at the top */
-  body {
+  /* Ensure the container allows scrolling */
+  body, html {
     display: block !important;
     overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+  
+  /* Make sure the page content is not fixed */
+  .page-content {
+    overflow: auto !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    position: relative !important;
   }
 }
