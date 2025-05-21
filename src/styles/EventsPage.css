@@ -102,15 +102,15 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Hover text overlay for film posters */
-.film-posters-grid .film-poster-link {
+/* Hover text overlay for film posters - only on events page */
+.events-content .film-posters-grid .film-poster-link {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
 }
 
 /* First poster (Brushstrokes) */
-.film-posters-grid .film-poster-link:first-child::after {
+.events-content .film-posters-grid .film-poster-link:first-child::after {
   content: 'BRUSHSTROKES';
   position: absolute;
   top: 0;
@@ -136,7 +136,7 @@
 }
 
 /* Second poster (Experimental) */
-.film-posters-grid .film-poster-link:nth-child(2)::after {
+.events-content .film-posters-grid .film-poster-link:nth-child(2)::after {
   content: 'EXPERIMENTAL (NY)';
   position: absolute;
   top: 0;
@@ -162,7 +162,7 @@
 }
 
 /* Third poster (Decentralympics) */
-.film-posters-grid .film-poster-link:nth-child(3)::after {
+.events-content .film-posters-grid .film-poster-link:nth-child(3)::after {
   content: 'DECENTRALYMPICS';
   position: absolute;
   top: 0;
@@ -188,7 +188,7 @@
 }
 
 /* Fourth poster (Cyberjam) */
-.film-posters-grid .film-poster-link:nth-child(4)::after {
+.events-content .film-posters-grid .film-poster-link:nth-child(4)::after {
   content: 'CYBERJAM';
   position: absolute;
   top: 0;
@@ -213,6 +213,6 @@
   box-sizing: border-box;
 }
 
-.film-posters-grid .film-poster-link:hover::after {
+.events-content .film-posters-grid .film-poster-link:hover::after {
   opacity: 1;
 }

@@ -23,17 +23,15 @@
     background-color: rgba(0, 0, 0, 0.7) !important;
   }
   
-  /* Style the mobile content container with text */
+  /* Style the mobile content container - ensure it's scrollable */
   .mobile-digitaldaydream-content {
     position: relative !important;
     width: 100% !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    padding: 80px 0 120px !important; /* Match IFoundIt page padding */
+    padding: 60px 0 40px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    overflow-y: visible !important;
+    overflow-y: auto !important;
   }
   
   /* Style the title image */
@@ -55,19 +53,24 @@
   .mobile-digitaldaydream-text {
     position: relative !important;
     width: 85% !important;
-    margin: 20px auto 30px !important;
-    padding: 20px !important;
-    font-size: 24px !important;
+    margin: 10px auto 80px !important; /* Added bottom margin for scrolling space */
+    padding: 10px !important;
+    font-size: 18px !important; /* Slightly smaller font for more text visibility */
     font-weight: bold !important;
     text-align: center !important;
     color: white !important;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
     line-height: 1.4 !important;
     z-index: 100 !important;
+    max-height: none !important; /* Ensure no height restriction */
+    overflow: visible !important;
   }
   
   .mobile-digitaldaydream-text p {
-    margin-bottom: 24px !important;
+    margin-bottom: 16px !important;
+    white-space: normal !important; /* Ensure text wraps properly */
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
   }
   
   /* Style the mint button */
