@@ -21,6 +21,36 @@
     z-index: 2000 !important;
     background-color: rgba(0, 0, 0, 0.7) !important;
   }
+
+  /* Ensure header is properly laid out with centered login button */
+  .site-header {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    align-items: center !important;
+    padding: 0.5rem 1rem !important;
+    position: relative !important;
+    width: 100% !important;
+    z-index: 2000 !important;
+  }
+  
+  /* Position the logo on the left */
+  .site-header .header-logo {
+    grid-column: 1 !important;
+    justify-self: start !important;
+  }
+  
+  /* Center the login button */
+  .site-header .auth-section {
+    grid-column: 2 !important;
+    justify-self: center !important;
+  }
+  
+  /* Position the hamburger menu on the right */
+  .site-header .mobile-menu-container {
+    grid-column: 3 !important;
+    justify-self: end !important;
+  }
+
   
   /* Style the mobile content container - ensure it's scrollable */
   .mobile-cyberjam-content {
