@@ -65,7 +65,7 @@ const PodPlayrContent = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        style={{ maxWidth: '800px', margin: '0 auto 40px', textAlign: 'center' }}
+        style={{ maxWidth: '800px', margin: '0 auto 20px', textAlign: 'center' }}
       >
         <OptimizedImage 
           src="/images/podplayr/pptextlogo.webp" 
@@ -75,19 +75,30 @@ const PodPlayrContent = () => {
         />
       </motion.div>
       
+      <motion.div 
+        className="mobile-podplayr-secondary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/podplayr/ppmobile1.webp" 
+          alt="PODPLAYR Mobile Image" 
+          className="mobile-ppmobile1-image"
+        />
+      </motion.div>
+      
       <motion.div
         className="podplayr-video-container"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
+        transition={{ delay: 0.55, duration: 0.6 }}
         style={{
           display: 'flex',
           justifyContent: 'center',
-          marginTop: '2rem',
-          marginBottom: '2rem',
           width: '100%',
           maxWidth: '800px',
-          margin: '2rem auto'
+          margin: '0 auto 1.5rem'
         }}
       >
         <OptimizedVideo
@@ -159,9 +170,24 @@ const PodPlayrContent = () => {
           <p>
             PODPLAYR offers a seamless login experience that puts you in control of your digital music collection. With a simple click, you can log in using your Farcaster account or connect your favorite crypto wallet. This hassle-free authentication keeps your liked tracks and playlists synchronized across all your devices.
           </p>
+          
+          <motion.div 
+            className="mobile-podplayr-tertiary-image"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+          >
+            <OptimizedImage 
+              src="/images/podplayr/ppmobile2.webp" 
+              alt="PODPLAYR Mobile Image 2" 
+              className="mobile-ppmobile2-image"
+            />
+          </motion.div>
+          
           <p>
             The smart login system remembers your preferences even when you switch between devices, ensuring your favorite music is always just a tap away. For Farcaster users, PODPLAYR integrates directly with your existing account, making it even easier to jump in and start listening.
           </p>
+          
           <p>
             Your privacy and security remain a priority. PODPLAYR only requests the permissions it needs to provide you with a personalized music experience. Whether you're a web3 expert or just looking for great music, our login system keeps the technical details behind the scenes so you can focus on what matters most: enjoying your media
           </p>

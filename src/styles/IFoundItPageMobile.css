@@ -93,6 +93,7 @@
     width: 100% !important;
     height: auto !important;
     display: block !important;
+    border-radius: 12px !important;
     animation: fadeIn 0.8s ease-in-out !important;
   }
   
@@ -171,6 +172,7 @@
     width: 100% !important;
     height: auto !important;
     display: block !important;
+    border-radius: 12px !important;
     animation: fadeIn 0.8s ease-in-out !important;
   }
   
