@@ -75,7 +75,35 @@
     display: block !important;
   }
   
-  /* Image removed from mobile version */
+  /* Style for the gtlmobile1 image */
+  .mobile-gtl-secondary-image {
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 0 auto 30px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-gtlmobile1-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+
+  /* Style for the gtlmobile2 image */
+  .mobile-gtl-tertiary-image {
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: -40px auto 0px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-gtlmobile2-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
   
   /* Style the text paragraphs */
   .mobile-gtl-text {

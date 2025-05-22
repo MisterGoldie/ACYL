@@ -71,7 +71,7 @@
   .mobile-ifoundit-logo {
     width: 95% !important;
     max-width: 600px !important;
-    margin: 0 auto 50px !important;
+    margin: 0 auto 60px !important;
     z-index: 100 !important;
   }
   
@@ -79,6 +79,21 @@
     width: 100% !important;
     height: auto !important;
     display: block !important;
+  }
+  
+  /* Style for the ifimobile1 image */
+  .mobile-ifoundit-secondary-image {
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 0 auto 30px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-ifimobile1-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    animation: fadeIn 0.8s ease-in-out !important;
   }
   
   /* Text styling - removed absolute positioning to allow proper scrolling */
@@ -144,10 +159,25 @@
     overflow-y: auto !important;
   }
   
+  /* Style for the ifimobile2 image - exactly matching ifimobile1 */
+  .mobile-ifoundit-tertiary-image {
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 30px auto 30px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-ifimobile2-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
   /* Make mint button fully visible and styled properly */
   .mobile-ifoundit-text a {
     display: inline-block !important;
-    margin: 30px auto 20px !important;
+    margin: 20px auto 20px !important;
     padding: 12px 24px !important;
     background-color: #333 !important;
     color: white !important;

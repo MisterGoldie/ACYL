@@ -17,7 +17,7 @@ export default defineConfig({
     port: 3000,
     strictPort: true,
     cors: true,
-    origin: 'https://5068327a348f.ngrok.app',
+    origin: 'https://618a916d489d.ngrok.app',
     proxy: {
       '/.websocket': {
         target: 'ws://localhost:3000',

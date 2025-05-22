@@ -69,6 +69,18 @@ const MobileDigitalDaydreamContent = () => {
         />
       </motion.div>
       <motion.div 
+        className="mobile-digitaldaydream-secondary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/digitaldaydream/ddmobile1.webp" 
+          alt="Digital Daydream Mobile Image" 
+          className="mobile-ddmobile1-image"
+        />
+      </motion.div>
+      <motion.div 
         className="mobile-digitaldaydream-text"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -80,30 +92,49 @@ const MobileDigitalDaydreamContent = () => {
         <p>
           As we navigate the ever-evolving landscape of virtual experiences, Digital Daydream offers a thought-provoking glimpse into a future where our dreams and digital lives become increasingly intertwined.
         </p>
-        
-        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-          <a 
-            href="https://app.manifold.xyz/c/digital-daydream" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="mobile-mint-button"
-            style={{
-              display: 'inline-block',
-              padding: '0.75rem 2rem',
-              backgroundColor: '#333',
-              color: 'white',
-              border: 'none',
-              borderRadius: '50px',
-              fontSize: '1rem',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              textDecoration: 'none',
-              margin: '20px auto'
-            }}
-          >
-            Mint on Manifold
-          </a>
-        </div>
+      </motion.div>
+      
+      <motion.div 
+        className="mobile-digitaldaydream-tertiary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/digitaldaydream/ddmobile2.webp" 
+          alt="Digital Daydream Mobile Image 2" 
+          className="mobile-ddmobile2-image"
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="mobile-mint-button-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        style={{ textAlign: 'center', marginTop: '1rem' }}
+      >
+        <a 
+          href="https://app.manifold.xyz/c/digital-daydream" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="mobile-mint-button"
+          style={{
+            display: 'inline-block',
+            padding: '0.75rem 2rem',
+            backgroundColor: '#333',
+            color: 'white',
+            border: 'none',
+            borderRadius: '50px',
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            textDecoration: 'none',
+            margin: '20px auto'
+          }}
+        >
+          Mint on Manifold
+        </a>
       </motion.div>
     </motion.div>
   );
@@ -326,17 +357,14 @@ const DigitalDaydreamPageContent = () => {
   }, []);
   
   return (
-    <div 
-      className="film-bg"
-      style={{ 
-        background: 'url("/images/digitaldaydream/ddbg.webp")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        minHeight: '100vh',
-        color: 'white'
-      }}
-    >
+    <div style={{ 
+      background: 'url("/images/digitaldaydream/ddbg.webp")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh',
+      color: 'white'
+    }}>
       <Header />
       <div className="page-content">
         {isMobile ? <MobileDigitalDaydreamContent /> : <DigitalDaydreamContent />}

@@ -69,6 +69,18 @@ const MobileIFoundItContent = () => {
         />
       </motion.div>
       <motion.div 
+        className="mobile-ifoundit-secondary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/ifoundit/ifimobile1.webp" 
+          alt="I Found It Mobile Image" 
+          className="mobile-ifimobile1-image"
+        />
+      </motion.div>
+      <motion.div 
         className="mobile-ifoundit-text"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -77,32 +89,50 @@ const MobileIFoundItContent = () => {
         <p>
           FROM MOVING OUT FOR COLLEGE TO THE BIG CITY IN 2018, CHARLES FOX DOCUMENTS HIS DISCOVERY OF THE TALENTED UNDERGROUND MUSIC SCENE IN CHICAGO. A COMMUNITY THAT SEEMS TO CONTINUE GROWING.
         </p>
-        
-        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-          
-          <div style={{ marginTop: '1rem' }}>
-            {/* Direct Mint Button to Manifold */}
-            <a 
-              href="https://app.manifold.xyz/c/ifoundit" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              style={{
-                display: 'inline-block',
-                padding: '0.75rem 2rem',
-                backgroundColor: '#333',
-                color: 'white',
-                border: 'none',
-                borderRadius: '50px',
-                fontSize: '1rem',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                margin: '20px auto'
-              }}
-            >
-              Mint on Manifold
-            </a>
-          </div>
+      </motion.div>
+      
+      <motion.div 
+        className="mobile-ifoundit-tertiary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/ifoundit/ifimobile2.webp" 
+          alt="I Found It Mobile Image 2" 
+          className="mobile-ifimobile2-image"
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="mobile-ifoundit-button-container" 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        style={{ textAlign: 'center', marginTop: '1rem' }}
+      >
+        <div style={{ marginTop: '1rem' }}>
+          {/* Direct Mint Button to Manifold */}
+          <a 
+            href="https://app.manifold.xyz/c/ifoundit" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style={{
+              display: 'inline-block',
+              padding: '0.75rem 2rem',
+              backgroundColor: '#333',
+              color: 'white',
+              border: 'none',
+              borderRadius: '50px',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              margin: '20px auto'
+            }}
+          >
+            Mint on Manifold
+          </a>
         </div>
       </motion.div>
     </motion.div>

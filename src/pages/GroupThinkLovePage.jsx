@@ -32,6 +32,18 @@ const MobileGroupThinkLoveContent = () => {
         />
       </motion.div>
       <motion.div 
+        className="mobile-gtl-secondary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/groupthinklove/gtlmobile1.webp" 
+          alt="Group Think Love Mobile Image" 
+          className="mobile-gtlmobile1-image"
+        />
+      </motion.div>
+      <motion.div 
         className="mobile-gtl-text"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -45,8 +57,28 @@ const MobileGroupThinkLoveContent = () => {
           familial successor in human evolution. Crafted entirely through AI tools, it simultaneously references 
           pivotal moments and ideas from AI culture itself, embodying the very subject it critiques.
         </p>
-        
-        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+      </motion.div>
+      
+      <motion.div 
+        className="mobile-gtl-tertiary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/groupthinklove/gtlmobile2.webp" 
+          alt="Group Think Love Mobile Image 2" 
+          className="mobile-gtlmobile2-image"
+        />
+      </motion.div>
+      
+      <motion.div
+        className="mobile-mint-button-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
+        <div style={{ textAlign: 'center', marginTop: '0' }}>
           
           <div style={{ marginTop: '1rem' }}>
             {/* Direct Mint Button to Manifold */}

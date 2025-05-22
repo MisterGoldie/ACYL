@@ -69,7 +69,7 @@
     position: relative !important;
     width: 85% !important;
     max-width: 400px !important;
-    margin: 20px auto !important;
+    margin: 20px auto 30px !important;
     z-index: 100 !important;
   }
   
@@ -79,11 +79,43 @@
     display: block !important;
   }
   
+  /* Style for the secondary image */
+  .mobile-digitaldaydream-secondary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 0 auto 30px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-ddmobile1-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
+  /* Style for the tertiary image - same size as the secondary image */
+  .mobile-digitaldaydream-tertiary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 0 auto 30px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-ddmobile2-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
   /* Style the text paragraphs */
   .mobile-digitaldaydream-text {
     position: relative !important;
     width: 85% !important;
-    margin: 10px auto 80px !important; /* Added bottom margin for scrolling space */
+    margin: 10px auto 30px !important; /* Reduced bottom margin */
     padding: 10px !important;
     font-size: 18px !important; /* Slightly smaller font for more text visibility */
     font-weight: bold !important;
@@ -118,7 +150,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
   }
   
-  /* Make background image visible the same way as GroupThinkLovePageMobile.css */
+  /* Make background image scroll with content like GroupThinkLovePageMobile.css */
   .film-bg {
     min-height: 100vh !important;
     height: 100% !important;
@@ -126,7 +158,7 @@
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
+    /* Removed fixed background attachment to allow scrolling */
   }
   
   /* Hide all other content as a fallback */
