@@ -70,8 +70,23 @@
   .multicolored-bg {
     display: block !important;
     min-height: 100vh !important;
-    height: 100% !important;
+    height: auto !important;
     overflow-y: auto !important;
     position: relative !important;
+  }
+  
+  /* Adjust the description container to reduce excessive scrolling */
+  .acyl-description-container {
+    margin-bottom: 20px !important;
+  }
+  
+  /* Add a specific height to the content container */
+  .homepage-content {
+    padding-bottom: 0 !important;
+  }
+  
+  /* Reduce the space after the last paragraph */
+  .acyl-description-body:last-child {
+    margin-bottom: 0 !important;
   }
 }

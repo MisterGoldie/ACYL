@@ -191,10 +191,11 @@ body {
 .acyl-description-container {
   /* Container removed: all visual styles stripped, but spacing preserved via child elements */
   max-width: 700px;
-  margin: 2rem auto 2rem auto; /* Adjusted margins for better positioning */
+  margin: 1rem auto 2rem auto; /* Added some top margin back */
   padding: 0;
   text-align: center;
   position: relative;
+  transform: translateY(-20px); /* Reduced the upward shift */
 }
 
 .acyl-big-logo {
