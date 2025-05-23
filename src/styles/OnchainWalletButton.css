@@ -1,0 +1,27 @@
+.onchain-wallet-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.wallet-connected {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 4px 12px 4px 4px;
+}
+
+.wallet-balance {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Override OnchainKit button styles to match site theme */
+:root {
+  --ock-button-primary-color: #676FFF;
+  --ock-button-primary-hover-color: #7A82FF;
+  --ock-button-text-color: white;
+  --ock-border-radius-md: 8px;
+}
