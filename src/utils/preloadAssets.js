@@ -62,6 +62,46 @@ const preloadInBatches = async (assets, preloadFn, batchSize = 10, batchDelay = 
   return { loadedCount, totalCount };
 };
 
+// Preload iframe widgets by creating hidden iframes
+const preloadWidget = (src) => {
+  return new Promise((resolve, reject) => {
+    try {
+      // Create a hidden iframe
+      const iframe = document.createElement('iframe');
+      iframe.style.position = 'absolute';
+      iframe.style.width = '1px';
+      iframe.style.height = '1px';
+      iframe.style.opacity = '0.01';
+      iframe.style.pointerEvents = 'none';
+      iframe.style.zIndex = '-1';
+      iframe.src = src;
+      
+      // Set up load handler
+      iframe.onload = () => {
+        // Remove the iframe after it loads to clean up
+        setTimeout(() => {
+          if (iframe.parentNode) {
+            iframe.parentNode.removeChild(iframe);
+          }
+        }, 1000);
+        resolve(src);
+      };
+      
+      iframe.onerror = () => {
+        if (iframe.parentNode) {
+          iframe.parentNode.removeChild(iframe);
+        }
+        reject(`Failed to load widget: ${src}`);
+      };
+      
+      // Add to DOM temporarily
+      document.body.appendChild(iframe);
+    } catch (err) {
+      reject(`Error preloading widget: ${err.message}`);
+    }
+  });
+};
+
 // Main function to preload all assets
 const preloadAllAssets = async () => {
   console.log('Starting asset preloading...');
@@ -83,6 +123,21 @@ const preloadAllAssets = async () => {
     console.log(`Preloading ${assetList.videos.length} videos...`);
     const videoResults = await preloadInBatches(assetList.videos, preloadVideo, 3, 300);
     console.log(`Videos preloaded: ${videoResults.loadedCount}/${videoResults.totalCount}`);
+    
+    // Preload widgets (Mixcloud and Spotify)
+    console.log('Preloading widgets...');
+    const widgetUrls = [
+      'https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FACYLstudio%2Fplaylists%2Facyl-radio%2F',
+      'https://open.spotify.com/embed/album/5wHRZCFMhWTk399TLXkdBi?utm_source=generator'
+    ];
+    
+    try {
+      const widgetPromises = widgetUrls.map(url => preloadWidget(url));
+      await Promise.allSettled(widgetPromises);
+      console.log('Widgets preloaded successfully');
+    } catch (err) {
+      console.warn('Widget preloading had some failures:', err);
+    }
     
     console.log('Asset preloading complete!');
     return true;
