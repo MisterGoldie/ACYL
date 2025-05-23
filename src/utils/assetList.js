@@ -20,15 +20,61 @@ const assetList = {
     '/ppheaderlogo.png',
     '/ppheaderlogo.webp',
 
+    // Brushstrokes assets
+    '/images/brushstrokes/bsmobile1.png',
+    '/images/brushstrokes/bsmobile1.webp',
+    '/images/brushstrokes/bsmobile2.png',
+    '/images/brushstrokes/bsmobile2.webp',
+    '/images/brushstrokes/bspagebg.png',
+    '/images/brushstrokes/bspagebg.webp',
+    '/images/brushstrokes/bstrokepagebg.png',
+    '/images/brushstrokes/bstrokepagebg.webp',
+    '/images/brushstrokes/bstrokes.png',
+    '/images/brushstrokes/bstrokes.webp',
+
+    // Caf assets
+    '/images/caf/cafbg.png',
+    '/images/caf/cafbg.webp',
+    '/images/caf/cafmobile1.png',
+    '/images/caf/cafmobile1.webp',
+    '/images/caf/cafmobile2.png',
+    '/images/caf/cafmobile2.webp',
+    '/images/caf/cafthumbnail.png',
+    '/images/caf/cafthumbnail.webp',
+
     // Contribute assets
     '/images/contribute/freemember.png',
     '/images/contribute/freemember.webp',
     '/images/contribute/paidmember.png',
     '/images/contribute/paidmember.webp',
 
+    // Cyberjam assets
+    '/images/cyberjam/cjmobile1.png',
+    '/images/cyberjam/cjmobile1.webp',
+    '/images/cyberjam/cjmobile2.png',
+    '/images/cyberjam/cjmobile2.webp',
+    '/images/cyberjam/cyberjam.png',
+    '/images/cyberjam/cyberjam.webp',
+    '/images/cyberjam/cyberpagebg.png',
+    '/images/cyberjam/cyberpagebg.webp',
+
+    // Decentralympics assets
+    '/images/decentralympics/decentmobile1.png',
+    '/images/decentralympics/decentmobile1.webp',
+    '/images/decentralympics/decentmobile2.png',
+    '/images/decentralympics/decentmobile2.webp',
+    '/images/decentralympics/decentrapagebg.png',
+    '/images/decentralympics/decentrapagebg.webp',
+    '/images/decentralympics/decetra.png',
+    '/images/decentralympics/decetra.webp',
+
     // Digitaldaydream assets
     '/images/digitaldaydream/ddbg.png',
     '/images/digitaldaydream/ddbg.webp',
+    '/images/digitaldaydream/ddmobile1.png',
+    '/images/digitaldaydream/ddmobile1.webp',
+    '/images/digitaldaydream/ddmobile2.png',
+    '/images/digitaldaydream/ddmobile2.webp',
     '/images/digitaldaydream/ddtitle.png',
     '/images/digitaldaydream/ddtitle.webp',
     '/images/digitaldaydream/ddwithtext.png',
@@ -45,6 +91,20 @@ const assetList = {
     '/images/discover/iso.webp',
     '/images/discover/salem.png',
     '/images/discover/salem.webp',
+
+    // Events assets
+    '/images/events/eventpagebg.png',
+    '/images/events/eventpagebg.webp',
+
+    // Experimental assets
+    '/images/experimental/experpagebg.png',
+    '/images/experimental/experpagebg.webp',
+    '/images/experimental/nycmobile1.png',
+    '/images/experimental/nycmobile1.webp',
+    '/images/experimental/nycmobile2.png',
+    '/images/experimental/nycmobile2.webp',
+    '/images/experimental/nyevent.png',
+    '/images/experimental/nyevent.webp',
 
     // Film assets
     '/images/film/ddposter.png',
@@ -71,6 +131,10 @@ const assetList = {
     '/images/groupthinklove/gtlbg.webp',
     '/images/groupthinklove/gtllogo.png',
     '/images/groupthinklove/gtllogo.webp',
+    '/images/groupthinklove/gtlmobile1.png',
+    '/images/groupthinklove/gtlmobile1.webp',
+    '/images/groupthinklove/gtlmobile2.png',
+    '/images/groupthinklove/gtlmobile2.webp',
     '/images/groupthinklove/gtlwithtext.png',
     '/images/groupthinklove/gtlwithtext.webp',
 
@@ -79,12 +143,18 @@ const assetList = {
     '/images/ifoundit/ifibg.webp',
     '/images/ifoundit/ifilogo.png',
     '/images/ifoundit/ifilogo.webp',
+    '/images/ifoundit/ifimobile1.png',
+    '/images/ifoundit/ifimobile1.webp',
+    '/images/ifoundit/ifimobile2.png',
+    '/images/ifoundit/ifimobile2.webp',
     '/images/ifoundit/ifiwithtext.png',
     '/images/ifoundit/ifiwithtext.webp',
 
     // Isolation assets
     '/images/isolation/isobg.png',
     '/images/isolation/isobg.webp',
+    '/images/isolation/isomobile1.png',
+    '/images/isolation/isomobile1.webp',
     '/images/isolation/isotitle.png',
     '/images/isolation/isotitle.webp',
     '/images/isolation/isowithtext.png',
@@ -95,6 +165,10 @@ const assetList = {
     '/images/isolation/prisoner.webp',
 
     // Podplayr assets
+    '/images/podplayr/ppmobile1.png',
+    '/images/podplayr/ppmobile1.webp',
+    '/images/podplayr/ppmobile2.png',
+    '/images/podplayr/ppmobile2.webp',
     '/images/podplayr/pptextlogo.png',
     '/images/podplayr/pptextlogo.webp',
 
@@ -137,8 +211,23 @@ const assetList = {
     '/images/tv/tvbg.webp',
   ],
   videos: [
+    // Brushstrokes videos
+    '/images/brushstrokes/2025 ACYL LIVE BROOKLYN MEETUPO.mp4',
+
+    // Caf videos
+    '/images/caf/CTRL ALT FILM EVENT RECAP VIDEO.mp4',
+
+    // Cyberjam videos
+    '/images/cyberjam/2025 CYBERJAM 2024.mp4',
+
+    // Decentralympics videos
+    '/images/decentralympics/2025 DECENTRALYMPICS SEGMENT.mp4',
+
     // Digitaldaydream videos
     '/images/digitaldaydream/ddsequence.mp4',
+
+    // Experimental videos
+    '/images/experimental/2025 ACYL LIVE SCREENING.mp4',
 
     // Groupthinklove videos
     '/images/groupthinklove/gtltrailer1.mp4',
