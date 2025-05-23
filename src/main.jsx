@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { AppProviders } from './AppProviders';
 import './styles/mobile.css';
+import '@coinbase/onchainkit/styles.css'; // Import OnchainKit styles
 
 // Force scroll to top on page load/refresh
 if ('scrollRestoration' in history) {
@@ -17,6 +19,8 @@ window.onload = function() {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <AppProviders>
+      <App />
+    </AppProviders>
   </React.StrictMode>
 );

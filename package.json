@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@coinbase/onchainkit": "^0.38.13",
     "@privy-io/privy-browser": "^0.0.3",
     "@privy-io/react-auth": "^2.10.0",
     "@privy-io/server-auth": "^1.21.0",
