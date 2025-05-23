@@ -78,11 +78,46 @@
     line-height: 1.2 !important;
   }
   
+  /* Style for the secondary image */
+  .mobile-brushstrokes-secondary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 0 auto 30px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-bsmobile1-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 12px !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
+  /* Style for the tertiary image - positioned between paragraphs */
+  .mobile-brushstrokes-tertiary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 20px auto 0px !important; /* Positive top margin to create more space with paragraph */
+    z-index: 100 !important;
+  }
+  
+  .mobile-bsmobile2-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 12px !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
   /* Style the text paragraphs */
-  .mobile-brushstrokes-description {
+  .mobile-brushstrokes-description,
+  .mobile-brushstrokes-description-second {
     position: relative !important;
     width: 85% !important;
-    margin: 10px auto 80px !important; /* Added bottom margin for scrolling space */
+    margin: 10px auto 0px !important;
     padding: 10px !important;
     text-align: center !important;
     color: white !important;
@@ -91,7 +126,14 @@
     overflow: visible !important;
   }
   
-  .mobile-brushstrokes-description p {
+  /* Add top and bottom margin to the last paragraph */
+  .mobile-brushstrokes-description-second {
+    margin-top: 40px !important; /* Added top margin to lower the paragraph */
+    margin-bottom: 120px !important; /* Increased bottom margin for better scrolling space */
+  }
+  
+  .mobile-brushstrokes-description p,
+  .mobile-brushstrokes-description-second p {
     font-size: 1.1rem !important;
     line-height: 1.7 !important;
     margin-bottom: 1.5rem !important;

@@ -64,6 +64,19 @@ const MobileCyberJamContent = () => {
         CyberJam
       </motion.h1>
       
+      <motion.div
+        className="mobile-cyberjam-secondary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/cyberjam/cjmobile1.webp" 
+          alt="CyberJam Event Image 1" 
+          className="mobile-cjmobile1-image"
+        />
+      </motion.div>
+      
       <motion.div 
         className="mobile-cyberjam-description"
         initial={{ opacity: 0, y: 20 }}
@@ -78,6 +91,27 @@ const MobileCyberJamContent = () => {
           building and hands-on learning. Designed to bridge the gap between Web3 natives and newcomers, the hackathon focused on
           exploring the real-world potential of blockchain tech, not just in theory, but in action.
         </p>
+      </motion.div>
+      
+      <motion.div
+        className="mobile-cyberjam-tertiary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/cyberjam/cjmobile2.webp" 
+          alt="CyberJam Event Image 2" 
+          className="mobile-cjmobile2-image"
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="mobile-cyberjam-description-second"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
         <p>
           From idea to prototype, teams tackled projects that merged code with creativity, guided by mentors and fueled by purpose.
           Any Colour You Like was on the ground throughout the event, documenting the energy, the breakthroughs, and the power of

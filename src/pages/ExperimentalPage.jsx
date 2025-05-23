@@ -64,6 +64,19 @@ const MobileExperimentalContent = () => {
         NYC Experimental Showcase
       </motion.h1>
       
+      <motion.div
+        className="mobile-experimental-secondary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/experimental/nycmobile1.webp" 
+          alt="NYC Experimental Showcase Image 1" 
+          className="mobile-nycmobile1-image"
+        />
+      </motion.div>
+      
       <motion.div 
         className="mobile-experimental-description"
         initial={{ opacity: 0, y: 20 }}
@@ -77,6 +90,19 @@ const MobileExperimentalContent = () => {
           documentaries and surreal animations to AI-driven experiments and unconventional narratives. Every frame challenged
           expectations. Every story pushed boundaries. It was a cinematic glimpse into the future of independent film.
         </p>
+      </motion.div>
+      
+      <motion.div
+        className="mobile-experimental-tertiary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/experimental/nycmobile2.webp" 
+          alt="NYC Experimental Showcase Image 2" 
+          className="mobile-nycmobile2-image"
+        />
       </motion.div>
     </motion.div>
   );

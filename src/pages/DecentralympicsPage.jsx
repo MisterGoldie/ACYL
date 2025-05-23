@@ -73,6 +73,19 @@ const MobileDecentralympicsContent = () => {
         <p>In collaboration with Keep It Crypto</p>
       </motion.div>
       
+      <motion.div
+        className="mobile-decentralympics-secondary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.55, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/decentralympics/decentmobile1.webp" 
+          alt="Decentralympics Event Image 1" 
+          className="mobile-decentmobile1-image"
+        />
+      </motion.div>
+      
       <motion.div 
         className="mobile-decentralympics-description"
         initial={{ opacity: 0, y: 20 }}
@@ -87,12 +100,25 @@ const MobileDecentralympicsContent = () => {
         </p>
       </motion.div>
       
+      <motion.div
+        className="mobile-decentralympics-tertiary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.65, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/decentralympics/decentmobile2.webp" 
+          alt="Decentralympics Event Image 2" 
+          className="mobile-decentmobile2-image"
+        />
+      </motion.div>
+      
       <motion.div 
         className="mobile-decentralympics-video-container"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7, duration: 0.6 }}
-        style={{ marginTop: '30px', width: '100%', padding: '0 20px' }}
+        style={{ marginTop: '30px', marginBottom: '100px', width: '100%', padding: '0 20px' }}
       >
         <OptimizedVideo
           src="/images/decentralympics/2025 DECENTRALYMPICS SEGMENT.mp4"

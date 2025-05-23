@@ -78,6 +78,40 @@
     line-height: 1.2 !important;
   }
   
+  /* Style for the first image */
+  .mobile-experimental-secondary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 0 auto 30px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-nycmobile1-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 12px !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
+  /* Style for the second image */
+  .mobile-experimental-tertiary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: -70px auto 100px !important; /* More negative top margin to close spacing with paragraph */
+    z-index: 100 !important;
+  }
+  
+  .mobile-nycmobile2-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 12px !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
   /* Style the text paragraphs */
   .mobile-experimental-description {
     position: relative !important;

@@ -95,6 +95,40 @@
     line-height: 1.2 !important;
   }
   
+  /* Style for the first image */
+  .mobile-decentralympics-secondary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 0 auto 30px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-decentmobile1-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 12px !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
+  /* Style for the second image - positioned after paragraph */
+  .mobile-decentralympics-tertiary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: -40px auto 30px !important; /* Less negative top margin to increase spacing with paragraph */
+    z-index: 100 !important;
+  }
+  
+  .mobile-decentmobile2-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 12px !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
   /* Style the text paragraphs */
   .mobile-decentralympics-description {
     position: relative !important;

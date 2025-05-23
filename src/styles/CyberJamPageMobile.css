@@ -77,11 +77,46 @@
     line-height: 1.2 !important;
   }
   
+  /* Style for the first image */
+  .mobile-cyberjam-secondary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 0 auto 30px !important;
+    z-index: 100 !important;
+  }
+  
+  .mobile-cjmobile1-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 12px !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
+  /* Style for the second image - positioned between paragraphs */
+  .mobile-cyberjam-tertiary-image {
+    position: relative !important;
+    width: 90% !important;
+    max-width: 550px !important;
+    margin: 0px auto 20px !important; /* Positive margin to prevent overlap */
+    z-index: 100 !important;
+  }
+  
+  .mobile-cjmobile2-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 12px !important;
+    animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
   /* Style the text paragraphs */
-  .mobile-cyberjam-description {
+  .mobile-cyberjam-description,
+  .mobile-cyberjam-description-second {
     position: relative !important;
     width: 85% !important;
-    margin: 10px auto 80px !important; /* Added bottom margin for scrolling space */
+    margin: 10px auto 20px !important;
     padding: 10px !important;
     text-align: center !important;
     color: white !important;
@@ -90,7 +125,13 @@
     overflow: visible !important;
   }
   
-  .mobile-cyberjam-description p {
+  /* Add bottom margin to the last paragraph */
+  .mobile-cyberjam-description-second {
+    margin-bottom: 120px !important; /* Increased bottom margin for better scrolling space */
+  }
+  
+  .mobile-cyberjam-description p,
+  .mobile-cyberjam-description-second p {
     font-size: 1.1rem !important;
     line-height: 1.7 !important;
     margin-bottom: 1.5rem !important;

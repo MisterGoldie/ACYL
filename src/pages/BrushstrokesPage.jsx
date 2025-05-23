@@ -64,6 +64,19 @@ const MobileBrushstrokesContent = () => {
         Brushstrokes
       </motion.h1>
       
+      <motion.div
+        className="mobile-brushstrokes-secondary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/brushstrokes/bsmobile1.webp" 
+          alt="Brushstrokes Event Image" 
+          className="mobile-bsmobile1-image"
+        />
+      </motion.div>
+      
       <motion.div 
         className="mobile-brushstrokes-description"
         initial={{ opacity: 0, y: 20 }}
@@ -73,6 +86,27 @@ const MobileBrushstrokesContent = () => {
         <p>
           Tucked inside a former photo darkroom turned DIY skatepark, Brushstrokes brought together a crew of creatives for a night of raw expression and real connection. The space buzzed with live art, spontaneous collabs, and an intimate music set featuring the genre-blurring talents of Jamee Cornelia, GRLKRASH, and Leo Pastel.
         </p>
+      </motion.div>
+      
+      <motion.div
+        className="mobile-brushstrokes-tertiary-image"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+      >
+        <OptimizedImage 
+          src="/images/brushstrokes/bsmobile2.webp" 
+          alt="Brushstrokes Event Image 2" 
+          className="mobile-bsmobile2-image"
+        />
+      </motion.div>
+      
+      <motion.div 
+        className="mobile-brushstrokes-description-second"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+      >
         <p>
           No stage, no velvet ropes. Just a shared energy that blurred the lines between performer and crowd. It was community in motion, soundtracked by artists who aren't afraid to bend the rules.
         </p>
