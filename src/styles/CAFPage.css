@@ -1,0 +1,110 @@
+/* Import the base styles and fonts */
+@import './HomePage.css';
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
+
+.caf-page {
+  /* Using cafbg.webp as background */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/caf/cafbg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+.caf-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.caf-headline {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.caf-headline h1 {
+  font-family: 'Instrument Serif', serif !important;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.caf-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 60px;
+  max-width: 900px;
+  text-align: center;
+}
+
+.caf-description p {
+  margin-bottom: 25px;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.7;
+  text-align: center;
+  color: white;
+}
+
+.caf-description p:first-child {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: white;
+  text-align: center;
+}
+
+.caf-image-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.caf-main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .caf-content {
+    padding: 100px 40px 40px;
+  }
+  
+  .caf-headline h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .caf-page {
+    display: none;
+  }
+}

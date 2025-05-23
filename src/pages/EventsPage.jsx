@@ -105,6 +105,13 @@ const MobileEventsContent = () => {
             className="film-poster-image"
           />
         </Link>
+        <Link to="/CAF" className="film-poster-link">
+          <OptimizedImage 
+            src="/images/caf/cafthumbnail.webp" 
+            alt="Chicago Art Fair" 
+            className="film-poster-image"
+          />
+        </Link>
       </div>
     </motion.div>
   );
@@ -167,6 +174,13 @@ const EventsContent = () => {
           <OptimizedImage 
             src="/images/cyberjam/cyberjam.webp" 
             alt="Cyber Jam Event" 
+            className="film-poster-image"
+          />
+        </Link>
+        <Link to="/CAF" className="film-poster-link">
+          <OptimizedImage 
+            src="/images/caf/cafthumbnail.webp" 
+            alt="Chicago Art Fair" 
             className="film-poster-image"
           />
         </Link>
