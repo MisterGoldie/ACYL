@@ -41,7 +41,7 @@
   
   /* Adjust content spacing */
   .contribute-bg .page-content {
-    padding-top: 20px !important;
+    padding-top: 120px !important; /* Increased from 20px to 120px to bring content down */
     margin-top: 0 !important;
   }
   
@@ -50,6 +50,22 @@
     padding: 1rem !important;
     text-align: center;
     width: 100%;
+    padding-top: 60px !important; /* Added additional top padding */
+  }
+  
+  /* Add padding to headline/title */
+  .contribute-headline {
+    padding-top: 40px !important;
+    margin-bottom: 40px !important; /* Reduced from 60px to 40px */
+  }
+  
+  /* Reduce spacing between paragraph and membership containers */
+  .contribute-description {
+    margin-bottom: 10px !important; /* Reduced from 20px to 10px */
+  }
+  
+  .membership-options {
+    margin-top: -30px !important; /* Increased negative margin from -10px to -30px */
   }
   
   /* Make form elements more mobile-friendly */

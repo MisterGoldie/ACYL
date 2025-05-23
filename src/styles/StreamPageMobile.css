@@ -41,7 +41,7 @@
   
   /* Adjust content spacing */
   .stream-bg .page-content {
-    padding-top: 80px !important; /* Increased from 20px to 80px to bring content down */
+    padding-top: 120px !important; /* Increased from 80px to 120px to bring content down */
     margin-top: 0 !important;
   }
   
@@ -50,7 +50,7 @@
     padding: 1rem !important;
     text-align: center;
     width: 100%;
-    padding-top: 40px !important; /* Added additional top padding */
+    padding-top: 60px !important; /* Increased from 40px to 60px */
   }
   
   /* Add consistent spacing between headline and description (60px) */
@@ -64,7 +64,7 @@
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     font-family: 'Instrument Serif', serif !important;
     font-weight: 700;
-    padding-top: 20px !important; /* Added padding to the title itself */
+    padding-top: 40px !important; /* Increased from 20px to 40px */
   }
   
   /* Adjust space between description text and images */

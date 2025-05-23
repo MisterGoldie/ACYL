@@ -65,31 +65,33 @@
     object-fit: contain;
   }
   
-  /* Adjust content spacing */
+  /* Adjust content spacing - reduced to raise content */
   .page-content {
-    padding-top: 20px !important;
+    padding-top: 0 !important;
     margin-top: 0 !important;
   }
   
-  /* Center content and improve readability */
+  /* Center content and improve readability - reduced padding to raise content */
   .stream-content {
-    padding: 1rem !important;
+    padding: 0.5rem !important;
+    padding-top: 0 !important;
     text-align: center;
     width: 100%;
   }
   
-  /* Adjust headline size and spacing */
+  /* Adjust headline size and spacing - reduced margins */
   .stream-headline {
     font-size: 2rem !important;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    margin-top: 0 !important;
     line-height: 1.2 !important;
   }
   
-  /* Ensure images are responsive */
+  /* Ensure images are responsive - reduced margins */
   .stream-content img {
     max-width: 100% !important;
     height: auto !important;
-    margin: 1.5rem auto !important;
+    margin: 0.75rem auto !important;
   }
   
   /* Style for the ppmobile1 image */
@@ -124,6 +126,12 @@
     display: block !important;
     border-radius: 12px !important;
     animation: fadeIn 0.8s ease-in-out !important;
+  }
+  
+  /* Style for the podplayr logo - reduced margins */
+  .podplayr-logo-container {
+    margin-bottom: 0.5rem !important;
+    margin-top: -0.5rem !important;
   }
   
   /* Position video higher on mobile */
