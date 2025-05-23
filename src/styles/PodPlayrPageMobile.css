@@ -1,5 +1,11 @@
 /* Mobile-specific styles for PodPlayrPage only */
 
+/* Hide mobile images on desktop by default */
+.mobile-podplayr-secondary-image,
+.mobile-podplayr-tertiary-image {
+  display: none;
+}
+
 /* Animation keyframes for mobile components */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -88,6 +94,7 @@
   
   /* Style for the ppmobile1 image */
   .mobile-podplayr-secondary-image {
+    display: block !important; /* Show on mobile */
     width: 90% !important;
     max-width: 550px !important;
     margin: -20px auto 10px !important;
@@ -104,9 +111,10 @@
   
   /* Style for the ppmobile2 image */
   .mobile-podplayr-tertiary-image {
+    display: block !important; /* Show on mobile */
     width: 90% !important;
     max-width: 550px !important;
-    margin: 25px auto 25px !important;
+    margin: 1.5rem auto !important;
     z-index: 100 !important;
   }
   
