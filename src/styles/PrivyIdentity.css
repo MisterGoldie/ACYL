@@ -1,0 +1,42 @@
+.identity-container {
+  margin: 10px 0;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 8px 12px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.identity-layout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.identity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.identity-desktop {
+  width: 100%;
+}
+
+.identity-mobile {
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+/* Override OnchainKit identity styles to match site theme */
+:root {
+  --ock-color-primary: #676FFF;
+  --ock-color-primary-highlight: #7A82FF;
+  --ock-color-text-on-primary: white;
+  --ock-avatar-border-radius: 12px;
+  --ock-badge-border-radius: 4px;
+}
