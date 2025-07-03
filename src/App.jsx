@@ -21,6 +21,7 @@ import ExperimentalPage from "./pages/ExperimentalPage";
 import DecentralympicsPage from "./pages/DecentralympicsPage";
 import CyberJamPage from "./pages/CyberJamPage";
 import CAFPage from "./pages/CAFPage";
+import ReelColoursPage from "./pages/ReelColoursPage";
 import { preloadAllAssets } from "./utils/preloadAssets";
 import "./styles/transitions.css";
 
@@ -73,6 +74,14 @@ const AnimatedRoutes = () => {
             <Route path="/decentralympics" element={<DecentralympicsPage />} />
             <Route path="/cyberjam" element={<CyberJamPage />} />
             <Route path="/CAF" element={<CAFPage />} />
+            <Route 
+              path="/reelcolours" 
+              element={
+                <React.Suspense fallback={<div className="loading">Loading Reel Colours...</div>}>
+                  <ReelColoursPage />
+                </React.Suspense>
+              } 
+            />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </AnimatePresence>

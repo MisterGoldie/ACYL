@@ -178,6 +178,12 @@ const assetList = {
     '/images/radio/radiologo.png',
     '/images/radio/radiologo.webp',
 
+    // Reelcolors assets
+    '/images/reelcolors/rcthumbnail.png',
+    '/images/reelcolors/rcthumbnail.webp',
+    '/images/reelcolors/reelcoloursbg.png',
+    '/images/reelcolors/reelcoloursbg.webp',
+
     // Salemtries assets
     '/images/salemtries/salemlogo.png',
     '/images/salemtries/salemlogo.webp',

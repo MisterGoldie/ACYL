@@ -1,0 +1,110 @@
+/* Import the base styles and fonts */
+@import './HomePage.css';
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
+
+.reelcolours-bg {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('/images/reelcolors/reelcoloursbg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+.reelcolours-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.reelcolours-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.reelcolours-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.reelcolours-title {
+  font-family: 'Instrument Serif', serif !important;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+}
+
+.reelcolours-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reelcolours-description {
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Inter', Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.reelcolours-description p {
+  margin-bottom: 25px;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .reelcolours-main {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+  }
+  
+  .reelcolours-title {
+    font-size: 3.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reelcolours-container {
+    padding: 1rem;
+  }
+  
+  .reelcolours-title {
+    font-size: 2.5rem;
+  }
+  
+  .reelcolours-description {
+    font-size: 1rem;
+  }
+  
+  .reelcolours-intro {
+    font-size: 1.1rem;
+  }
+}

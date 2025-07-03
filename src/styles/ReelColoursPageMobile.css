@@ -1,0 +1,88 @@
+/* Mobile-specific styles for ReelColours page */
+
+/* Animation keyframes for mobile components */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+  /* Ensure proper scrolling */
+  body, html {
+    display: block !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+
+  /* Background adjustments for mobile */
+  .reelcolours-bg {
+    background-attachment: scroll !important;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  /* Mobile content container */
+  .mobile-reelcolours-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0 120px 0;
+    width: 100%;
+    position: relative;
+    z-index: 10 !important;
+  }
+
+  /* Mobile headline */
+  .mobile-reelcolours-headline {
+    font-family: 'Instrument Serif', serif !important;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    padding: 0 15px;
+    width: 90%;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  /* Mobile description */
+  .mobile-reelcolours-description {
+    width: 85%;
+    margin: 0 auto;
+  }
+  
+  .mobile-reelcolours-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* Adjustments for very small screens */
+  @media screen and (max-width: 480px) {
+    .mobile-reelcolours-headline {
+      font-size: 24px;
+    }
+    
+    .mobile-reelcolours-description {
+      width: 95%;
+    }
+    
+    .mobile-reelcolours-description p {
+      font-size: 1rem;
+    }
+  }
+}
