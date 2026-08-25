@@ -1,51 +1,11 @@
 import React from "react";
+import SiteHeader from "../components/SiteHeader";
 import { motion } from "framer-motion";
-import { PrivyProvider, usePrivy } from "@privy-io/react-auth";
-import { Link } from "react-router-dom";
-import LoginComponent from "../components/LoginComponent";
-import MobileMenu from "../components/MobileMenu";
 import OptimizedImage from "../components/OptimizedImage";
 import OptimizedVideo from "../components/OptimizedVideo";
 import "../styles/StreamPage.css"; // Reusing Stream page styles for now
-import "../styles/MobileMenu.css";
 import "../styles/SalemTriesPageMobile.css"; // Mobile-specific styles for SalemTries page
 
-// Header component that uses Privy hooks
-const Header = () => {
-  return (
-    <motion.header 
-      className="site-header"
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="header-logo">
-        <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
-        </Link>
-      </div>
-      <nav className="main-nav">
-        <ul className="nav-links">
-          <li><Link to="/tv">TV</Link></li>
-          <li><Link to="/film">Film</Link></li>
-          <li><Link to="/radio">Radio</Link></li>
-          <li><Link to="/stream" className="active">Stream</Link></li>
-          <li className="more-dropdown">
-            <Link to="#">More <span className="dropdown-arrow">▼</span></Link>
-            <div className="dropdown-menu">
-              <Link to="/contribute" className="dropdown-item">Contribute</Link>
-              <Link to="/discover" className="dropdown-item">Discover</Link>
-              <Link to="/events" className="dropdown-item">Events</Link>
-              <Link to="/podplayr" className="dropdown-item">PODPLAYR</Link>
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <LoginComponent />
-      <MobileMenu />
-    </motion.header>
-  );
-};
 
 const SalemTriesContent = () => {
   return (
@@ -175,27 +135,7 @@ const SalemTriesPage = () => {
   }, []);
 
   return (
-    <PrivyProvider
-      appId="cm9wa9olg004yl70mwjt9n1x9"
-      config={{
-        loginMethods: ['email', 'wallet', 'google', 'sms', 'farcaster'],
-        appearance: {
-          theme: 'light',
-          accentColor: '#0f62fe',
-          showWalletLoginFirst: false,
-          layout: 'modal',
-          defaultView: 'login',
-          logo: '/acylprivylogo.webp',
-          backgroundColor: '#fff',
-        },
-        embeddedWallets: {
-          createOnLogin: 'all-users',
-          noPromptOnSignature: false,
-        },
-      }}
-    >
-      <SalemTriesPageContent />
-    </PrivyProvider>
+    <SalemTriesPageContent />
   );
 };
 
@@ -217,7 +157,7 @@ const SalemTriesPageContent = () => {
         color: 'white'
       }}
     >
-      <Header />
+      <SiteHeader />
       <div className="page-content">
         <SalemTriesContent />
       </div>

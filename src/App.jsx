@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { PrivyProvider } from "@privy-io/react-auth";
 import HomePage from "./pages/HomePage";
 import TVPage from "./pages/TVPage";
 import FilmPage from "./pages/FilmPage";
@@ -91,9 +92,29 @@ const AnimatedRoutes = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <AnimatedRoutes />
-    </BrowserRouter>
+    <PrivyProvider
+      appId="cm9wa9olg004yl70mwjt9n1x9"
+      config={{
+        loginMethods: ['email', 'wallet', 'google', 'sms', 'farcaster'],
+        appearance: {
+          theme: 'light',
+          accentColor: '#0f62fe',
+          showWalletLoginFirst: false,
+          layout: 'modal',
+          defaultView: 'login',
+          logo: '/acylprivylogo.webp',
+          backgroundColor: '#fff',
+        },
+        embeddedWallets: {
+          createOnLogin: 'all-users',
+          noPromptOnSignature: false,
+        },
+      }}
+    >
+      <BrowserRouter>
+        <AnimatedRoutes />
+      </BrowserRouter>
+    </PrivyProvider>
   );
 };
 
