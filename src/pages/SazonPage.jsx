@@ -21,7 +21,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -63,7 +63,7 @@ const SazonContent = () => {
         style={{ textAlign: 'center', marginBottom: '2rem' }}
       >
         <OptimizedImage 
-          src="/images/sazon/swslogo.png" 
+          src="/images/sazon/swslogo.webp" 
           alt="Seasoning With Sazon" 
           style={{ maxWidth: '80%', margin: '0 auto' }}
         />
@@ -77,7 +77,7 @@ const SazonContent = () => {
         style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}
       >
         <OptimizedImage 
-          src="/images/sazon/swsbanner.png" 
+          src="/images/sazon/swsbanner.webp" 
           alt="Mr. Sazon profile and description" 
           style={{ width: '100%', margin: '0 auto' }}
         />
@@ -180,7 +180,7 @@ const SazonPage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
@@ -204,7 +204,7 @@ const SazonPageContent = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ 
-        background: 'url("/images/sazon/swsbg.png")',
+        background: 'url("/images/sazon/swsbg.webp")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

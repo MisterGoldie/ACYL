@@ -9,211 +9,128 @@
 const assetList = {
   images: [
     // Global assets
-    '/acylprivylogo.png',
     '/acylprivylogo.webp',
-    '/bighomepagelogo.png',
     '/bighomepagelogo.webp',
-    '/circleheaderlogo.png',
     '/circleheaderlogo.webp',
-    '/homepagebg.png',
     '/homepagebg.webp',
-    '/ppheaderlogo.png',
     '/ppheaderlogo.webp',
 
     // Brushstrokes assets
-    '/images/brushstrokes/bsmobile1.png',
     '/images/brushstrokes/bsmobile1.webp',
-    '/images/brushstrokes/bsmobile2.png',
     '/images/brushstrokes/bsmobile2.webp',
-    '/images/brushstrokes/bspagebg.png',
     '/images/brushstrokes/bspagebg.webp',
-    '/images/brushstrokes/bstrokepagebg.png',
     '/images/brushstrokes/bstrokepagebg.webp',
-    '/images/brushstrokes/bstrokes.png',
     '/images/brushstrokes/bstrokes.webp',
 
     // Caf assets
-    '/images/caf/cafbg.png',
     '/images/caf/cafbg.webp',
-    '/images/caf/cafmobile1.png',
     '/images/caf/cafmobile1.webp',
-    '/images/caf/cafmobile2.png',
     '/images/caf/cafmobile2.webp',
-    '/images/caf/cafthumbnail.png',
     '/images/caf/cafthumbnail.webp',
 
     // Contribute assets
-    '/images/contribute/freemember.png',
     '/images/contribute/freemember.webp',
-    '/images/contribute/paidmember.png',
     '/images/contribute/paidmember.webp',
 
     // Cyberjam assets
-    '/images/cyberjam/cjmobile1.png',
     '/images/cyberjam/cjmobile1.webp',
-    '/images/cyberjam/cjmobile2.png',
     '/images/cyberjam/cjmobile2.webp',
-    '/images/cyberjam/cyberjam.png',
     '/images/cyberjam/cyberjam.webp',
-    '/images/cyberjam/cyberpagebg.png',
     '/images/cyberjam/cyberpagebg.webp',
 
     // Decentralympics assets
-    '/images/decentralympics/decentmobile1.png',
     '/images/decentralympics/decentmobile1.webp',
-    '/images/decentralympics/decentmobile2.png',
     '/images/decentralympics/decentmobile2.webp',
-    '/images/decentralympics/decentrapagebg.png',
     '/images/decentralympics/decentrapagebg.webp',
-    '/images/decentralympics/decetra.png',
     '/images/decentralympics/decetra.webp',
 
     // Digitaldaydream assets
-    '/images/digitaldaydream/ddbg.png',
     '/images/digitaldaydream/ddbg.webp',
-    '/images/digitaldaydream/ddmobile1.png',
     '/images/digitaldaydream/ddmobile1.webp',
-    '/images/digitaldaydream/ddmobile2.png',
     '/images/digitaldaydream/ddmobile2.webp',
-    '/images/digitaldaydream/ddtitle.png',
     '/images/digitaldaydream/ddtitle.webp',
-    '/images/digitaldaydream/ddwithtext.png',
     '/images/digitaldaydream/ddwithtext.webp',
 
     // Discover assets
-    '/images/discover/discoverbg.png',
     '/images/discover/discoverbg.webp',
-    '/images/discover/groupthinklove.png',
     '/images/discover/groupthinklove.webp',
-    '/images/discover/ifoundit.png',
     '/images/discover/ifoundit.webp',
-    '/images/discover/iso.png',
     '/images/discover/iso.webp',
-    '/images/discover/salem.png',
     '/images/discover/salem.webp',
 
     // Events assets
-    '/images/events/eventpagebg.png',
     '/images/events/eventpagebg.webp',
 
     // Experimental assets
-    '/images/experimental/experpagebg.png',
     '/images/experimental/experpagebg.webp',
-    '/images/experimental/nycmobile1.png',
     '/images/experimental/nycmobile1.webp',
-    '/images/experimental/nycmobile2.png',
     '/images/experimental/nycmobile2.webp',
-    '/images/experimental/nyevent.png',
     '/images/experimental/nyevent.webp',
 
     // Film assets
-    '/images/film/ddposter.png',
     '/images/film/ddposter.webp',
-    '/images/film/ddwithtext.png',
     '/images/film/ddwithtext.webp',
-    '/images/film/filmbg.png',
     '/images/film/filmbg.webp',
-    '/images/film/gtlposter.png',
     '/images/film/gtlposter.webp',
-    '/images/film/gtlwithtext.png',
     '/images/film/gtlwithtext.webp',
-    '/images/film/ifiposter.png',
     '/images/film/ifiposter.webp',
-    '/images/film/ifiwithtext.png',
     '/images/film/ifiwithtext.webp',
-    '/images/film/isoposter.png',
     '/images/film/isoposter.webp',
-    '/images/film/isowithtext.png',
     '/images/film/isowithtext.webp',
 
     // Groupthinklove assets
-    '/images/groupthinklove/gtlbg.png',
     '/images/groupthinklove/gtlbg.webp',
-    '/images/groupthinklove/gtllogo.png',
     '/images/groupthinklove/gtllogo.webp',
-    '/images/groupthinklove/gtlmobile1.png',
     '/images/groupthinklove/gtlmobile1.webp',
-    '/images/groupthinklove/gtlmobile2.png',
     '/images/groupthinklove/gtlmobile2.webp',
-    '/images/groupthinklove/gtlwithtext.png',
     '/images/groupthinklove/gtlwithtext.webp',
 
     // Ifoundit assets
-    '/images/ifoundit/ifibg.png',
     '/images/ifoundit/ifibg.webp',
-    '/images/ifoundit/ifilogo.png',
     '/images/ifoundit/ifilogo.webp',
-    '/images/ifoundit/ifimobile1.png',
     '/images/ifoundit/ifimobile1.webp',
-    '/images/ifoundit/ifimobile2.png',
     '/images/ifoundit/ifimobile2.webp',
-    '/images/ifoundit/ifiwithtext.png',
     '/images/ifoundit/ifiwithtext.webp',
 
     // Isolation assets
-    '/images/isolation/isobg.png',
     '/images/isolation/isobg.webp',
-    '/images/isolation/isomobile1.png',
     '/images/isolation/isomobile1.webp',
-    '/images/isolation/isotitle.png',
     '/images/isolation/isotitle.webp',
-    '/images/isolation/isowithtext.png',
     '/images/isolation/isowithtext.webp',
-    '/images/isolation/meditatetext.png',
     '/images/isolation/meditatetext.webp',
-    '/images/isolation/prisoner.png',
     '/images/isolation/prisoner.webp',
 
     // Podplayr assets
-    '/images/podplayr/ppmobile1.png',
     '/images/podplayr/ppmobile1.webp',
-    '/images/podplayr/ppmobile2.png',
     '/images/podplayr/ppmobile2.webp',
-    '/images/podplayr/pptextlogo.png',
     '/images/podplayr/pptextlogo.webp',
 
     // Radio assets
-    '/images/radio/radiobg.png',
     '/images/radio/radiobg.webp',
-    '/images/radio/radiologo.png',
     '/images/radio/radiologo.webp',
 
     // Reelcolors assets
-    '/images/reelcolors/rcthumbnail.png',
     '/images/reelcolors/rcthumbnail.webp',
-    '/images/reelcolors/reelcoloursbg.png',
     '/images/reelcolors/reelcoloursbg.webp',
 
     // Salemtries assets
-    '/images/salemtries/salemlogo.png',
     '/images/salemtries/salemlogo.webp',
-    '/images/salemtries/salemstream.png',
     '/images/salemtries/salemstream.webp',
-    '/images/salemtries/salemtriesbg.png',
     '/images/salemtries/salemtriesbg.webp',
 
     // Sazon assets
-    '/images/sazon/swsbanner.png',
     '/images/sazon/swsbanner.webp',
-    '/images/sazon/swsbg.png',
     '/images/sazon/swsbg.webp',
-    '/images/sazon/swslogo.png',
     '/images/sazon/swslogo.webp',
-    '/images/sazon/swsstream.png',
     '/images/sazon/swsstream.webp',
 
     // Stream assets
-    '/images/stream/salemstream.png',
     '/images/stream/salemstream.webp',
-    '/images/stream/streambg.png',
     '/images/stream/streambg.webp',
-    '/images/stream/swsstream.png',
     '/images/stream/swsstream.webp',
 
     // Tv assets
-    '/images/tv/afuerafont.png',
     '/images/tv/afuerafont.webp',
-    '/images/tv/tvbg.png',
     '/images/tv/tvbg.webp',
   ],
   videos: [

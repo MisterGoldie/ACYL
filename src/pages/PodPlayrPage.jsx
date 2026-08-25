@@ -21,7 +21,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/ppheaderlogo.png" alt="PODPLAYR Logo" className="circle-header-logo" />
+          <OptimizedImage src="/ppheaderlogo.webp" alt="PODPLAYR Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -266,7 +266,7 @@ const PodPlayrPage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/ppheaderlogo.png',
+          logo: '/ppheaderlogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {

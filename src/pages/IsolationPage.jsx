@@ -21,7 +21,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -64,7 +64,7 @@ const MobileIsolationContent = () => {
         transition={{ delay: 0.4, duration: 0.6 }}
       >
         <OptimizedImage 
-          src="/images/isolation/isotitle.png?v=9" 
+          src="/images/isolation/isotitle.webp?v=9" 
           alt="Isolation" 
           className="mobile-iso-title-image"
         />
@@ -78,7 +78,7 @@ const MobileIsolationContent = () => {
         transition={{ delay: 0.6, duration: 0.6 }}
       >
         <OptimizedImage 
-          src="/images/isolation/meditatetext.png?v=4" 
+          src="/images/isolation/meditatetext.webp?v=4" 
           alt="A man attempts to meditate." 
           className="mobile-iso-meditate-image"
         />
@@ -92,7 +92,7 @@ const MobileIsolationContent = () => {
         transition={{ delay: 0.8, duration: 0.6 }}
       >
         <OptimizedImage 
-          src="/images/isolation/prisoner.png?v=3" 
+          src="/images/isolation/prisoner.webp?v=3" 
           alt="Prisoner meditating" 
           className="mobile-iso-prisoner-image"
         />
@@ -152,7 +152,7 @@ const IsolationContent = () => {
           }}
         >
           <OptimizedImage 
-            src="/images/isolation/isotitle.png?v=9" 
+            src="/images/isolation/isotitle.webp?v=9" 
             alt="Isolation" 
             style={{ 
               width: '100%',
@@ -175,7 +175,7 @@ const IsolationContent = () => {
         }}
       >
         <OptimizedImage 
-          src="/images/isolation/meditatetext.png?v=4" 
+          src="/images/isolation/meditatetext.webp?v=4" 
           alt="A man attempts to meditate." 
           style={{ 
             width: '100%',
@@ -225,7 +225,7 @@ const IsolationContent = () => {
         }}
       >
         <OptimizedImage 
-          src="/images/isolation/prisoner.png?v=3" 
+          src="/images/isolation/prisoner.webp?v=3" 
           alt="Prisoner meditating" 
           style={{
             width: '100%',
@@ -282,7 +282,7 @@ const IsolationPage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
@@ -306,7 +306,7 @@ const IsolationPageContent = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ 
-        background: 'url("/images/isolation/isobg.png")',
+        background: 'url("/images/isolation/isobg.webp")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

@@ -19,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -96,28 +96,28 @@ const MobileFilmContent = () => {
       >
         <Link to="/isolation" className="mobile-film-poster-link">
           <OptimizedImage 
-            src="/images/film/isoposter.png" 
+            src="/images/film/isoposter.webp" 
             alt="Isolation" 
             className="mobile-film-poster-image"
           />
         </Link>
         <Link to="/ifoundit" className="mobile-film-poster-link">
           <OptimizedImage 
-            src="/images/film/ifiposter.png" 
+            src="/images/film/ifiposter.webp" 
             alt="I Found It" 
             className="mobile-film-poster-image"
           />
         </Link>
         <Link to="/digitaldaydream" className="mobile-film-poster-link">
           <OptimizedImage 
-            src="/images/film/ddposter.png" 
+            src="/images/film/ddposter.webp" 
             alt="Digital Daydream" 
             className="mobile-film-poster-image"
           />
         </Link>
         <Link to="/groupthinklove" className="mobile-film-poster-link">
           <OptimizedImage 
-            src="/images/film/gtlposter.png" 
+            src="/images/film/gtlposter.webp" 
             alt="Group Think Love" 
             className="mobile-film-poster-image"
           />
@@ -195,28 +195,28 @@ const FilmContent = () => {
       <div className="film-posters-grid">
         <Link to="/isolation" className="film-poster-link">
           <OptimizedImage 
-            src="/images/film/isoposter.png" 
+            src="/images/film/isoposter.webp" 
             alt="Isolation" 
             className="film-poster-image"
           />
         </Link>
         <Link to="/ifoundit" className="film-poster-link">
           <OptimizedImage 
-            src="/images/film/ifiposter.png" 
+            src="/images/film/ifiposter.webp" 
             alt="I Found It" 
             className="film-poster-image"
           />
         </Link>
         <Link to="/digitaldaydream" className="film-poster-link">
           <OptimizedImage 
-            src="/images/film/ddposter.png" 
+            src="/images/film/ddposter.webp" 
             alt="Digital Daydream" 
             className="film-poster-image"
           />
         </Link>
         <Link to="/groupthinklove" className="film-poster-link">
           <OptimizedImage 
-            src="/images/film/gtlposter.png" 
+            src="/images/film/gtlposter.webp" 
             alt="Group Think Love" 
             className="film-poster-image"
           />
@@ -238,7 +238,7 @@ const FilmPage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
@@ -256,7 +256,7 @@ const FilmPage = () => {
         style={{ 
           minHeight: '100vh', 
           height: '100%',
-          backgroundImage: 'url("/images/film/filmbg.png")',
+          backgroundImage: 'url("/images/film/filmbg.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

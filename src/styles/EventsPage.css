@@ -7,7 +7,7 @@
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/events/eventpagebg.webp');
   /* Fallback for browsers that don't support WebP */
   @supports not (background-image: url('/images/events/eventpagebg.webp')) {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/events/eventpagebg.png');
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/events/eventpagebg.webp');
   }
   background-size: cover;
   background-position: center;

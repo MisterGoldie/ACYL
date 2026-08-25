@@ -19,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -77,7 +77,7 @@ const StreamContent = () => {
       </motion.div>
       <Link to="/salemtries" style={{ display: 'block', textDecoration: 'none' }}>
         <OptimizedImage 
-          src="/images/stream/salemstream.png" 
+          src="/images/stream/salemstream.webp" 
           alt="Salem Stream" 
           className="stream-feature-image"
           style={{
@@ -92,7 +92,7 @@ const StreamContent = () => {
       </Link>
       <Link to="/sazon" style={{ display: 'block', textDecoration: 'none' }}>
         <OptimizedImage 
-          src="/images/stream/swsstream.png" 
+          src="/images/stream/swsstream.webp" 
           alt="SWS Stream" 
           className="stream-feature-image"
           style={{
@@ -121,7 +121,7 @@ const StreamPage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
@@ -139,7 +139,7 @@ const StreamPage = () => {
         style={{ 
           minHeight: '100vh', 
           height: '100%',
-          backgroundImage: 'url("/images/stream/streambg.png")',
+          backgroundImage: 'url("/images/stream/streambg.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

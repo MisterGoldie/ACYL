@@ -19,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -176,7 +176,7 @@ const ReelColoursPage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {

@@ -18,7 +18,7 @@ const PUBLIC_DIR = path.join(__dirname, '../public');
 const OUTPUT_FILE = path.join(__dirname, '../src/utils/assetList.js');
 
 // File extensions to look for
-const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp'];
+const IMAGE_EXTENSIONS = ['.webp', '.jpg', '.jpeg'];
 const VIDEO_EXTENSIONS = ['.mp4', '.webm'];
 const GIF_EXTENSIONS = ['.gif'];
 

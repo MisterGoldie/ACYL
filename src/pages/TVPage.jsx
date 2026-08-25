@@ -19,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -96,7 +96,7 @@ const TVContent = () => {
         <h2>Coming Soon</h2>
         {/* Arthouse image removed */}
         <OptimizedImage 
-          src="/images/tv/afuerafont.png" 
+          src="/images/tv/afuerafont.webp" 
           alt="Afuera Font Logo" 
           className="tv-feature-image"
           style={{
@@ -123,7 +123,7 @@ const TVPage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
@@ -141,7 +141,7 @@ const TVPage = () => {
         style={{ 
           minHeight: '100vh', 
           height: '100%',
-          backgroundImage: 'url("/images/tv/tvbg.png")',
+          backgroundImage: 'url("/images/tv/tvbg.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

@@ -19,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -54,7 +54,7 @@ const RadioContent = () => {
       transition={{ delay: 0.3, duration: 0.5 }}
     >
       <OptimizedImage 
-        src="/images/radio/radiologo.png" 
+        src="/images/radio/radiologo.webp" 
         alt="Radio Logo" 
         style={{
           display: 'block',
@@ -187,7 +187,7 @@ const RadioPage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
@@ -205,7 +205,7 @@ const RadioPage = () => {
         style={{ 
           minHeight: '100vh', 
           height: '100%',
-          backgroundImage: 'url("/images/radio/radiobg.png")',
+          backgroundImage: 'url("/images/radio/radiobg.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

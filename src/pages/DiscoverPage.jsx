@@ -19,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -62,7 +62,7 @@ const DiscoverContent = () => {
         </p>
         <Link to="/groupthinklove" style={{ display: 'block', textDecoration: 'none' }}>
           <OptimizedImage 
-            src="/images/discover/groupthinklove.png" 
+            src="/images/discover/groupthinklove.webp" 
             alt="Group Think Love" 
             className="discover-feature-image"
             style={{
@@ -79,7 +79,7 @@ const DiscoverContent = () => {
         </Link>
         <Link to="/isolation" style={{ display: 'block', textDecoration: 'none' }}>
           <OptimizedImage 
-            src="/images/discover/iso.png" 
+            src="/images/discover/iso.webp" 
             alt="ISO Film Still" 
             className="discover-feature-image"
             style={{
@@ -97,7 +97,7 @@ const DiscoverContent = () => {
         {/* Arthouse image removed */}
         <Link to="/ifoundit" style={{ display: 'block', textDecoration: 'none' }}>
           <OptimizedImage 
-            src="/images/discover/ifoundit.png" 
+            src="/images/discover/ifoundit.webp" 
             alt="I Found It Film Still" 
             className="discover-feature-image"
             style={{
@@ -114,7 +114,7 @@ const DiscoverContent = () => {
         </Link>
         <Link to="/salemtries" style={{ display: 'block', textDecoration: 'none' }}>
           <OptimizedImage 
-            src="/images/discover/salem.png" 
+            src="/images/discover/salem.webp" 
             alt="Salem Film Still" 
             className="discover-feature-image"
             style={{
@@ -146,7 +146,7 @@ const DiscoverPage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
@@ -164,7 +164,7 @@ const DiscoverPage = () => {
         style={{ 
           minHeight: '100vh', 
           height: '100%',
-          backgroundImage: 'url("/images/discover/discoverbg.png")',
+          backgroundImage: 'url("/images/discover/discoverbg.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

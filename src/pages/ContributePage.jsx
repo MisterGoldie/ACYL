@@ -20,7 +20,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -62,7 +62,7 @@ const MemberCard = () => {
   return (
     <div className="membership-card">
       <div className="card-logo">
-        <OptimizedImage src="/images/contribute/freemember.png" alt="ACYL Member" className="logo-image" />
+        <OptimizedImage src="/images/contribute/freemember.webp" alt="ACYL Member" className="logo-image" />
       </div>
       <h3>ACYL Member</h3>
       <div className="price">Free</div>
@@ -115,7 +115,7 @@ const PatronCard = () => {
   return (
     <div className="membership-card">
       <div className="card-logo dark">
-        <OptimizedImage src="/images/contribute/paidmember.png" alt="ACYL Patron" className="logo-image" />
+        <OptimizedImage src="/images/contribute/paidmember.webp" alt="ACYL Patron" className="logo-image" />
       </div>
       <h3>ACYL Patron</h3>
       <div className="price">$1.00</div>
@@ -221,7 +221,7 @@ const ContributePage = () => {
           showWalletLoginFirst: false, // Don't prioritize wallet login
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {

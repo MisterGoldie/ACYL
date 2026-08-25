@@ -19,7 +19,7 @@ const Header = () => {
     >
       <div className="header-logo">
         <Link to="/">
-          <OptimizedImage src="/circleheaderlogo.png" alt="ACYL Logo" className="circle-header-logo" />
+          <OptimizedImage src="/circleheaderlogo.webp" alt="ACYL Logo" className="circle-header-logo" />
         </Link>
       </div>
       <nav className="main-nav">
@@ -54,7 +54,7 @@ const HomeContent = () => {
       transition={{ delay: 0.3, duration: 0.5 }}
     >
       <div className="acyl-description-container">
-        <OptimizedImage src="/bighomepagelogo.png" alt="ACYL Logo" className="acyl-big-logo" />
+        <OptimizedImage src="/bighomepagelogo.webp" alt="ACYL Logo" className="acyl-big-logo" />
         <p className="acyl-description-body">
           Welcome to Any Colour You Like, a new age media legacy company that champions independent voices and experimental storytelling. We believe that creativity thrives when it isn’t restricted, and we’re here to amplify the ideas that mainstream media overlooks. Our platform is home for the unconventional. A space for fearless filmmakers, writers, and creators who push limits, reimagine formats, and challenge perspectives.
         </p>
@@ -89,7 +89,7 @@ const HomePage = () => {
           showWalletLoginFirst: false,
           layout: 'modal',
           defaultView: 'login',
-          logo: '/acylprivylogo.png',
+          logo: '/acylprivylogo.webp',
           backgroundColor: '#fff',
         },
         embeddedWallets: {
