@@ -1,7 +1,6 @@
 import { usePrivy } from '@privy-io/react-auth';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import PrivyIdentity from './PrivyIdentity';
 import '../styles/LoginComponent.css';
 
 function LoginComponent() {
@@ -25,8 +24,6 @@ function LoginComponent() {
   
   useEffect(() => {
     if (authenticated && user && ready) {
-      console.log('User data:', user);
-      
       // Check for wallet address in the embedded wallets
       if (user.wallet?.address) {
         const address = user.wallet.address;
@@ -82,7 +79,6 @@ function LoginComponent() {
         ) : (
           isMobile ? (
             <div className="user-section">
-              <PrivyIdentity />
               <span className="welcome-text">
                 {displayName}
               </span>
@@ -102,7 +98,6 @@ function LoginComponent() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <PrivyIdentity />
               <motion.span 
                 className="welcome-text"
                 initial={{ opacity: 0, x: -10 }}
