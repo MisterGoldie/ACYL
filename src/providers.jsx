@@ -1,8 +1,7 @@
 'use client';
 
 import { OnchainKitProvider } from '@coinbase/onchainkit';
-import { base } from 'wagmi/chains'; // use baseSepolia for testing if needed
-import { createConfig } from 'wagmi';
+import { base } from 'viem/chains'; // use baseSepolia for testing if needed
 import { http } from 'viem';
 import { useState, useEffect } from 'react';
 
